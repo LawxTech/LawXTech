@@ -9,8 +9,8 @@ const theme = createTheme({
       main: '#113167', // Main shade of secondary color
     },
     background: {
-      default: '#f0f0f0', // Default background color
-      paper: '#ffffff', // Background color for paper surfaces
+      default: '#ffffff', // Default background color
+      paper: '#113167', // Background color for paper surfaces
     },
     text: {
       primary: '#000000', // Primary text color
