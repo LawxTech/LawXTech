@@ -1,20 +1,20 @@
 import React from 'react'
-import { Button } from '../components/Button'
+// import { Button } from '../components/Button'
 
 const Home: React.FC = () => {
 
-    const redirectToGoogle = () => {
-        window.location.href = 'https://www.google.com'
-      };
+    // const redirectToGoogle = () => {
+    //     window.location.href = 'https://www.google.com'
+    //   };
 
   return (
     <div>
-        <Button
+        {/* <Button
         type='primary'
         onClick={redirectToGoogle}
         > 
         Join Community
-        </Button>
+        </Button> */}
       {/* Home content */}
     </div>
   )
