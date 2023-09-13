@@ -13,6 +13,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Button } from '../components/Button'
 import theme from '../styles/theme';
+import { useNavigate } from 'react-router-dom';
 
 
 interface Props {
@@ -34,6 +35,9 @@ export default function DrawerAppBar(props: Props) {
   const redirectToGoogle = () => {
        'https://www.google.com'
   };
+
+ const navigate = useNavigate();
+
 
   const drawer = (
     <Box sx={{ textAlign: 'center' }}>
@@ -74,7 +78,10 @@ export default function DrawerAppBar(props: Props) {
                     textAlign: 'center',
                     color: item === activeItem ? theme.palette.background.paper : 'inherit',
                   }}
-                  onClick={() => setActiveItem(item)}
+                  onClick={() => {
+                    setActiveItem(item);
+                    navigate(`/${item.toLowerCase().replace(/\s+/g, '-')}`); // Navigate to the route corresponding to the clicked item
+                  }}
                 >
                   <ListItemText
                     primary={
