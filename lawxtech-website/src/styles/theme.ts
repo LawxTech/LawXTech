@@ -1,4 +1,5 @@
 import { createTheme } from '@mui/material/styles';
+import { Theme, makeStyles } from "@mui/material";
 
 const theme = createTheme({
   palette: {
@@ -20,5 +21,13 @@ const theme = createTheme({
   },
   // ... Other theme configurations
 })
+
+
+// export const useStyles = makeStyles((theme: Theme)=>({
+//   container:{
+//       backgroundColor: theme.palette.background.paper,
+//       padding: theme.spacing(8,0,6)
+//   }
+// }));
 
 export default theme;

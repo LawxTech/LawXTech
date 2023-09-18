@@ -1,3 +1,9 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +41,27 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.banner{
+  background-color: #133167;
+  margin-bottom: 3vh;
+  padding-bottom: 10vh;
+  margin-top: -2%;
+}
+
+.bannerDesc{
+  width: 100%;
+}
+
+
+
+#cta{
+  padding-left:4rem
+}
+
+.heroImg{
+  background-image: url();
+  height:fit-content;
 }
