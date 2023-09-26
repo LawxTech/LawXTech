@@ -45,7 +45,7 @@
 
 
 .banner{
-  background-color: #133167;
+  /* background-color: #133167; */
   margin-bottom: 3vh;
   padding-bottom: 10vh;
   margin-top: -2%;
@@ -55,13 +55,51 @@
   width: 100%;
 }
 
+.btn{
+  background-color: #133167 !important;
+}
 
+.grey{
+  background-color:#CFD6E1 !important;
+  border-radius: 8%;
+}
+
+.spacing{
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
 
 #cta{
   padding-left:4rem
 }
 
-.heroImg{
-  background-image: url();
-  height:fit-content;
+.gap{
+  padding-left: 2rem;
+}
+
+.features_desc{
+  padding-left: 1rem;
+  padding-right: 0.5rem;
+}
+
+.testimonials{
+  background-color: #CFD6E1;
+}
+
+.spacer{
+  height:240px;
+  position: relative;
+  z-index: 5;
+}
+
+.mid{
+  margin: auto;
+  position: relative;
+  top: 30%;
+}
+
+.features{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
 }

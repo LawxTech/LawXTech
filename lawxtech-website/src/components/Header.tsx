@@ -69,7 +69,7 @@ export default function DrawerAppBar(props: Props) {
           >
             <MenuIcon />
           </IconButton>
-          <img src={require('../assets/logo_2.JPG')} alt="Logo" style={{ maxHeight: '5em', marginLeft: '2em' }} />
+          <img src={require('../assets/logo/logo_2.JPG')} alt="Logo" style={{ maxHeight: '5em', marginLeft: '2em' }} />
           <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', whiteSpace: 'nowrap' }}>
             {navItems.map((item) => (
               <ListItem key={item} sx={{ mr: 2, color: theme.palette.text.primary }} disablePadding>
@@ -107,7 +107,7 @@ export default function DrawerAppBar(props: Props) {
             ))}
           </Box>
           <Box style={{ marginRight: '2em' }}>
-          <Button
+          <Button 
             type='primary'
             onClick={redirectToGoogle}
           >
