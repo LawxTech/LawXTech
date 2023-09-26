@@ -44,7 +44,19 @@ export const Testimonials = () => {
                                 being in this community and attending these Law
                                 x Tech series, i have learnt how to code.
                             </Typography>
-                            <img src={require("../../assets/witness.png")} width="10%" alt="Reviewer" className="witness"/>
+                            <Box maxWidth="xl" sx={{ display:"flex", justifyContent:"center"}}>
+                                <Box>
+                                    <img src={require("../../assets/witness.png")} width={34} alt="Reviewer" style={{ marginLeft: '-10em' }} />
+                                </Box>
+                                <Box>
+                                    <Typography variant="h6" sx={{ fontSize:".9rem", marginLeft:"-8em" }} fontWeight="bold" paragraph>
+                                        Shelly A.
+                                    </Typography>
+                                    <Typography variant="h6" sx={{ fontSize:".75rem", marginTop:"-22px", marginLeft:"-9.4em" }} fontWeight="light" paragraph>
+                                        Paralegal
+                                    </Typography>
+                                </Box>
+                            </Box>
                         </Box>
                         <Box height={208} sx={{backgroundColor:"#ffffff", marginBottom:"10%" }} className="gap witnessbox">
                             <Icon path={mdiFormatQuoteOpen} size={1.8} />
@@ -53,7 +65,19 @@ export const Testimonials = () => {
                                 being in this community and attending these Law
                                 x Tech series, i have learnt how to code.
                             </Typography>
-                            <img src={require("../../assets/witness.png")} width="10%" alt="Reviewer" className="witness"/>
+                            <Box maxWidth="xl" sx={{ display:"flex", justifyContent:"center"}}>
+                                <Box>
+                                    <img src={require("../../assets/witness.png")} width={34} alt="Reviewer" style={{ marginLeft: '-10em' }} />
+                                </Box>
+                                <Box>
+                                    <Typography variant="h6" sx={{ fontSize:".9rem", marginLeft:"-8em" }} fontWeight="bold" paragraph>
+                                        Shelly A.
+                                    </Typography>
+                                    <Typography variant="h6" sx={{ fontSize:".75rem", marginTop:"-22px", marginLeft:"-9.4em" }} fontWeight="light" paragraph>
+                                        Paralegal
+                                    </Typography>
+                                </Box>
+                            </Box>
                         </Box>
                         <Box height={208} sx={{backgroundColor:"#ffffff", marginBottom:"10%" }} className="gap witnessbox">
                             <Icon path={mdiFormatQuoteOpen} size={1.8} />
@@ -62,7 +86,19 @@ export const Testimonials = () => {
                                 being in this community and attending these Law
                                 x Tech series, i have learnt how to code.
                             </Typography>
-                            <img src={require("../../assets/witness.png")} width="10%" alt="Reviewer" className="witness"/>
+                            <Box maxWidth="xl" sx={{ display:"flex", justifyContent:"center"}}>
+                                <Box>
+                                    <img src={require("../../assets/witness.png")} width={34} alt="Reviewer" style={{ marginLeft: '-10em' }} />
+                                </Box>
+                                <Box>
+                                    <Typography variant="h6" sx={{ fontSize:".9rem", marginLeft:"-8em" }} fontWeight="bold" paragraph>
+                                        Shelly A.
+                                    </Typography>
+                                    <Typography variant="h6" sx={{ fontSize:".75rem", marginTop:"-22px", marginLeft:"-9.4em" }} fontWeight="light" paragraph>
+                                        Paralegal
+                                    </Typography>
+                                </Box>
+                            </Box>
                         </Box>
                         <Box height={208} sx={{backgroundColor:"#ffffff", marginBottom:"10%", marginLeft:"10%" }} className="gap witnessbox">
                             <Icon path={mdiFormatQuoteOpen} size={1.8} />
@@ -71,7 +107,19 @@ export const Testimonials = () => {
                                 being in this community and attending these Law
                                 x Tech series, i have learnt how to code.
                             </Typography>
-                            <img src={require("../../assets/witness.png")} width="10%" alt="Reviewer" className="witness"/>
+                            <Box maxWidth="xl" sx={{ display:"flex", justifyContent:"center"}}>
+                                <Box>
+                                    <img src={require("../../assets/witness.png")} width={34} alt="Reviewer" style={{ marginLeft: '-10em' }} />
+                                </Box>
+                                <Box>
+                                    <Typography variant="h6" sx={{ fontSize:".9rem", marginLeft:"-8em" }} fontWeight="bold" paragraph>
+                                        Shelly A.
+                                    </Typography>
+                                    <Typography variant="h6" sx={{ fontSize:".75rem", marginTop:"-22px", marginLeft:"-9.4em" }} fontWeight="light" paragraph>
+                                        Paralegal
+                                    </Typography>
+                                </Box>
+                            </Box>
                         </Box>
                         <Box height={208} sx={{backgroundColor:"#ffffff", marginBottom:"10%", marginLeft:"10%" }} className="gap witnessbox">
                             <Icon path={mdiFormatQuoteOpen} size={1.8} />
@@ -80,7 +128,19 @@ export const Testimonials = () => {
                                 being in this community and attending these Law
                                 x Tech series, i have learnt how to code.
                             </Typography>
-                            <img src={require("../../assets/witness.png")} width="10%" alt="Reviewer" className="witness"/>
+                            <Box maxWidth="xl" sx={{ display:"flex", justifyContent:"center"}}>
+                                <Box>
+                                    <img src={require("../../assets/witness.png")} width={34} alt="Reviewer" style={{ marginLeft: '-10em' }} />
+                                </Box>
+                                <Box>
+                                    <Typography variant="h6" sx={{ fontSize:".9rem", marginLeft:"-8em" }} fontWeight="bold" paragraph>
+                                        Shelly A.
+                                    </Typography>
+                                    <Typography variant="h6" sx={{ fontSize:".75rem", marginTop:"-22px", marginLeft:"-9.4em" }} fontWeight="light" paragraph>
+                                        Paralegal
+                                    </Typography>
+                                </Box>
+                            </Box>
                         </Box>
                     </Slider>
            
