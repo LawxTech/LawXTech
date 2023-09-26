@@ -13,10 +13,11 @@ interface FeatureBoxProps {
 
 const FeatureBox: React.FC<FeatureBoxProps> = ({ src, alt, title, description }) => {
   const featureBoxStyle: React.CSSProperties = {
-    maxWidth: 230,
+    maxWidth: 300,
     margin: "auto",
     padding: "16px",
     backgroundColor: "#CFD6E1",
+    height:"30vh",
     cursor: "pointer",
     boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
     borderRadius: "20px", 
@@ -34,7 +35,7 @@ const FeatureBox: React.FC<FeatureBoxProps> = ({ src, alt, title, description })
   const titleStyle: React.CSSProperties = {
     fontSize: "1.2rem",
     fontWeight: "light",
-    textAlign: "center",
+    marginLeft: "14px",
     marginTop: "8px",
     marginBottom: "5px"
   };
