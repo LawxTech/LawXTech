@@ -21,7 +21,7 @@ export const Intro = () => {
                         </Grid>
                     </Grid>
                 </Container>
-                <Box maxWidth="xl" className="btn spacer" marginTop="-7%">
+                <Box maxWidth="xl" className="btn spacer" marginTop="-12.4%" height={300}>
                     <Box maxWidth="sm" alignContent="center" className="mid">
                         <Typography  variant="h6"  align="center" color="#ffffff" sx={{fontSize:"1.2rem"}} fontWeight="normal" marginX="auto" paragraph>
                             “I want to talk regularly to lawyers who want to learn more
@@ -33,8 +33,7 @@ export const Intro = () => {
                     </Box>
                 </Box>
             </div>
-            
-            
+
         </>
     )
 }

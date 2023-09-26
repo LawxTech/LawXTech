@@ -6,7 +6,7 @@ export const MeetTeam = () => {
     return(
         <>
             <div>
-                <Typography  variant="h4" color="#133167" align="center" sx={{fontSize:"1.8rem"}}  marginTop={2} fontWeight="bold" marginX="auto" gutterBottom>
+                <Typography  variant="h4" color="#133167" align="center" sx={{fontSize:"1.8rem", marginTop:"4%", marginBottom:"4%"}}  marginTop={2} fontWeight="bold" marginX="auto" gutterBottom>
                     Meet the Team
                 </Typography>
                 <Container maxWidth="xl" sx={{ display:"flex", justifyContent:"center"}}>

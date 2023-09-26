@@ -26,25 +26,25 @@ export const Events = () => {
         <Grid container maxWidth="xl" sx={{ display: "flex", alignItems:"center", justifyContent:"center" }}>
           <Grid item maxWidth="sm">
             <div>
-              <img src={require("../../assets/events/event1.png")} className="gap" alt="Upcoming Events" />
-              <Typography variant="h5" align="center" sx={{fontSize:"1rem"}}>Community Chat</Typography>
-              <Typography variant="h6" align="center" sx={{fontSize:"0.8rem"}}>30th September 2023</Typography>
+              <img src={require("../../assets/events/event1.png")} width="80%" className="gap" alt="Upcoming Events" />
+              <Typography variant="h5" sx={{fontSize:"1rem", marginLeft:"12%"}} id="cta">Community Chat</Typography>
+              <Typography variant="h6" sx={{fontSize:"0.8rem" , marginLeft:"12%"}} id="cta">30th September 2023</Typography>
             </div>
           </Grid>
-          <Grid item maxWidth="sm" marginRight={5}>
-            <img src={require("../../assets/events/event2.png")} className="gap" alt="Upcoming Events" />
-            <Typography variant="h5" align="center" sx={{fontSize:"1rem"}}>LawxTechSeries4</Typography>
-            <Typography variant="h6" align="center" sx={{fontSize:"0.8rem"}}>23rd September 2023</Typography>
+          <Grid item maxWidth="sm">
+            <img src={require("../../assets/events/event2.png")} width="80%" className="gap" alt="Upcoming Events" />
+            <Typography variant="h5" sx={{fontSize:"1rem", marginLeft:"11%"}} id="cta">LawxTechSeries4</Typography>
+            <Typography variant="h6"  sx={{fontSize:"0.8rem", marginLeft:"11%"}} id="cta">23rd September 2023</Typography>
           </Grid>
           <Grid item maxWidth="sm">
-            <img src={require("../../assets/events/event3.png")} alt="Upcoming Events" />
-            <Typography variant="h5" align="center" sx={{fontSize:"1rem"}}>Partnership Announcementt</Typography>
-            <Typography variant="h6" align="center" sx={{fontSize:"0.8rem"}}>21st  September 2023</Typography>
+            <img src={require("../../assets/events/event3.png")} width="80%" alt="Upcoming Events" />
+            <Typography variant="h5"  sx={{fontSize:"1rem"}} id="cta">Partnership Announcementt</Typography>
+            <Typography variant="h6" sx={{fontSize:"0.8rem", marginLeft:"17%"}} className="gap">21st  September 2023</Typography>
           </Grid>
         </Grid>
       </div>
       <div>
-        <Box maxWidth="xl" className="btn"  height={300} marginTop="10%" sx={{ display:"flex"}}>
+        <Box maxWidth="xl" className="btn"  height={320} marginTop="10%" sx={{ display:"flex"}}>
           <Box maxWidth="sm" marginTop={6} marginLeft={14}>
               <Typography  variant="h4" color="#ffffff" sx={{fontSize:"1.8rem"}}  marginTop={2} fontWeight="normal" marginX="auto" gutterBottom>
                 Join us at Law x Tech as a VOLUNTEER
