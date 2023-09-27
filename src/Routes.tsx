@@ -9,7 +9,7 @@ import Contact from './pages/Contact'
 const Routes: React.FC = () => {
   return (
       <ReactRoutes>
-        <Route path="/home" element={<Home />} /> 
+        <Route path="/" element={<Home />} /> 
         <Route path="/about-us" element={<About />} />
         <Route path="/series" element={<Series />} />
         <Route path="/contact-us" element={<Contact />} />

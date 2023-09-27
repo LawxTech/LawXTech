@@ -1,3 +1,9 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +41,64 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.banner{
+  /* background-color: #133167; */
+  margin-bottom: 3vh;
+  padding-bottom: 10vh;
+  margin-top: -2%;
+}
+
+.bannerDesc{
+  width: 100%;
+}
+
+.btn{
+  background-color: #133167 !important;
+}
+
+.grey{
+  background-color:#CFD6E1 !important;
+  border-radius: 8%;
+}
+
+.spacing{
+  margin-top: 5% !important;
+  margin-bottom: 5% !important;
+}
+
+#cta{
+  padding-left:4rem
+}
+
+.gap{
+  padding-left: 2rem;
+}
+
+.features_desc{
+  padding-left: 1rem;
+  padding-right: 0.5rem;
+}
+
+.testimonials{
+  background-color: #CFD6E1;
+}
+
+.spacer{
+  position: relative;
+  z-index: 5;
+}
+
+.mid{
+  margin: auto;
+  position: relative;
+  top: 30%;
+}
+
+.witnessbox{
+  width:75% !important;
+  border-radius: 20px;
+  box-shadow: "0px 4px 6px rgba(0, 0, 0, 0.1)"
 }
