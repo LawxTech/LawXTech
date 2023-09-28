@@ -44,23 +44,23 @@ export const Events = () => {
         </Grid>
       </div>
       <div>
-        <Box maxWidth="xl" className="btn"  height={320} marginTop="10%" sx={{ display:"flex"}}>
-          <Box maxWidth="sm" marginTop={6} marginLeft={14}>
-              <Typography  variant="h4" color="#ffffff" sx={{fontSize:"1.8rem"}}  marginTop={2} fontWeight="normal" marginX="auto" gutterBottom>
+        <Box maxWidth="xl" className="btn"  maxHeight={900} marginTop="10%" sx={{ display:"flex"}}>
+          <Box maxWidth="sm" marginTop={6} marginLeft={14} className="textInBlue">
+              <Typography  variant="h4" color="#ffffff" className="left"  id="leftTitle" sx={{fontSize:"1.8rem"}}  marginTop={2} fontWeight="normal" marginX="auto" gutterBottom>
                 Join us at Law x Tech as a VOLUNTEER
               </Typography>
-              <Typography variant="h6" color="#ffffff" sx={{fontSize:".9rem"}} fontWeight="light" paragraph>
+              <Typography variant="h6" color="#ffffff" className="left" sx={{fontSize:".9rem"}} fontWeight="light" paragraph>
                 Do you have tech skills such as graphics designing, web development,
                 community management, copy writing, project management and the likes?
                 Are you interested in gaining hands on experience working on real life
                 projects with us? Then, join us today!
               </Typography>
-              <Typography variant="h6" color="#ffffff" sx={{fontSize:".9rem"}} fontWeight="light" paragraph>
+              <Typography variant="h6" color="#ffffff" className="left" sx={{fontSize:".9rem"}} fontWeight="light" paragraph>
                 Are you interested in gaining hands on experience working on real life
                 projects with us? Then, join us today!
               </Typography>
           </Box>
-          <Box maxWidth="sm" marginTop={10} marginLeft={40}>
+          <Box maxWidth="sm" marginTop={10} marginLeft={35} className="right">
             <Typography variant="h6" color="#ffffff" sx={{fontSize:"0.9rem"}} fontWeight="light" paragraph>
               To be a Volunteer
             </Typography>

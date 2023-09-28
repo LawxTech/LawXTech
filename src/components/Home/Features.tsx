@@ -14,10 +14,10 @@ interface FeatureBoxProps {
 const FeatureBox: React.FC<FeatureBoxProps> = ({ src, alt, title, description }) => {
   const featureBoxStyle: React.CSSProperties = {
     maxWidth: 300,
-    margin: "auto",
+    maxHeight:900,
+    margin: "10px",
     padding: "16px",
     backgroundColor: "#CFD6E1",
-    height:"30vh",
     cursor: "pointer",
     boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
     borderRadius: "20px", 
@@ -81,7 +81,7 @@ export const Features = () => {
         </Container>
         <section>
         </section>
-        <Container maxWidth="xl" sx={{ display:"flex", justifyContent:"center"}}>
+        <Container maxWidth="xl" sx={{ display:"flex", flexWrap:"wrap", justifyContent:"center"}}>
                     <Box maxWidth="sm">
                       <FeatureBox
                         src={require("../../assets/icons/learning.png")}
@@ -90,7 +90,7 @@ export const Features = () => {
                         description="We share resources to help you grow in your learning"
                       />
                     </Box>
-                    <Box maxWidth="sm" className="gap">
+                    <Box maxWidth="sm">
                       <FeatureBox
                         src={require("../../assets/icons/learning.png")}
                         alt="Feature"
@@ -98,7 +98,7 @@ export const Features = () => {
                         description="We share resources to help you grow in your learning"
                       />
                     </Box>
-                    <Box maxWidth="sm" className="gap">
+                    <Box maxWidth="sm">
                       <FeatureBox
                         src={require("../../assets/icons/learning.png")}
                         alt="Feature"
@@ -106,7 +106,7 @@ export const Features = () => {
                         description="We share resources to help you grow in your learning"
                       />
                     </Box>
-                    <Box maxWidth="sm" className="gap">
+                    <Box maxWidth="sm">
                       <FeatureBox
                         src={require("../../assets/icons/learning.png")}
                         alt="Feature"
@@ -115,42 +115,6 @@ export const Features = () => {
                       />
                     </Box>
                 </Container>
-        {/* <Grid container maxWidth="md">
-          <Grid item>
-            <div>
-              <FeatureBox
-                src={require("../../assets/icons/learning.png")}
-                alt="Feature"
-                title="Learning Resources"
-                description="We share resources to help you grow in your learning"
-              />
-            </div>
-          </Grid>
-          <Grid item maxWidth="md">
-            <FeatureBox
-              src={require("../../assets/icons/webinar.png")}
-              alt="Feature"
-              title="Webinars/Workshop"
-              description="We share resources to help you grow in your learning"
-            />
-          </Grid>
-          <Grid item maxWidth="md">
-            <FeatureBox
-              src={require("../../assets/icons/mentorship.png")}
-              alt="Feature"
-              title="Mentorship"
-              description="We share resources to help you grow in your learning"
-            />
-          </Grid>
-          <Grid item maxWidth="md">
-            <FeatureBox
-              src={require("../../assets/icons/internship.png")}
-              alt="Feature"
-              title="Internship"
-              description="We share resources to help you grow in your learning"
-            />
-          </Grid>
-        </Grid> */}
       </div>
     </>
   );
