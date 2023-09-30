@@ -5,11 +5,11 @@ import "../.../../../App.css";
 export const MeetTeam = () => {
     return(
         <>
-            <div>
+            <Box maxWidth="l">
                 <Typography  variant="h4" color="#133167" align="center" sx={{fontSize:"1.8rem", marginTop:"4%", marginBottom:"4%"}}  marginTop={2} fontWeight="bold" marginX="auto" gutterBottom>
                     Meet the Team
                 </Typography>
-                <Container maxWidth="xl" sx={{ display:"flex", justifyContent:"center"}}>
+                <Container maxWidth="xl" sx={{ display:"flex", flexWrap:"wrap", justifyContent:"center"}}>
                     <Box maxWidth="sm">
                         <img src={require("../../assets/team/1.png")} alt="Team member"/>
                         <Typography variant="h6" sx={{fontSize:".9rem"}} fontWeight="light" id="cta" paragraph>
@@ -47,7 +47,7 @@ export const MeetTeam = () => {
                         </Typography>
                     </Box>
                 </Container>
-            </div>
+            </Box>
         </>
     )
 }

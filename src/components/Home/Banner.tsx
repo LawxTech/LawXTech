@@ -14,16 +14,16 @@ export const Banner = () => {
 
     return(
         <ThemeProvider theme = {theme}> 
-            <div className="banner gap">
-                <Container maxWidth="xl" sx={{ display: 'flex', justifyContent:"space-between" }}>
-                    <div>
-                        <Typography variant="h3" letterSpacing={8} fontWeight="bold" sx={{fontSize:"4.1rem"}} pt="4rem" px={4} ml={4} mt={0}>
+            <Box maxWidth="xl" className="banner">
+                <Container maxWidth="xl" sx={{ display: 'flex', justifyContent:"space-between", alignItems:"center" }}>
+                    <Box maxWidth="sm">
+                        <Typography variant="h3" letterSpacing={8} fontWeight="bold" sx={{fontSize:"3rem"}} pt="4rem" px={4} ml={4} mt={0}>
                             Empowering
                             <span>
-                                <Typography variant="h3" letterSpacing={8} fontWeight="bold" sx={{fontSize:"4.1rem"}}>Lawyers in the</Typography> 
+                                <Typography variant="h3" letterSpacing={8} fontWeight="bold" sx={{fontSize:"3rem"}}>Lawyers in the</Typography> 
                             </span>
                         </Typography>
-                        <Typography variant="h3" letterSpacing={8} color="#42858C" sx={{fontSize:"3.5rem"}}fontWeight="bold" fontStyle="oblique" ml={4} px={4} mb={2}>
+                        <Typography variant="h3" letterSpacing={8} color="#42858C" sx={{fontSize:"2.8rem"}}fontWeight="bold" fontStyle="oblique" ml={4} px={4} mb={2}>
                             Tech World
                         </Typography>
                         <Grid container maxWidth="md">
@@ -36,7 +36,7 @@ export const Banner = () => {
                                         This is where Law meets Tech.
                                     </Typography>
                                 </Box>
-                                <div id="cta">
+                                <Box id="cta">
                                     <Button className="btn"
                                         variant="contained"
                                         size="large"
@@ -44,26 +44,23 @@ export const Banner = () => {
                                     >
                                         Join Community
                                     </Button>
-                                </div>
+                                </Box>
                             </Grid>
                         </Grid> 
-                    </div>
-                    <div >
-                        <Grid container maxWidth="sm">
-                            <Grid item>
+                    </Box>
+                    <Box >
+                        <Grid container maxWidth="sm" sx={{ justifyContent:"center", alignItems:"center" }}  className="reverse">
+                            <Grid item maxWidth="sm">
                                 <Box component="img" sx={{marginRight:"40px", paddingRight:"30px"}}
                                     alt="Hero image"
                                     src={ require("../../assets/hero.png")}
-                                    width={570}
-                                    height={360}
-                                    mr={14}
-                                    my={5}
+                                    maxWidth="sm"
                                 />
                             </Grid>  
                         </Grid>
-                    </div>
+                    </Box>
                 </Container>
-            </div>
+            </Box>
         </ThemeProvider>
     )
 }

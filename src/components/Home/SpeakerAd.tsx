@@ -8,9 +8,9 @@ export const SpeakerAd = () => {
     return(
         <>
             <div>
-                <Container maxWidth="md" sx={{ display:"flex"}}>
+                <Container maxWidth="md" sx={{ display:"flex"}} className="ad">
                     <Box maxWidth="sm" marginTop={20} marginRight={1}>
-                        <Typography variant="h4" sx={{fontSize:"1.8rem"}} marginTop={2} fontWeight="normal" marginX="auto" gutterBottom>
+                        <Typography variant="h4" className="adText" sx={{fontSize:"1.8rem"}} marginTop={2} fontWeight="normal" marginX="auto" gutterBottom>
                             Become a Speaker at the Law x Tech Series
                         </Typography>
                         <Typography variant="h6" sx={{fontSize:".9rem"}} paragraph>
@@ -20,7 +20,7 @@ export const SpeakerAd = () => {
                             you to become a featured speaker at the monthly Law x Tech
                             Series webinar!
                         </Typography>
-                        <div>
+                        <div className="join">
                             <Button className="btn"
                                 variant="contained"
                                 size="large"
@@ -30,7 +30,7 @@ export const SpeakerAd = () => {
                         </div>
                     </Box>
                     <Box maxWidth="md" marginLeft={12}>
-                        <img src={require("../../assets/speaker.png")} alt="Speaker" />
+                        <img src={require("../../assets/speaker.png")} alt="Speaker" className="adImg" />
                     </Box>
                 </Container>
             </div>

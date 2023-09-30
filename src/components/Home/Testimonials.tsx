@@ -6,9 +6,6 @@ import Icon from '@mdi/react';
 import { mdiFormatQuoteOpen } from '@mdi/js';
 
 
-
-
-
 export const Testimonials = () => {
     var settings = {
         dots: true,
@@ -18,6 +15,17 @@ export const Testimonials = () => {
         slidesToShow: 3,
         slidesToScroll: 1
       };
+
+      const isSmallDevice = window.matchMedia("(max-width: 768px)").matches;
+      const isMediumDevice = window.matchMedia("(max-width: 991px)").matches;
+
+      if (isSmallDevice) {
+        settings.slidesToShow = 1;
+      } else if (isMediumDevice) {
+        settings.slidesToShow = 2;
+      } else {
+        settings.slidesToShow = 3;
+      }
     return(
         <>
             <section className="testimonials">
@@ -37,14 +45,14 @@ export const Testimonials = () => {
                         </Typography>
                     </Container>
                     <Slider {...settings}>
-                        <Box height={208} sx={{backgroundColor:"#ffffff", marginBottom:"10%", marginLeft:"10%" }} className="gap witnessbox">
+                        <Box maxHeight={900} maxWidth="xl" sx={{backgroundColor:"#ffffff", marginBottom:"10%", marginLeft:"10%" }} className="gap witnessbox">
                             <Icon path={mdiFormatQuoteOpen} size={1.8} className="witness" />
                             <Typography variant="h6" sx={{ fontSize:".9rem", width:"95%", marginTop:"3%"}} fontWeight="normal" paragraph>
                                 I am very proud to say that after a few months of
                                 being in this community and attending these Law
                                 x Tech series, i have learnt how to code.
                             </Typography>
-                            <Box maxWidth="xl" sx={{ display:"flex", justifyContent:"center"}}>
+                            <Box maxWidth="xl" sx={{ display:"flex", justifyContent:"center"}} className="up">
                                 <Box>
                                     <img src={require("../../assets/witness.png")} width={34} alt="Reviewer" style={{ marginLeft: '-10em' }} />
                                 </Box>
@@ -58,16 +66,16 @@ export const Testimonials = () => {
                                 </Box>
                             </Box>
                         </Box>
-                        <Box height={208} sx={{backgroundColor:"#ffffff", marginBottom:"10%" }} className="gap witnessbox">
+                        <Box maxHeight={900} sx={{backgroundColor:"#ffffff", marginBottom:"10%" }} className="gap witnessbox">
                             <Icon path={mdiFormatQuoteOpen} size={1.8} />
                             <Typography variant="h6" sx={{ fontSize:".9rem", width:"95%", marginTop:"3%"}} fontWeight="normal" paragraph>
                                 I am very proud to say that after a few months of
                                 being in this community and attending these Law
                                 x Tech series, i have learnt how to code.
                             </Typography>
-                            <Box maxWidth="xl" sx={{ display:"flex", justifyContent:"center"}}>
+                            <Box maxWidth="xl" sx={{ display:"flex", justifyContent:"center"}} className="up">
                                 <Box>
-                                    <img src={require("../../assets/witness.png")} width={34} alt="Reviewer" style={{ marginLeft: '-10em' }} />
+                                    <img src={require("../../assets/witness.png")} width={34} alt="Reviewer" style={{ marginLeft: '-10em' }}  />
                                 </Box>
                                 <Box>
                                     <Typography variant="h6" sx={{ fontSize:".9rem", marginLeft:"-8em" }} fontWeight="bold" paragraph>
@@ -79,16 +87,16 @@ export const Testimonials = () => {
                                 </Box>
                             </Box>
                         </Box>
-                        <Box height={208} sx={{backgroundColor:"#ffffff", marginBottom:"10%" }} className="gap witnessbox">
+                        <Box maxHeight={900} sx={{backgroundColor:"#ffffff", marginBottom:"10%" }} className="gap witnessbox">
                             <Icon path={mdiFormatQuoteOpen} size={1.8} />
                             <Typography variant="h6" sx={{ fontSize:".9rem", width:"95%", marginTop:"3%"}} fontWeight="normal" paragraph>
                                 I am very proud to say that after a few months of
                                 being in this community and attending these Law
                                 x Tech series, i have learnt how to code.
                             </Typography>
-                            <Box maxWidth="xl" sx={{ display:"flex", justifyContent:"center"}}>
+                            <Box maxWidth="xl" sx={{ display:"flex", justifyContent:"center"}} className="up">
                                 <Box>
-                                    <img src={require("../../assets/witness.png")} width={34} alt="Reviewer" style={{ marginLeft: '-10em' }} />
+                                    <img src={require("../../assets/witness.png")} width={34} alt="Reviewer" style={{ marginLeft: '-10em' }}  />
                                 </Box>
                                 <Box>
                                     <Typography variant="h6" sx={{ fontSize:".9rem", marginLeft:"-8em" }} fontWeight="bold" paragraph>
@@ -100,16 +108,16 @@ export const Testimonials = () => {
                                 </Box>
                             </Box>
                         </Box>
-                        <Box height={208} sx={{backgroundColor:"#ffffff", marginBottom:"10%", marginLeft:"10%" }} className="gap witnessbox">
+                        <Box maxHeight={900} sx={{backgroundColor:"#ffffff", marginBottom:"10%", marginLeft:"10%" }} className="gap witnessbox">
                             <Icon path={mdiFormatQuoteOpen} size={1.8} />
                             <Typography variant="h6" sx={{ fontSize:".9rem", width:"95%", marginTop:"3%"}} fontWeight="normal" paragraph>
                                 I am very proud to say that after a few months of
                                 being in this community and attending these Law
                                 x Tech series, i have learnt how to code.
                             </Typography>
-                            <Box maxWidth="xl" sx={{ display:"flex", justifyContent:"center"}}>
+                            <Box maxWidth="xl" sx={{ display:"flex", justifyContent:"center"}} className="up">
                                 <Box>
-                                    <img src={require("../../assets/witness.png")} width={34} alt="Reviewer" style={{ marginLeft: '-10em' }} />
+                                    <img src={require("../../assets/witness.png")} width={34} alt="Reviewer" style={{ marginLeft: '-10em' }}  />
                                 </Box>
                                 <Box>
                                     <Typography variant="h6" sx={{ fontSize:".9rem", marginLeft:"-8em" }} fontWeight="bold" paragraph>
@@ -121,16 +129,16 @@ export const Testimonials = () => {
                                 </Box>
                             </Box>
                         </Box>
-                        <Box height={208} sx={{backgroundColor:"#ffffff", marginBottom:"10%", marginLeft:"10%" }} className="gap witnessbox">
+                        <Box maxHeight={900} sx={{backgroundColor:"#ffffff", marginBottom:"10%", marginLeft:"10%" }} className="gap witnessbox">
                             <Icon path={mdiFormatQuoteOpen} size={1.8} />
                             <Typography variant="h6" sx={{ fontSize:".9rem", width:"95%", marginTop:"3%"}} fontWeight="normal" paragraph>
                                 I am very proud to say that after a few months of
                                 being in this community and attending these Law
                                 x Tech series, i have learnt how to code.
                             </Typography>
-                            <Box maxWidth="xl" sx={{ display:"flex", justifyContent:"center"}}>
+                            <Box maxWidth="xl" sx={{ display:"flex", justifyContent:"center"}} className="up">
                                 <Box>
-                                    <img src={require("../../assets/witness.png")} width={34} alt="Reviewer" style={{ marginLeft: '-10em' }} />
+                                    <img src={require("../../assets/witness.png")} width={34} alt="Reviewer" style={{ marginLeft: '-10em' }}  />
                                 </Box>
                                 <Box>
                                     <Typography variant="h6" sx={{ fontSize:".9rem", marginLeft:"-8em" }} fontWeight="bold" paragraph>
