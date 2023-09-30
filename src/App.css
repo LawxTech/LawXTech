@@ -69,6 +69,11 @@
   margin-bottom: 5% !important;
 }
 
+.boxes{
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
 #cta{
   padding-left:4rem
 }
@@ -101,4 +106,51 @@
   width:75% !important;
   border-radius: 20px;
   box-shadow: "0px 4px 6px rgba(0, 0, 0, 0.1)"
+}
+
+
+@media (max-width: 1200px) {
+  #leftTitle {
+    margin-left: -14px !important;
+    width: fit-content !important;
+  }
+  .left {
+    width: 80%;
+  }
+  .right {
+    margin-left: -8% !important;
+    margin-top: 12% !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .reverse {
+    display: none !important;
+  }
+
+  .textInBlue {
+    width: fit-content !important;
+  }
+
+  #leftTitle {
+    margin-top: -7% !important;
+  }
+  .left {
+    margin-left: -30% !important;
+    width: 90%;
+  }
+  .right {
+    margin-left: -7% !important;
+    margin-top: 26% !important;
+  }
+  .ad{
+    flex-wrap: wrap !important;
+    flex-direction: column-reverse !important;
+  }
+  .adText{
+    margin-top: -20% !important;
+  }
+  .join{
+    text-align: center;
+  }
 }
