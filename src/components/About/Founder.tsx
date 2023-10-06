@@ -13,20 +13,20 @@ const Founder: React.FC = () => {
           maxWidth="lg"
           style={{
             backgroundColor: "#fff",
-
-            display: "flex",
-            alignItems: "center",
-            gap: "3.5rem",
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            rowGap: "3.5rem",
+            // alignItems: "center",
+            border: "1px solid #000",
           }}
         >
           <Box
             component="img"
             sx={{
-              width: "50%",
-              height: "30.75rem",
-              objectFit: "cover",
+              height: "40rem",
+              width: "90%",
             }}
-            src="/images/about-us-landing-image.jpeg"
+            src="/images/sopuruchi.jpeg"
             alt="about"
           />
           <Box
@@ -34,13 +34,21 @@ const Founder: React.FC = () => {
               width: "100%",
             }}
           >
-            <Typography variant="h3">About our Founder</Typography>
+            <Typography
+              variant="h3"
+              sx={{
+                color: "#113167",
+              }}
+            >
+              About our Founder
+            </Typography>
             <Typography
               variant="body1"
               fontWeight={400}
               sx={{
                 marginBottom: "0.625rem",
                 lineHeight: "1.7rem",
+                textJustify: "inter-punctuation",
               }}
             >
               Meet Sopuruchi Rufus, the driving force behind Law x Tech. With a
