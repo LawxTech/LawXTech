@@ -1,6 +1,5 @@
 import React from "react";
 import { Typography, Container, Box } from "@mui/material";
-import "../../App.css"; // Adjust the path to your CSS file if needed
 
 const teamMembers = [
   {
@@ -113,9 +112,8 @@ const MeetTeam = () => {
             }}
           >
             {teamMembers.map((member, index) => (
-              <Box key={index} sx={{}}>
+              <Box key={index} sx={{}} marginBottom={3}>
                 <img
-                  //   src={require(`../../assets/team/3.png`)}
                   src={require(`../../assets/Members/${member.image}`)}
                   alt={`Team member ${index + 1}`}
                   style={{

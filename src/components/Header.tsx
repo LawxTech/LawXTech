@@ -10,7 +10,6 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import { Button } from "../components/Button";
 import theme from "../styles/theme";
 import { useNavigate } from "react-router-dom";
@@ -113,7 +112,7 @@ export default function DrawerAppBar(props: Props) {
                           ? ""
                           : item.toLowerCase().replace(/\s+/g, "-")
                       }`
-                    ); // Navigate to the route corresponding to the clicked item
+                    );
                   }}
                 >
                   <ListItemText
