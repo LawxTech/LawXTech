@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Typography, Grid, Container, Box } from "@mui/material";
 import "../.../../../App.css"
 
@@ -26,18 +27,18 @@ export const Events = () => {
         <Grid container maxWidth="xl" sx={{ display: "flex", alignItems:"center", justifyContent:"center" }}>
           <Grid item maxWidth="sm">
             <div>
-              <img src={require("../../assets/events/event1.png")} width="87%" className="gap" alt="Upcoming Events" />
+              <img src={require("../../assets/events/event1.png")} width="80%" className="gap" alt="Upcoming Events" />
               <Typography variant="h5" sx={{fontSize:"1rem", marginLeft:"12%"}} id="cta">Community Chat</Typography>
               <Typography variant="h6" sx={{fontSize:"0.8rem" , marginLeft:"12%"}} id="cta">30th September 2023</Typography>
             </div>
           </Grid>
           <Grid item maxWidth="sm">
-            <img src={require("../../assets/events/event2.png")} width="87%" className="gap" alt="Upcoming Events" />
+            <img src={require("../../assets/events/event2.png")} width="80%" className="gap" alt="Upcoming Events" />
             <Typography variant="h5" sx={{fontSize:"1rem", marginLeft:"14%"}} id="cta">LawxTechSeries4</Typography>
             <Typography variant="h6"  sx={{fontSize:"0.8rem", marginLeft:"14%"}} id="cta">23rd September 2023</Typography>
           </Grid>
           <Grid item maxWidth="sm">
-            <img src={require("../../assets/events/event3.png")} width="87%" alt="Upcoming Events" />
+            <img src={require("../../assets/events/event3.png")} width="80%" alt="Upcoming Events" />
             <Typography variant="h5"  sx={{fontSize:"1rem"}} id="cta">Partnership Announcementt</Typography>
             <Typography variant="h6" sx={{fontSize:"0.8rem", marginLeft:"17%"}} className="gap">21st  September 2023</Typography>
           </Grid>
@@ -70,9 +71,10 @@ export const Events = () => {
             <Typography variant="h6" color="#ffffff" sx={{fontSize:"0.9rem", marginTop:"-6%"}} fontWeight="normal" paragraph gutterBottom>
               Follow us on all social media platform
             </Typography>
-            <Typography variant="h6" color="#ffffff" sx={{fontSize:"0.8rem"}} fontWeight="light" paragraph>
-              Fill the Volunteer form to Apply!
-            </Typography>
+            <Link to="https://docs.google.com/forms/d/e/1FAIpQLSctpedh8IpGJOZl-UwJk-WKsXbF0mPHuphxRklvjt1TmOEnkw/viewform" target="_blank">
+              <Typography variant="h6" color="#ffffff" sx={{fontSize:"0.8rem", textDecoration:"underline"}} fontWeight="light" paragraph>
+                Fill the Volunteer form to Apply!
+              </Typography></Link>
           </Box>
       </Box>
       </div>

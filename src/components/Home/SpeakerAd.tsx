@@ -21,11 +21,11 @@ export const SpeakerAd = () => {
                             Series webinar!
                         </Typography>
                         <div className="join">
-                            <Button className="btn"
+                            <Button className="btn" 
                                 variant="contained"
                                 size="large"
                             >
-                                Join Community
+                                Become a Speaker Today
                             </Button>
                         </div>
                     </Box>
