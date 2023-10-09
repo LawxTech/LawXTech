@@ -16,8 +16,6 @@ const Founder: React.FC = () => {
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
             rowGap: "3.5rem",
-            // alignItems: "center",
-            border: "1px solid #000",
           }}
         >
           <Box
@@ -32,6 +30,7 @@ const Founder: React.FC = () => {
           <Box
             sx={{
               width: "100%",
+              paddingRight: "3.5rem",
             }}
           >
             <Typography
@@ -42,47 +41,58 @@ const Founder: React.FC = () => {
             >
               About our Founder
             </Typography>
-            <Typography
-              variant="body1"
-              fontWeight={400}
+            <Box
               sx={{
-                marginBottom: "0.625rem",
-                lineHeight: "1.7rem",
-                textJustify: "inter-punctuation",
+                width: "30.75rem",
               }}
             >
-              Meet Sopuruchi Rufus, the driving force behind Law x Tech. With a
-              dynamic blend of legal expertise and technological innovation,
-              being a product manager herself, she has set the course for our
-              organization’s exceptional journey.
-            </Typography>
+              <Typography
+                variant="body1"
+                fontWeight={400}
+                sx={{
+                  marginBottom: "0.625rem",
+                  lineHeight: "1.7rem",
+                  textAlign: "justify",
+                  textJustify: "auto",
+                }}
+              >
+                Meet Sopuruchi Rufus, the driving force behind Law x Tech. With
+                a dynamic blend of legal expertise and technological innovation,
+                being a product manager herself, she has set the course for our
+                organization’s exceptional journey.
+              </Typography>
 
-            <Typography
-              variant="body1"
-              fontWeight={400}
-              sx={{
-                marginBottom: "0.625rem",
-                lineHeight: "1.7rem",
-              }}
-            >
-              In a world increasingly shaped by technology, Sopuruchi Rufus
-              recognized the transformative power of innovation early on. Her
-              passion for technology and its potential to revolutionize the
-              legal industry has driven Law x Tech to the forefront of the
-              legal-tech realm.
-            </Typography>
-            <Typography
-              variant="body1"
-              fontWeight={400}
-              sx={{
-                marginBottom: "0.625rem",
-                lineHeight: "1.7rem",
-              }}
-            >
-              Her dedication to merging the worlds of law and technology has
-              empowered Law x Tech to provide opportunities to law professionals
-              to acquire tech skills.
-            </Typography>
+              <Typography
+                variant="body1"
+                fontWeight={400}
+                sx={{
+                  marginBottom: "0.625rem",
+                  lineHeight: "1.7rem",
+                  textAlign: "justify",
+                  textJustify: "auto",
+                }}
+              >
+                In a world increasingly shaped by technology, Sopuruchi Rufus
+                recognized the transformative power of innovation early on. Her
+                passion for technology and its potential to revolutionize the
+                legal industry has driven Law x Tech to the forefront of the
+                legal-tech realm.
+              </Typography>
+              <Typography
+                variant="body1"
+                fontWeight={400}
+                sx={{
+                  marginBottom: "0.625rem",
+                  lineHeight: "1.7rem",
+                  textAlign: "justify",
+                  textJustify: "auto",
+                }}
+              >
+                Her dedication to merging the worlds of law and technology has
+                empowered Law x Tech to provide opportunities to law
+                professionals to acquire tech skills.
+              </Typography>
+            </Box>
           </Box>
         </Container>
       </section>
