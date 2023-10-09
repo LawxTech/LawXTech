@@ -2,6 +2,7 @@ import React from "react";
 import { Typography, Container, Box } from "@mui/material";
 import Button from "@mui/material/Button";
 import "../.../../../App.css";
+import { Link } from "react-router-dom";
 
 
 export const SpeakerAd = () => {
@@ -21,12 +22,14 @@ export const SpeakerAd = () => {
                             Series webinar!
                         </Typography>
                         <div className="join">
-                            <Button className="btn" 
-                                variant="contained"
-                                size="large"
-                            >
-                                Become a Speaker Today
-                            </Button>
+                            <Link to="https://forms.gle/NFD7ex8vRV1YKZV39" target="_blank">
+                                <Button className="btn" 
+                                    variant="contained"
+                                    size="large"
+                                >
+                                    Become a Speaker Today
+                                </Button>
+                            </Link>
                         </div>
                     </Box>
                     <Box maxWidth="md" marginLeft={12}>
