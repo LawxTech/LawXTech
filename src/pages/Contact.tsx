@@ -45,7 +45,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <Box style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+    <Box style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '7em'}}>
       <Box style={{ backgroundColor: theme.palette.background.paper, 
         color: theme.palette.text.secondary, 
         borderRadius: '0.7em', 
