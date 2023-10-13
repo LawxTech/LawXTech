@@ -1,12 +1,21 @@
+import React, { useEffect } from "react"
 import { Typography, Container, Box } from "@mui/material";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Icon from '@mdi/react';
-import { mdiFormatQuoteOpen } from '@mdi/js';
+import Icon from "@mdi/react";
+import { mdiFormatQuoteOpen } from "@mdi/js";
 
 
-export const Testimonials = () => {
+export const Testimonials: React.FC = () => {
+    useEffect(() => {
+        if (window.location.hash === "#testimony") {
+          document.getElementById("testimony")?.scrollIntoView({
+            behavior: "smooth",
+          });
+        }
+      }, []);
+
     var settings = {
         dots: true,
         infinite: true,
@@ -54,7 +63,7 @@ export const Testimonials = () => {
                             </Typography>
                             <Box maxWidth="xl" sx={{ display:"flex", justifyContent:"center"}} className="up">
                                 <Box>
-                                    <img src={require("../../assets/witness.png")} width={34} alt="Reviewer" style={{ marginLeft: '-10em' }} />
+                                    <img src={require("../../assets/witness.png")} width={34} alt="Reviewer" style={{ marginLeft: "-10em" }} />
                                 </Box>
                                 <Box>
                                     <Typography variant="h6" sx={{ fontSize:".9rem", marginLeft:"-8em" }} fontWeight="bold" paragraph>
@@ -75,7 +84,7 @@ export const Testimonials = () => {
                             </Typography>
                             <Box maxWidth="xl" sx={{ display:"flex", justifyContent:"center"}} className="up">
                                 <Box>
-                                    <img src={require("../../assets/witness.png")} width={34} alt="Reviewer" style={{ marginLeft: '-10em' }}  />
+                                    <img src={require("../../assets/witness.png")} width={34} alt="Reviewer" style={{ marginLeft: "-10em" }}  />
                                 </Box>
                                 <Box>
                                     <Typography variant="h6" sx={{ fontSize:".9rem", marginLeft:"-8em" }} fontWeight="bold" paragraph>
@@ -96,7 +105,7 @@ export const Testimonials = () => {
                             </Typography>
                             <Box maxWidth="xl" sx={{ display:"flex", justifyContent:"center"}} className="up">
                                 <Box>
-                                    <img src={require("../../assets/witness.png")} width={34} alt="Reviewer" style={{ marginLeft: '-10em' }}  />
+                                    <img src={require("../../assets/witness.png")} width={34} alt="Reviewer" style={{ marginLeft: "-10em" }}  />
                                 </Box>
                                 <Box>
                                     <Typography variant="h6" sx={{ fontSize:".9rem", marginLeft:"-8em" }} fontWeight="bold" paragraph>
@@ -117,7 +126,7 @@ export const Testimonials = () => {
                             </Typography>
                             <Box maxWidth="xl" sx={{ display:"flex", justifyContent:"center"}} className="up">
                                 <Box>
-                                    <img src={require("../../assets/witness.png")} width={34} alt="Reviewer" style={{ marginLeft: '-10em' }}  />
+                                    <img src={require("../../assets/witness.png")} width={34} alt="Reviewer" style={{ marginLeft: "-10em" }}  />
                                 </Box>
                                 <Box>
                                     <Typography variant="h6" sx={{ fontSize:".9rem", marginLeft:"-8em" }} fontWeight="bold" paragraph>
@@ -138,7 +147,7 @@ export const Testimonials = () => {
                             </Typography>
                             <Box maxWidth="xl" sx={{ display:"flex", justifyContent:"center"}} className="up">
                                 <Box>
-                                    <img src={require("../../assets/witness.png")} width={34} alt="Reviewer" style={{ marginLeft: '-10em' }}  />
+                                    <img src={require("../../assets/witness.png")} width={34} alt="Reviewer" style={{ marginLeft: "-10em" }}  />
                                 </Box>
                                 <Box>
                                     <Typography variant="h6" sx={{ fontSize:".9rem", marginLeft:"-8em" }} fontWeight="bold" paragraph>
@@ -150,9 +159,9 @@ export const Testimonials = () => {
                                 </Box>
                             </Box>
                         </Box>
-                    </Slider>
-           
+                    </Slider>           
             </section>
+            <div id="testimony"></div>
         </>
     )
 }

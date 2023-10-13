@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 import { Typography, Container, Box } from "@mui/material";
 import "../.../../../App.css";
 
@@ -11,7 +11,7 @@ export const MeetTeam = () => {
                 </Typography>
                 <Container maxWidth="xl" sx={{ display:"flex", flexWrap:"wrap", justifyContent:"center"}}>
                     <Box maxWidth="sm">
-                        <img src={require("../../assets/team/1.png")} alt="Team member"/>
+                        <img src={require("../../assets/team/sopuruchi.jpeg")} alt="Team member" width={280} className="gap" />
                         <Typography variant="h6" sx={{fontSize:".9rem"}} fontWeight="light" id="cta" paragraph>
                             Founder/CEO
                         </Typography>
@@ -20,31 +20,37 @@ export const MeetTeam = () => {
                         </Typography>
                     </Box>
                     <Box maxWidth="sm">
-                        <img src={require("../../assets/team/2.png")} alt="Team member" className="gap" />
+                        <img src={require("../../assets/team/michael.png")} alt="Team member" width={365} className="gap" />
                         <Typography variant="h6" sx={{fontSize:".9rem"}} fontWeight="light" id="cta" paragraph>
-                            Founder/CEO
+                            UI/UX Designer
                         </Typography>
                         <Typography variant="h5" sx={{fontSize:".9rem"}} fontWeight="bold" id="cta" marginTop={-3}>
-                            Sopuruchi Rufus
+                            Aniefiok_Michael
                         </Typography>
                     </Box>
                     <Box maxWidth="sm">
-                        <img src={require("../../assets/team/3.png")} alt="Team member" className="gap" />
+                        <img src={require("../../assets/team/joel.png")} alt="Team member" width={365} className="gap" />
                         <Typography variant="h6" sx={{fontSize:".9rem"}} fontWeight="light" id="cta" paragraph>
-                            Founder/CEO
+                            Graphics Designer
                         </Typography>
                         <Typography variant="h5" sx={{fontSize:".9rem"}} fontWeight="bold" id="cta" marginTop={-3}>
-                            Sopuruchi Rufus
+                            Joel
                         </Typography>
                     </Box>
                     <Box maxWidth="sm">
-                        <img src={require("../../assets/team/4.png")} alt="Team member" className="gap" />
+                        <img src={require("../../assets/team/vivian.jpeg")} alt="Team member" width={270} className="gap" />
                         <Typography variant="h6" sx={{fontSize:".9rem"}} fontWeight="light" id="cta" paragraph>
-                            Founder/CEO
+                            Writer
                         </Typography>
                         <Typography variant="h5" sx={{fontSize:".9rem"}} fontWeight="bold" id="cta" marginTop={-3}>
-                            Sopuruchi Rufus
+                            Vivian
                         </Typography>
+                        <Link to="" target="_blank">
+                            <Typography variant="h6" color="#133167"
+                            sx={{fontSize:"0.8rem", textDecoration:"underline", float:"right", marginTop:"-10%" }} fontWeight="light" paragraph>
+                                View All&gt;
+                            </Typography>
+                        </Link>
                     </Box>
                 </Container>
             </Box>
