@@ -111,7 +111,7 @@ const Series: React.FC = () => {
               }}
             >
               <img
-                src={require(`../assets/team/1.png`)}
+                src={require(`../assets/team/joel.png`)}
                 alt={`Team member`}
                 style={{
                   width: "24rem",
@@ -192,7 +192,7 @@ const Series: React.FC = () => {
                   }}
                 >
                   <img
-                    src={require(`../assets/team/1.png`)}
+                    src={require(`../assets/team/joel.png`)}
                     alt={`Team member`}
                     style={{
                       width: "24rem",
