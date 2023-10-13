@@ -11,7 +11,7 @@ import React from "react";
 export const Banner = () => {
     return(
         <ThemeProvider theme = {theme}> 
-            <Box maxWidth="xl" className="banner">
+            <Box maxWidth="xl" className="banner" marginTop='2em'>
                 <Container maxWidth="xl" sx={{ display: 'flex', justifyContent:"space-between", alignItems:"center" }}>
                     <Box maxWidth="sm">
                         <Typography variant="h3" letterSpacing={8} fontWeight="bold" sx={{fontSize:"3rem"}} pt="4rem" px={4} ml={4} mt={0}>
