@@ -13,8 +13,7 @@ interface ButtonProps {
 
 const StyledButton = styled(MuiButton)<{ buttonType: 'primary' | 'secondary' }>`
   background-color: ${(props: { buttonType: string; }) => props.buttonType === 'primary' ? theme.palette.primary.main : theme.palette.secondary.main};
-  color: white; // Text color for the button
-  border-radius: 1em;
+  color: white;
 `;
 
 export const Button: React.FC<ButtonProps> = ({ children, onClick, type, small=false, fullwidth=false }) => {

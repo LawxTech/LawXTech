@@ -14,7 +14,7 @@ const theme = createTheme({
     },
     text: {
       primary: "#000000", // Primary text color
-      secondary: "#333333", // Secondary text color
+      secondary: "#ffffff", // Secondary text color
     },
   },
   typography: {
@@ -40,11 +40,9 @@ const theme = createTheme({
     // Body copy styles
     body1: {
       fontSize: "1rem",
-      color: "#000",
     },
     body2: {
       fontSize: "0.875rem",
-      color: "#000",
     },
 
     // Button styles (optional)
