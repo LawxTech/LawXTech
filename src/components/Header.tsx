@@ -10,10 +10,10 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import { Button } from "../components/Button";
+import Button from "@mui/material/Button";
 import theme from "../styles/theme";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface Props {
   window?: () => Window;
@@ -38,9 +38,9 @@ export default function DrawerAppBar(props: Props) {
     setMobileOpen((prevState) => !prevState);
   };
 
-  const redirectToGoogle = () => {
-    "https://www.google.com";
-  };
+  // const redirectToGoogle = () => {
+  //   "https://www.google.com";
+  // };
 
   const navigate = useNavigate();
 
@@ -78,71 +78,81 @@ export default function DrawerAppBar(props: Props) {
           >
             <MenuIcon />
           </IconButton>
-          <img
-            src={require("../assets/logo/logo_2.JPG")}
-            alt="Logo"
-            style={{ maxHeight: "5em", marginLeft: "2em" }}
-          />
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "flex-end",
-              whiteSpace: "nowrap",
-            }}
+          <Link to="/">
+            <img
+              src={require("../assets/logo/logo_2.JPG")}
+              alt="Logo"
+              style={{ maxHeight: "5em", marginLeft: "2em" }}
+            />
+            </Link>
+
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-end",
+          whiteSpace: "nowrap",
+        }}
+      >
+        {navItems.map((item) => (
+          <ListItem
+            key={item}
+            sx={{ mr: 2, color: theme.palette.text.primary }}
+            disablePadding
           >
-            {navItems.map((item) => (
-              <ListItem
-                key={item}
-                sx={{ mr: 2, color: theme.palette.text.primary }}
-                disablePadding
-              >
-                <ListItemButton
-                  sx={{
-                    textAlign: "center",
-                    color:
-                      item === activeItem
-                        ? theme.palette.background.paper
-                        : "inherit",
-                  }}
-                  onClick={() => {
-                    setActiveItem(item);
-                    navigate(
-                      `/${
-                        item === "Home"
-                          ? ""
-                          : item.toLowerCase().replace(/\s+/g, "-")
-                      }`
-                    ); // Navigate to the route corresponding to the clicked item
-                  }}
-                >
-                  <ListItemText
-                    primary={
-                      <span>
-                        {item}
-                        {item === activeItem && (
-                          <span
-                            style={{
-                              content: '""',
-                              display: "block",
-                              width: "100%",
-                              height: "0.15em",
-                              backgroundColor: theme.palette.text.primary,
-                              marginTop: "0.28em",
-                            }}
-                          ></span>
-                        )}
-                      </span>
-                    }
-                  />
-                </ListItemButton>
-              </ListItem>
-            ))}
-          </Box>
-          <Box style={{ marginRight: "2em" }}>
-            <Button type="primary" onClick={redirectToGoogle}>
-              Join Community
-            </Button>
+            <ListItemButton
+              sx={{
+                textAlign: "center",
+                color:
+                  item === activeItem
+                    ? theme.palette.background.paper
+                    : "inherit",
+              }}
+              onClick={() => {
+                setActiveItem(item);
+                if (item === "Testimonials") {
+                  navigate('/#testimony');
+                } else {
+                  navigate(
+                    `/${
+                      item === "Home"
+                        ? ""
+                        : item.toLowerCase().replace(/\s+/g, "-")
+                    }`
+                  );
+                }
+              }}
+              
+            >
+              <ListItemText
+                primary={
+                  <span>
+                    {item}
+                    {item === activeItem && (
+                      <span
+                        style={{
+                          content: '""',
+                          display: "block",
+                          width: "100%",
+                          height: "0.15em",
+                          backgroundColor: theme.palette.text.primary,
+                          marginTop: "0.28em",
+                        }}
+                      ></span>
+                    )}
+                  </span>
+                }
+              />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </Box>    
+      <Box style={{ marginRight: "2em" }}>
+        <Link to="https://join.slack.com/t/lawxtech/shared_invite/zt-20u7mvfqu-EWVec2Qip3XhYoUyVtyvpA" target="_blank">
+          <Button className="btn" variant="contained" size="large">
+            JOIN COMMUNITY
+          </Button>
+          </Link>
           </Box>
         </Toolbar>
       </AppBar>
@@ -153,7 +163,7 @@ export default function DrawerAppBar(props: Props) {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true, 
           }}
           sx={{
             display: { xs: "block", sm: "none" },
