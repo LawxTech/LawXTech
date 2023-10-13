@@ -50,7 +50,8 @@ const theme = createTheme({
     // Button styles (optional)
     button: {
       textTransform: "uppercase",
-      fontWeight: "bold",
+      fontWeight: "600",
+      fontSize: "1rem",
     },
   },
 });

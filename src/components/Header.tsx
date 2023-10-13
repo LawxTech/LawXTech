@@ -10,7 +10,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
-import Button from "@mui/material/Button";
+import { Button } from "../components/Button";
 import theme from "../styles/theme";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -100,59 +100,58 @@ export default function DrawerAppBar(props: Props) {
             sx={{ mr: 2, color: theme.palette.text.primary }}
             disablePadding
           >
-            <ListItemButton
-              sx={{
-                textAlign: "center",
-                color:
-                  item === activeItem
-                    ? theme.palette.background.paper
-                    : "inherit",
-              }}
-              onClick={() => {
-                setActiveItem(item);
-                if (item === "Testimonials") {
-                  navigate('/#testimony');
-                } else {
-                  navigate(
-                    `/${
-                      item === "Home"
-                        ? ""
-                        : item.toLowerCase().replace(/\s+/g, "-")
-                    }`
-                  );
-                }
-              }}
-              
-            >
-              <ListItemText
-                primary={
-                  <span>
-                    {item}
-                    {item === activeItem && (
-                      <span
-                        style={{
-                          content: '""',
-                          display: "block",
-                          width: "100%",
-                          height: "0.15em",
-                          backgroundColor: theme.palette.text.primary,
-                          marginTop: "0.28em",
-                        }}
-                      ></span>
-                    )}
-                  </span>
-                }
-              />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </Box>    
-      <Box style={{ marginRight: "2em" }}>
-        <Link to="https://join.slack.com/t/lawxtech/shared_invite/zt-20u7mvfqu-EWVec2Qip3XhYoUyVtyvpA" target="_blank">
-          <Button className="btn" variant="contained" size="large">
-            JOIN COMMUNITY
-          </Button>
-          </Link>
+            {navItems.map((item) => (
+              <ListItem
+                key={item}
+                sx={{ mr: 2, color: theme.palette.text.primary }}
+                disablePadding
+              >
+                <ListItemButton
+                  sx={{
+                    textAlign: "center",
+                    color:
+                      item === activeItem
+                        ? theme.palette.background.paper
+                        : "inherit",
+                  }}
+                  onClick={() => {
+                    setActiveItem(item);
+                    navigate(
+                      `/${
+                        item === "Home"
+                          ? ""
+                          : item.toLowerCase().replace(/\s+/g, "-")
+                      }`
+                    );
+                  }}
+                >
+                  <ListItemText
+                    primary={
+                      <span>
+                        {item}
+                        {item === activeItem && (
+                          <span
+                            style={{
+                              content: '""',
+                              display: "block",
+                              width: "100%",
+                              height: "0.15em",
+                              backgroundColor: theme.palette.text.primary,
+                              marginTop: "0.28em",
+                            }}
+                          ></span>
+                        )}
+                      </span>
+                    }
+                  />
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </Box>
+          <Box style={{ marginRight: "2em" }}>
+            <Button type="primary" onClick={redirectToGoogle}>
+              Join Community
+            </Button>
           </Box>
         </Toolbar>
       </AppBar>

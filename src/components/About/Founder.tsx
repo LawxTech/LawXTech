@@ -13,68 +13,86 @@ const Founder: React.FC = () => {
           maxWidth="lg"
           style={{
             backgroundColor: "#fff",
-
-            display: "flex",
-            alignItems: "center",
-            gap: "3.5rem",
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            rowGap: "3.5rem",
           }}
         >
           <Box
             component="img"
             sx={{
-              width: "50%",
-              height: "30.75rem",
-              objectFit: "cover",
+              height: "40rem",
+              width: "90%",
             }}
-            src="/images/about-us-landing-image.jpeg"
+            src="/images/sopuruchi.jpeg"
             alt="about"
           />
           <Box
             sx={{
               width: "100%",
+              paddingRight: "3.5rem",
             }}
           >
-            <Typography variant="h3">About our Founder</Typography>
             <Typography
-              variant="body1"
-              fontWeight={400}
+              variant="h3"
               sx={{
-                marginBottom: "0.625rem",
-                lineHeight: "1.7rem",
+                color: "#113167",
               }}
             >
-              Meet Sopuruchi Rufus, the driving force behind Law x Tech. With a
-              dynamic blend of legal expertise and technological innovation,
-              being a product manager herself, she has set the course for our
-              organization’s exceptional journey.
+              About our Founder
             </Typography>
+            <Box
+              sx={{
+                width: "30.75rem",
+              }}
+            >
+              <Typography
+                variant="body1"
+                fontWeight={400}
+                sx={{
+                  marginBottom: "0.625rem",
+                  lineHeight: "1.7rem",
+                  textAlign: "justify",
+                  textJustify: "auto",
+                }}
+              >
+                Meet Sopuruchi Rufus, the driving force behind Law x Tech. With
+                a dynamic blend of legal expertise and technological innovation,
+                being a product manager herself, she has set the course for our
+                organization’s exceptional journey.
+              </Typography>
 
-            <Typography
-              variant="body1"
-              fontWeight={400}
-              sx={{
-                marginBottom: "0.625rem",
-                lineHeight: "1.7rem",
-              }}
-            >
-              In a world increasingly shaped by technology, Sopuruchi Rufus
-              recognized the transformative power of innovation early on. Her
-              passion for technology and its potential to revolutionize the
-              legal industry has driven Law x Tech to the forefront of the
-              legal-tech realm.
-            </Typography>
-            <Typography
-              variant="body1"
-              fontWeight={400}
-              sx={{
-                marginBottom: "0.625rem",
-                lineHeight: "1.7rem",
-              }}
-            >
-              Her dedication to merging the worlds of law and technology has
-              empowered Law x Tech to provide opportunities to law professionals
-              to acquire tech skills.
-            </Typography>
+              <Typography
+                variant="body1"
+                fontWeight={400}
+                sx={{
+                  marginBottom: "0.625rem",
+                  lineHeight: "1.7rem",
+                  textAlign: "justify",
+                  textJustify: "auto",
+                }}
+              >
+                In a world increasingly shaped by technology, Sopuruchi Rufus
+                recognized the transformative power of innovation early on. Her
+                passion for technology and its potential to revolutionize the
+                legal industry has driven Law x Tech to the forefront of the
+                legal-tech realm.
+              </Typography>
+              <Typography
+                variant="body1"
+                fontWeight={400}
+                sx={{
+                  marginBottom: "0.625rem",
+                  lineHeight: "1.7rem",
+                  textAlign: "justify",
+                  textJustify: "auto",
+                }}
+              >
+                Her dedication to merging the worlds of law and technology has
+                empowered Law x Tech to provide opportunities to law
+                professionals to acquire tech skills.
+              </Typography>
+            </Box>
           </Box>
         </Container>
       </section>
