@@ -12,7 +12,7 @@ import MenuIcon from "@mui/icons-material/Menu"
 import Toolbar from "@mui/material/Toolbar"
 import { Button } from "../components/Button"
 import theme from "../styles/theme"
-import { useNavigate } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom"
 
 interface Props {
@@ -30,15 +30,35 @@ const navItems = [
 ];
 
 export default function DrawerAppBar(props: Props) {
-  const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [activeItem, setActiveItem] = React.useState(navItems[0]);
+  const { window } = props
+  const [mobileOpen, setMobileOpen] = React.useState(false)
+  const [activeNavItem, setActiveNavItem] = React.useState(navItems[0])
+  const location = useLocation()
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
 
-  const navigate = useNavigate();
+  const navigate = useNavigate()
+  
+  const setActiveItem = (path: string) => {
+    let newItem = "Home"
+    if (path === "/") {
+      newItem = "Home";
+    } else {
+      for (const item of navItems) {
+        if (path.includes(item.toLowerCase().replace(/\s+/g, "-"))) {
+          newItem = item;
+          break
+        }
+      }
+    }
+    setActiveNavItem(newItem)
+  };
+
+  React.useEffect(() => {
+    setActiveItem(location.pathname);
+  }, [location.pathname]);
 
   const drawer = (
     <Box sx={{ textAlign: "center" }}>
@@ -104,12 +124,12 @@ export default function DrawerAppBar(props: Props) {
               sx={{
                 textAlign: "center",
                 color:
-                  item === activeItem
+                  item === activeNavItem
                     ? theme.palette.background.paper
                     : "inherit",
               }}
               onClick={() => {
-                setActiveItem(item);
+                setActiveNavItem(item);
                 if (item === "Testimonials") {
                   navigate('/#testimony');
                 } else {
@@ -128,7 +148,7 @@ export default function DrawerAppBar(props: Props) {
                 primary={
                   <span>
                     {item}
-                    {item === activeItem && (
+                    {item === activeNavItem && (
                       <span
                         style={{
                           content: '""',
