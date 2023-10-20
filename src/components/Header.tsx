@@ -13,6 +13,7 @@ import Toolbar from "@mui/material/Toolbar";
 import { Button } from "../components/Button";
 import theme from "../styles/theme";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface Props {
   window?: () => Window;
@@ -37,9 +38,9 @@ export default function DrawerAppBar(props: Props) {
     setMobileOpen((prevState) => !prevState);
   };
 
-  const redirectToGoogle = () => {
-    "https://www.google.com";
-  };
+  // const redirectToGoogle = () => {
+  //   "https://www.google.com";
+  // };
 
   const navigate = useNavigate();
 
@@ -77,18 +78,27 @@ export default function DrawerAppBar(props: Props) {
           >
             <MenuIcon />
           </IconButton>
-          <img
-            src={require("../assets/logo/logo_2.JPG")}
-            alt="Logo"
-            style={{ maxHeight: "5em", marginLeft: "2em" }}
-          />
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "flex-end",
-              whiteSpace: "nowrap",
-            }}
+          <Link to="/">
+            <img
+              src={require("../assets/logo/logo_2.JPG")}
+              alt="Logo"
+              style={{ maxHeight: "5em", marginLeft: "2em" }}
+            />
+            </Link>
+
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-end",
+          whiteSpace: "nowrap",
+        }}
+      >
+        {navItems.map((item) => (
+          <ListItem
+            key={item}
+            sx={{ mr: 2, color: theme.palette.text.primary }}
+            disablePadding
           >
             {navItems.map((item) => (
               <ListItem
@@ -152,7 +162,7 @@ export default function DrawerAppBar(props: Props) {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true, 
           }}
           sx={{
             display: { xs: "block", sm: "none" },

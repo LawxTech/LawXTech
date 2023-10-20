@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Typography, Grid, Box, Container} from "@mui/material";
 import { ThemeProvider } from '@mui/system';
 import theme from "../../styles/theme";
@@ -8,11 +9,6 @@ import React from "react";
   
 
 export const Banner = () => {
-    const redirectToGoogle = () => {
-        window.location.href = 'https://www.google.com'
-      };
-
-
     return(
         <ThemeProvider theme = {theme}> 
             <Box maxWidth="xl" className="banner">
@@ -38,13 +34,14 @@ export const Banner = () => {
                                     </Typography>
                                 </Box>
                                 <Box id="cta">
-                                    <Button className="btn"
-                                        variant="contained"
-                                        size="large"
-                                        onClick={redirectToGoogle}
-                                    >
-                                        Join Community
-                                    </Button>
+                                    <Link to="https://join.slack.com/t/lawxtech/shared_invite/zt-20u7mvfqu-EWVec2Qip3XhYoUyVtyvpA" target="_blank">
+                                        <Button className="btn"
+                                            variant="contained"
+                                            size="large"
+                                        >
+                                            Join Community
+                                        </Button>
+                                    </Link>
                                 </Box>
                             </Grid>
                         </Grid> 

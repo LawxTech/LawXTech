@@ -1,8 +1,5 @@
-import { Typography, Grid, Box, Container } from "@mui/material";
-import PropTypes from "prop-types";
-import { withStyles } from "@mui/material"; 
-// import GridList from "@mui/core/GridList";
-// import GridListTile from "@mui/core/GridListTile";
+import { Link } from "react-router-dom";
+import { Typography, Grid, Box, Container } from "@mui/material"; 
 import "../.../../../App.css"
 
 export const Intro = () => {
@@ -18,11 +15,13 @@ export const Intro = () => {
                     </Typography>
                     <Grid container maxWidth="xl" spacing={2} sx={{ justifyContent:"center", alignItems:"center" }}>
                         <Grid item marginTop={2}>
-                            <Box component="img" maxWidth="md"
-                                alt="Hero image"
-                                width="98%"
-                                src={ require("../../assets/slack.png")}
-                            />
+                            <Link to="https://join.slack.com/t/lawxtech/shared_invite/zt-20u7mvfqu-EWVec2Qip3XhYoUyVtyvpA" target="_blank">
+                                <Box component="img" maxWidth="md"
+                                    alt="Hero image"
+                                    width="98%"
+                                    src={ require("../../assets/slack.png")}
+                                />
+                            </Link>
                         </Grid>
                     </Grid>
                 </Container>
