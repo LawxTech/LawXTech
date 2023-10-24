@@ -15,22 +15,38 @@ const Founder: React.FC = () => {
             backgroundColor: "#fff",
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
-            rowGap: "3.5rem",
+            gridGap: "1.5rem",
           }}
         >
           <Box
-            component="img"
             sx={{
-              height: "40rem",
-              width: "90%",
+              width: "100%",
+              display: "flex",
+              justifyContent: "end",
             }}
-            src="/images/sopuruchi.jpeg"
-            alt="about"
-          />
+          >
+            <Box
+              sx={{
+                height: "30rem",
+                width: "30rem",
+                border: "1px solid #113167",
+              }}
+            >
+              <img
+                src="/images/sopuruchi.jpeg"
+                alt="about the founder"
+                style={{
+                  objectFit: "fill",
+                  width: "100%",
+                  height: "100%",
+                }}
+              />
+            </Box>
+          </Box>
+
           <Box
             sx={{
               width: "100%",
-              paddingRight: "3.5rem",
             }}
           >
             <Typography
@@ -43,7 +59,7 @@ const Founder: React.FC = () => {
             </Typography>
             <Box
               sx={{
-                width: "30.75rem",
+                width: "28rem",
               }}
             >
               <Typography
@@ -51,7 +67,7 @@ const Founder: React.FC = () => {
                 fontWeight={400}
                 sx={{
                   marginBottom: "0.625rem",
-                  lineHeight: "1.7rem",
+                  lineHeight: "1.85",
                   textAlign: "justify",
                   textJustify: "auto",
                 }}
@@ -67,7 +83,7 @@ const Founder: React.FC = () => {
                 fontWeight={400}
                 sx={{
                   marginBottom: "0.625rem",
-                  lineHeight: "1.7rem",
+                  lineHeight: "1.85",
                   textAlign: "justify",
                   textJustify: "auto",
                 }}
@@ -83,7 +99,7 @@ const Founder: React.FC = () => {
                 fontWeight={400}
                 sx={{
                   marginBottom: "0.625rem",
-                  lineHeight: "1.7rem",
+                  lineHeight: "1.85",
                   textAlign: "justify",
                   textJustify: "auto",
                 }}
