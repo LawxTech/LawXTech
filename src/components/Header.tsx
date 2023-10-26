@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -9,11 +10,9 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
-import Toolbar from "@mui/material/Toolbar";
 import { Button } from "../components/Button";
 import theme from "../styles/theme";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import Toolbar from "@mui/material/Toolbar";
 
 interface Props {
   window?: () => Window;
@@ -33,16 +32,15 @@ export default function DrawerAppBar(props: Props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [activeItem, setActiveItem] = React.useState(navItems[0]);
+  const navigate = useNavigate();
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
 
-  // const redirectToGoogle = () => {
-  //   "https://www.google.com";
-  // };
-
-  const navigate = useNavigate();
+  const redirectToGoogle = () => {
+    console.log("hello");
+  };
 
   const drawer = (
     <Box sx={{ textAlign: "center" }}>
@@ -84,21 +82,14 @@ export default function DrawerAppBar(props: Props) {
               alt="Logo"
               style={{ maxHeight: "5em", marginLeft: "2em" }}
             />
-            </Link>
-
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "flex-end",
-          whiteSpace: "nowrap",
-        }}
-      >
-        {navItems.map((item) => (
-          <ListItem
-            key={item}
-            sx={{ mr: 2, color: theme.palette.text.primary }}
-            disablePadding
+          </Link>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-end",
+              whiteSpace: "nowrap",
+            }}
           >
             {navItems.map((item) => (
               <ListItem
@@ -147,11 +138,11 @@ export default function DrawerAppBar(props: Props) {
                 </ListItemButton>
               </ListItem>
             ))}
-          </Box>
-          <Box style={{ marginRight: "2em" }}>
-            <Button type="primary" onClick={redirectToGoogle}>
-              Join Community
-            </Button>
+            <Box style={{ marginRight: "2em" }}>
+              <Button type="primary" onClick={redirectToGoogle}>
+                Join Community
+              </Button>
+            </Box>
           </Box>
         </Toolbar>
       </AppBar>
@@ -162,7 +153,7 @@ export default function DrawerAppBar(props: Props) {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, 
+            keepMounted: true,
           }}
           sx={{
             display: { xs: "block", sm: "none" },
@@ -175,12 +166,6 @@ export default function DrawerAppBar(props: Props) {
           {drawer}
         </Drawer>
       </nav>
-      {/* <Box component="main" sx={{ p: 3 }}>
-        <Toolbar />
-        <Typography>
-          
-        </Typography>
-      </Box> */}
     </Box>
   );
 }
