@@ -217,6 +217,7 @@ const Series: React.FC = () => {
                     borderRadius: 8,
                   }}
                 />
+
               </Box>
             </Box>
           ))}
