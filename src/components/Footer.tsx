@@ -1,9 +1,10 @@
 // Footer.tsx
-import React from 'react'
+import React, { useState } from 'react'
 import { makeStyles } from '@mui/styles'
 import theme from '../styles/theme'
 import { Box, Link, TextField } from '@mui/material'
 import { Button } from "../components/Button"
+import axios from 'axios'
 
 const useStyles = makeStyles({
   footer: {
@@ -30,9 +31,62 @@ const useStyles = makeStyles({
 const Footer: React.FC = () => {
   const classes = useStyles()
 
-  const redirectToGoogle = () => {
-    "https://www.google.com";
+  const [formData, setFormData] = useState({
+    firstname: '',
+    email: '',
+  });
+
+  const handleInputChange = (e: any) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
+
+  const subscribeToNewsletter = async () => {
+    const accessToken = 'pat-na1-aab58482-f33e-4df0-b3e8-615b2843a311'; // Replace with your HubSpot access token
+
+    // Replace with the actual HubSpot API endpoint for adding contacts
+    const hubSpotApiEndpoint = 'https://api.hubapi.com/contacts/v1/contact/';
+
+    const contactData = {
+      properties: [
+        {
+          property: 'email',
+          value: formData.email,
+        },
+        {
+          property: 'firstname',
+          value: formData.firstname,
+        },
+      ],
+    };
+
+    try {
+      const response = await fetch(hubSpotApiEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${accessToken}`,
+        },
+        body: JSON.stringify(contactData),
+      });
+
+      if (response.ok) {
+        console.log('Contact added to HubSpot');
+        // You can reset the form or show a success message here
+      } else {
+        console.error('Failed to add contact to HubSpot');
+        // Handle error, show an error message, etc.
+      }
+    } catch (error) {
+      console.error('Error while adding contact to HubSpot:', error);
+      // Handle the error, show an error message, etc.
+    }
+  };
+  
+  
 
   return (
     <footer className={classes.footer}>
@@ -99,6 +153,7 @@ const Footer: React.FC = () => {
             InputProps={{
               className: classes.whiteInput
             }}
+            onChange={handleInputChange}
           />
           <TextField
             label="Email Address"
@@ -111,9 +166,10 @@ const Footer: React.FC = () => {
             InputProps={{
               className: classes.whiteInput
             }}
+            onChange={handleInputChange}
           />
           <Box style={{ marginTop: "0.5em" }}>
-            <Button type="primary" onClick={redirectToGoogle} fullwidth>
+            <Button type="primary" onClick={subscribeToNewsletter} fullwidth>
               Subscribe
             </Button>
           </Box>
