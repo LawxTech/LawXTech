@@ -38,7 +38,7 @@ export default function DrawerAppBar(props: Props) {
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
-
+  
   const navigate = useNavigate()
   
   const setActiveItem = (path: string) => {
@@ -104,21 +104,14 @@ export default function DrawerAppBar(props: Props) {
               alt="Logo"
               style={{ maxHeight: "5em", marginLeft: "2em" }}
             />
-            </Link>
-
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "flex-end",
-          whiteSpace: "nowrap",
-        }}
-      >
-        {navItems.map((item) => (
-          <ListItem
-            key={item}
-            sx={{ mr: 2, color: theme.palette.text.primary }}
-            disablePadding
+          </Link>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-end",
+              whiteSpace: "nowrap",
+            }}
           >
             <ListItemButton
               sx={{
@@ -181,7 +174,7 @@ export default function DrawerAppBar(props: Props) {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, 
+            keepMounted: true,
           }}
           sx={{
             display: { xs: "block", sm: "none" },
