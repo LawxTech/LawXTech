@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Typography, Container, Box } from "@mui/material";
 import "../.../../../App.css";
 
-export const MeetTeam = () => {
+export const MeetTeam = () => { 
     return(
         <>
             <Box maxWidth="l">
@@ -45,7 +45,9 @@ export const MeetTeam = () => {
                         <Typography variant="h5" sx={{fontSize:".9rem"}} fontWeight="bold" id="cta" marginTop={-3}>
                             Vivian
                         </Typography>
-                        <Link to="" target="_blank">
+                        <Link to="/about-us#team"
+                        target="_self"
+                           >
                             <Typography variant="h6" color="#133167"
                             sx={{fontSize:"0.8rem", textDecoration:"underline", float:"right", marginTop:"-10%" }} fontWeight="light" paragraph>
                                 View All&gt;

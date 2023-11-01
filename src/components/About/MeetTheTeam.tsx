@@ -137,6 +137,7 @@ const MeetTeam = () => {
               </Box>
             ))}
           </Box>
+          <Box id="team"></Box>
         </Container>
       </section>
     </div>
