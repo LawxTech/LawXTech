@@ -4,7 +4,6 @@ import { makeStyles } from '@mui/styles'
 import theme from '../styles/theme'
 import { Box, Link, TextField } from '@mui/material'
 import { Button } from "../components/Button"
-import axios from 'axios'
 
 const useStyles = makeStyles({
   footer: {
@@ -30,63 +29,42 @@ const useStyles = makeStyles({
 
 const Footer: React.FC = () => {
   const classes = useStyles()
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
 
-  const [formData, setFormData] = useState({
-    firstname: '',
-    email: '',
-  });
+  const handleNameChange = (e: any) => {
+    setName(e.target.value);
+  };
 
-  const handleInputChange = (e: any) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+  const handleEmailChange = (e: any) => {
+    setEmail(e.target.value);
   };
 
   const subscribeToNewsletter = async () => {
-    const accessToken = 'pat-na1-aab58482-f33e-4df0-b3e8-615b2843a311'; // Replace with your HubSpot access token
-
-    // Replace with the actual HubSpot API endpoint for adding contacts
-    const hubSpotApiEndpoint = 'https://api.hubapi.com/contacts/v1/contact/';
-
-    const contactData = {
-      properties: [
-        {
-          property: 'email',
-          value: formData.email,
-        },
-        {
-          property: 'firstname',
-          value: formData.firstname,
-        },
-      ],
-    };
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', email);
 
     try {
-      const response = await fetch(hubSpotApiEndpoint, {
+      const response = await fetch('https://formsubmit.co/rofiatolusanya12@gmail.com', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${accessToken}`,
-        },
-        body: JSON.stringify(contactData),
+        body: formData,
       });
 
       if (response.ok) {
-        console.log('Contact added to HubSpot');
-        // You can reset the form or show a success message here
+        alert('Subscription successful!');
+        Promise.resolve().then(() => {
+          setName(''); // Reset the name to an empty string
+          setEmail(''); // Reset the email to an empty string
+        });
       } else {
-        console.error('Failed to add contact to HubSpot');
-        // Handle error, show an error message, etc.
+        alert('Subscription failed. Please try again.');
       }
     } catch (error) {
-      console.error('Error while adding contact to HubSpot:', error);
-      // Handle the error, show an error message, etc.
+      console.error('Error submitting the form:', error);
+      alert('Subscription failed. Please try again.');
     }
-  };
-  
-  
+  }
 
   return (
     <footer className={classes.footer}>
@@ -143,7 +121,7 @@ const Footer: React.FC = () => {
         <Box className={classes.inputBox} marginBottom='2em'>
           <Box>Subscribe to our Newsletters</Box>
           <TextField
-            label="First name"
+            label="Name"
             variant="outlined"
             margin="dense"
             size="small"
@@ -153,7 +131,7 @@ const Footer: React.FC = () => {
             InputProps={{
               className: classes.whiteInput
             }}
-            onChange={handleInputChange}
+            onChange={handleNameChange}
           />
           <TextField
             label="Email Address"
@@ -166,7 +144,7 @@ const Footer: React.FC = () => {
             InputProps={{
               className: classes.whiteInput
             }}
-            onChange={handleInputChange}
+            onChange={handleEmailChange}
           />
           <Box style={{ marginTop: "0.5em" }}>
             <Button type="primary" onClick={subscribeToNewsletter} fullwidth>

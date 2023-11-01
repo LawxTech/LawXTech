@@ -12,7 +12,7 @@ import MenuIcon from "@mui/icons-material/Menu"
 import Toolbar from "@mui/material/Toolbar"
 import { Button } from "../components/Button"
 import theme from "../styles/theme"
-import { useLocation, useNavigate } from "react-router-dom"
+import { useLocation, useNavigate, Location} from "react-router-dom"
 import { Link } from "react-router-dom"
 
 interface Props {
@@ -33,12 +33,13 @@ export default function DrawerAppBar(props: Props) {
   const { window } = props
   const [mobileOpen, setMobileOpen] = React.useState(false)
   const [activeNavItem, setActiveNavItem] = React.useState(navItems[0])
-  const location = useLocation()
+  const location = useLocation() as Location
+  const slackUrl = "https://join.slack.com/t/lawxtech/shared_invite/zt-20u7mvfqu-EWVec2Qip3XhYoUyVtyvpA"
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
-  
+
   const navigate = useNavigate()
   
   const setActiveItem = (path: string) => {
@@ -75,11 +76,13 @@ export default function DrawerAppBar(props: Props) {
   );
 
   const container =
-    window !== undefined ? () => window().document.body : undefined;
+    window !== undefined ? () => window().document.body : undefined
 
     const redirectToSlack = () => {
-      "https://join.slack.com/t/lawxtech/shared_invite/zt-20u7mvfqu-EWVec2Qip3XhYoUyVtyvpA";
-    };
+      if (typeof window !== 'undefined') {
+        (window as any).open("https://join.slack.com/t/lawxtech/shared_invite/zt-20u7mvfqu-EWVec2Qip3XhYoUyVtyvpA", "_blank");
+      }
+    }
 
   return (
     <Box sx={{ display: "flex", marginBottom: '5em' }}>
@@ -104,14 +107,21 @@ export default function DrawerAppBar(props: Props) {
               alt="Logo"
               style={{ maxHeight: "5em", marginLeft: "2em" }}
             />
-          </Link>
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "flex-end",
-              whiteSpace: "nowrap",
-            }}
+            </Link>
+
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-end",
+          whiteSpace: "nowrap",
+        }}
+      >
+        {navItems.map((item) => (
+          <ListItem
+            key={item}
+            sx={{ mr: 2, color: theme.palette.text.primary }}
+            disablePadding
           >
             <ListItemButton
               sx={{
@@ -161,10 +171,12 @@ export default function DrawerAppBar(props: Props) {
         ))}
       </Box>    
       <Box style={{ marginRight: "2em" }}>
+      <a href={slackUrl} target="_blank" rel="noopener noreferrer">
           <Button type="primary" onClick={redirectToSlack}>
             JOIN COMMUNITY
           </Button>
-          </Box>
+          </a>
+      </Box>
         </Toolbar>
       </AppBar>
       <nav>
@@ -174,7 +186,7 @@ export default function DrawerAppBar(props: Props) {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true,
+            keepMounted: true, 
           }}
           sx={{
             display: { xs: "block", sm: "none" },
