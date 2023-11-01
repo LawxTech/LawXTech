@@ -1,19 +1,19 @@
-import * as React from "react"
-import AppBar from "@mui/material/AppBar"
-import Box from "@mui/material/Box"
-import CssBaseline from "@mui/material/CssBaseline"
-import Drawer from "@mui/material/Drawer"
-import IconButton from "@mui/material/IconButton"
-import List from "@mui/material/List"
-import ListItem from "@mui/material/ListItem"
-import ListItemButton from "@mui/material/ListItemButton"
-import ListItemText from "@mui/material/ListItemText"
-import MenuIcon from "@mui/icons-material/Menu"
-import Toolbar from "@mui/material/Toolbar"
-import { Button } from "../components/Button"
-import theme from "../styles/theme"
-import { useLocation, useNavigate } from "react-router-dom"
-import { Link } from "react-router-dom"
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import CssBaseline from "@mui/material/CssBaseline";
+import Drawer from "@mui/material/Drawer";
+import IconButton from "@mui/material/IconButton";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
+import MenuIcon from "@mui/icons-material/Menu";
+import Toolbar from "@mui/material/Toolbar";
+import Button from "@mui/material/Button";
+import theme from "../styles/theme";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface Props {
   window?: () => Window;
@@ -25,40 +25,24 @@ const navItems = [
   "About Us",
   "Series",
   "Testimonials",
-  // "FAQs",
+  "FAQs",
   "Contact Us",
 ];
 
 export default function DrawerAppBar(props: Props) {
-  const { window } = props
-  const [mobileOpen, setMobileOpen] = React.useState(false)
-  const [activeNavItem, setActiveNavItem] = React.useState(navItems[0])
-  const location = useLocation()
+  const { window } = props;
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [activeItem, setActiveItem] = React.useState(navItems[0]);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
-  
-  const navigate = useNavigate()
-  
-  const setActiveItem = (path: string) => {
-    let newItem = "Home"
-    if (path === "/") {
-      newItem = "Home";
-    } else {
-      for (const item of navItems) {
-        if (path.includes(item.toLowerCase().replace(/\s+/g, "-"))) {
-          newItem = item;
-          break
-        }
-      }
-    }
-    setActiveNavItem(newItem)
-  };
 
-  React.useEffect(() => {
-    setActiveItem(location.pathname);
-  }, [location.pathname]);
+  // const redirectToGoogle = () => {
+  //   "https://www.google.com";
+  // };
+
+  const navigate = useNavigate();
 
   const drawer = (
     <Box sx={{ textAlign: "center" }}>
@@ -77,12 +61,8 @@ export default function DrawerAppBar(props: Props) {
   const container =
     window !== undefined ? () => window().document.body : undefined;
 
-    const redirectToSlack = () => {
-      "https://join.slack.com/t/lawxtech/shared_invite/zt-20u7mvfqu-EWVec2Qip3XhYoUyVtyvpA";
-    };
-
   return (
-    <Box sx={{ display: "flex", marginBottom: '5em' }}>
+    <Box sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar
         component="nav"
@@ -104,25 +84,32 @@ export default function DrawerAppBar(props: Props) {
               alt="Logo"
               style={{ maxHeight: "5em", marginLeft: "2em" }}
             />
-          </Link>
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "flex-end",
-              whiteSpace: "nowrap",
-            }}
+            </Link>
+
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-end",
+          whiteSpace: "nowrap",
+        }}
+      >
+        {navItems.map((item) => (
+          <ListItem
+            key={item}
+            sx={{ mr: 2, color: theme.palette.text.primary }}
+            disablePadding
           >
             <ListItemButton
               sx={{
                 textAlign: "center",
                 color:
-                  item === activeNavItem
+                  item === activeItem
                     ? theme.palette.background.paper
                     : "inherit",
               }}
               onClick={() => {
-                setActiveNavItem(item);
+                setActiveItem(item);
                 if (item === "Testimonials") {
                   navigate('/#testimony');
                 } else {
@@ -141,7 +128,7 @@ export default function DrawerAppBar(props: Props) {
                 primary={
                   <span>
                     {item}
-                    {item === activeNavItem && (
+                    {item === activeItem && (
                       <span
                         style={{
                           content: '""',
@@ -161,9 +148,11 @@ export default function DrawerAppBar(props: Props) {
         ))}
       </Box>    
       <Box style={{ marginRight: "2em" }}>
-          <Button type="primary" onClick={redirectToSlack}>
+        <Link to="https://join.slack.com/t/lawxtech/shared_invite/zt-20u7mvfqu-EWVec2Qip3XhYoUyVtyvpA" target="_blank">
+          <Button className="btn" variant="contained" size="large">
             JOIN COMMUNITY
           </Button>
+          </Link>
           </Box>
         </Toolbar>
       </AppBar>
@@ -174,7 +163,7 @@ export default function DrawerAppBar(props: Props) {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true,
+            keepMounted: true, 
           }}
           sx={{
             display: { xs: "block", sm: "none" },
@@ -187,6 +176,12 @@ export default function DrawerAppBar(props: Props) {
           {drawer}
         </Drawer>
       </nav>
+      {/* <Box component="main" sx={{ p: 3 }}>
+        <Toolbar />
+        <Typography>
+          
+        </Typography>
+      </Box> */}
     </Box>
   );
 }
