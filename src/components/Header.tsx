@@ -25,7 +25,7 @@ const navItems = [
   "About Us",
   "Series",
   "Testimonials",
-  // "FAQs",
+  "FAQs",
   "Contact Us",
 ];
 
@@ -57,9 +57,9 @@ export default function DrawerAppBar(props: Props) {
     setActiveNavItem(newItem)
   };
 
-  React.useEffect(() => {
-    setActiveItem(location.pathname);
-  }, [location.pathname]);
+  // const redirectToGoogle = () => {
+  //   "https://www.google.com";
+  // };
 
   const drawer = (
     <Box sx={{ textAlign: "center" }}>
@@ -85,7 +85,7 @@ export default function DrawerAppBar(props: Props) {
     }
 
   return (
-    <Box sx={{ display: "flex", marginBottom: '5em' }}>
+    <Box sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar
         component="nav"
@@ -132,7 +132,7 @@ export default function DrawerAppBar(props: Props) {
                     : "inherit",
               }}
               onClick={() => {
-                setActiveNavItem(item);
+                setActiveItem(item);
                 if (item === "Testimonials") {
                   navigate('/#testimony');
                 } else {
@@ -199,6 +199,12 @@ export default function DrawerAppBar(props: Props) {
           {drawer}
         </Drawer>
       </nav>
+      {/* <Box component="main" sx={{ p: 3 }}>
+        <Toolbar />
+        <Typography>
+          
+        </Typography>
+      </Box> */}
     </Box>
   );
 }
