@@ -1,82 +1,70 @@
 import { Link } from "react-router-dom";
-import { Typography, Grid, Container, Box } from "@mui/material";
-import "../.../../../App.css"
-
+import { Typography, Grid, Container, Box, Button } from "@mui/material";
 
 export const Events = () => {
   return (
     <>
-      <div className="spacing">
-        <Container maxWidth="md">
-          <Typography
-            variant="h4"
-            align="center"
-            sx={{
-              color: "#133167",
-              fontWeight: "bold",
-              fontSize: "1.8rem",
-              marginTop: 6,
-              marginBottom: 3,
-            }}
-            gutterBottom>
-            Upcoming Events
-          </Typography>
-        </Container>
-        <section>
-        </section>
-        <Grid container maxWidth="xl" sx={{ display: "flex", alignItems:"center", justifyContent:"center" }}>
-          <Grid item maxWidth="sm">
-            <div>
-              <img src={require("../../assets/events/event1.png")} width="80%" className="gap" alt="Upcoming Events" />
-              <Typography variant="h5" sx={{fontSize:"1rem", marginLeft:"12%"}} id="cta">Community Chat</Typography>
-              <Typography variant="h6" sx={{fontSize:"0.8rem" , marginLeft:"12%"}} id="cta">30th September 2023</Typography>
+      <Container maxWidth="md">
+        <Typography
+          variant="h4"
+          align="center"
+          sx={{
+            color: "#133167",
+            fontWeight: "bold",
+            fontSize: "1.8rem",
+            marginTop: 6,
+            marginBottom: 3,
+          }}
+          gutterBottom
+        >
+          Upcoming Events
+        </Typography>
+      </Container>
+
+      <Container maxWidth="lg" className="mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-8">
+          {Array(3).fill(
+            <Grid item maxWidth="sm" key="comm">
+              <div className="border rounded-lg w-[20rem] ">
+                <img
+                  src={require("../../assets/events/event1.png")}
+                  className=""
+                  alt="Upcoming Events"
+                />
+                <div className="p-4">
+                  <h5 className="text-[#133167] font-[600] text-[1.2rem]">
+                    Community Chat
+                  </h5>
+                  <p className="text-[#133167] font-[400] text-[0.85rem]">
+                    30-09-2023
+                  </p>
+                </div>
+              </div>
+            </Grid>
+          )}
+        </div>
+      </Container>
+
+      <div className="flex items-center min-h-[30vh] md:px-[3.5rem] bg-[#113167] my-6 ">
+        <Container maxWidth="lg">
+          <div className="w-full sm:w-2/3 px-6">
+            <h4 className="text-white text-[1.7rem] md:text-[3rem] ">
+              Join us at Law x Tech as a VOLUNTEER
+            </h4>
+            <div className="w-full md:w-3/4 mt-[1rem]">
+              <p className="text-white text-[.9rem] text-justify ">
+                Do you have tech skills such as graphics designing, web
+                development, community management, copy writing, project
+                management and the likes? Are you interested in gaining hands on
+                experience working on real life projects with us? Then, join us
+                today!
+              </p>
             </div>
-          </Grid>
-          <Grid item maxWidth="sm">
-            <img src={require("../../assets/events/event2.png")} width="80%" className="gap" alt="Upcoming Events" />
-            <Typography variant="h5" sx={{fontSize:"1rem", marginLeft:"14%"}} id="cta">LawxTechSeries4</Typography>
-            <Typography variant="h6"  sx={{fontSize:"0.8rem", marginLeft:"14%"}} id="cta">23rd September 2023</Typography>
-          </Grid>
-          <Grid item maxWidth="sm">
-            <img src={require("../../assets/events/event3.png")} width="80%" alt="Upcoming Events" />
-            <Typography variant="h5"  sx={{fontSize:"1rem"}} id="cta">Partnership Announcementt</Typography>
-            <Typography variant="h6" sx={{fontSize:"0.8rem", marginLeft:"17%"}} className="gap">21st  September 2023</Typography>
-          </Grid>
-        </Grid>
-      </div>
-      <div>
-        <Box maxWidth="xl" className="btn"  maxHeight={900} marginTop="10%" sx={{ display:"flex"}}>
-          <Box maxWidth="sm" marginTop={6} marginLeft={14} className="textInBlue">
-              <Typography  variant="h4" color="#ffffff" className="left"  id="leftTitle" sx={{fontSize:"1.8rem"}}  marginTop={2} fontWeight="normal" marginX="auto" gutterBottom>
-                Join us at Law x Tech as a VOLUNTEER
-              </Typography>
-              <Typography variant="h6" color="#ffffff" className="left" sx={{fontSize:".9rem"}} fontWeight="light" paragraph>
-                Do you have tech skills such as graphics designing, web development,
-                community management, copy writing, project management and the likes?
-                Are you interested in gaining hands on experience working on real life
-                projects with us? Then, join us today!
-              </Typography>
-              <Typography variant="h6" color="#ffffff" className="left" sx={{fontSize:".9rem"}} fontWeight="light" paragraph>
-                Are you interested in gaining hands on experience working on real life
-                projects with us? Then, join us today!
-              </Typography>
-          </Box>
-          <Box maxWidth="sm" marginTop={10} marginLeft={35} className="right">
-            <Typography variant="h6" color="#ffffff" sx={{fontSize:"0.9rem"}} fontWeight="light" paragraph>
-              To be a Volunteer
-            </Typography>
-            <Typography variant="h6" color="#ffffff" sx={{fontSize:"0.9rem", marginTop:"-6%"}} fontWeight="light" paragraph>
-              Join our Comuunity
-            </Typography>
-            <Typography variant="h6" color="#ffffff" sx={{fontSize:"0.9rem", marginTop:"-6%"}} fontWeight="normal" paragraph gutterBottom>
-              Follow us on all social media platform
-            </Typography>
-            <Link to="https://docs.google.com/forms/d/e/1FAIpQLSctpedh8IpGJOZl-UwJk-WKsXbF0mPHuphxRklvjt1TmOEnkw/viewform" target="_blank">
-              <Typography variant="h6" color="#ffffff" sx={{fontSize:"0.8rem", textDecoration:"underline"}} fontWeight="light" paragraph>
-                Fill the Volunteer form to Apply!
-              </Typography></Link>
-          </Box>
-      </Box>
+            <button className="bg-white px-10 h-[3rem] rounded-md text-[#131157] font-[600] text-[.95rem] mt-[1.5rem] ">
+              Apply Here
+            </button>
+          </div>
+        </Container>
       </div>
     </>
   );

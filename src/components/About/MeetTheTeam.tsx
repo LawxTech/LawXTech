@@ -7,11 +7,7 @@ const teamMembers = [
     position: "Founder",
     image: "Sopuruchi Rufus, Founder .jpeg",
   },
-  {
-    name: "Kate Ndemson Ekpo",
-    position: "Project Manager ",
-    image: "Kate Ndemson Ekpo, Project Manager .jpeg",
-  },
+
   {
     name: "Joel",
     position: "Graphics Designer",
@@ -43,11 +39,6 @@ const teamMembers = [
     image: "Saliu Waliyat Ayomiotan, Content Writer Volunteer.jpeg",
   },
   {
-    name: "Vivian",
-    position: "Content Writer",
-    image: "Vivian, Content Writer Volunteer.jpg",
-  },
-  {
     name: "Bakare Adefolakemi",
     position: "Email Marketer ",
     image: "BAKARE ADEFOLAKEMI, Email Marketer Volunteer.JPG",
@@ -56,21 +47,6 @@ const teamMembers = [
     name: "Aniefiok Michael",
     position: "UI/UX",
     image: "Aniefiok Michael, UI_UX Volunteer .jpeg",
-  },
-  {
-    name: "Opeyemi Oduyemi",
-    position: "Fullstack Developer",
-    image: "Opeyemi Oduyemi  Fullstack Developer.jpg",
-  },
-  {
-    name: "Rofiat Olusanya",
-    position: "Web Developer",
-    image: "Rofiat Olusanya, Web Developer.jpg",
-  },
-  {
-    name: "Rere Alonge",
-    position: "Social Media Manager ",
-    image: "Rere Alonge Social Media Manager .jpg",
   },
 ];
 

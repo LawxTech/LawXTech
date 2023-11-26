@@ -40,22 +40,6 @@ const OurStory: React.FC = () => {
                 marginBottom: "0.625rem",
               }}
             >
-              We want to bridge the gap between the worlds of law and
-              technology, providing a dynamic platform where lawyers and law
-              students can explore, learn, and thrive in the ever-evolving
-              landscape of legal tech and/or just tech. Through insightful
-              sessions, expert guidance, and collaborative networking, we
-              empower our participants to embrace innovation, cultivate
-              expertise, and pioneer positive change at the intersection of law
-              and technology. _ Mission
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                lineHeight: "1.7rem",
-                marginBottom: "0.625rem",
-              }}
-            >
               We hope to pioneer a transformed legal profession by empowering
               legal minds with the skills to navigate technology. We envision
               tech-savvy lawyers who integrate innovation and drive impact,
