@@ -1,13 +1,11 @@
-import { Box } from '@mui/material';
-import React from 'react';
+import React from "react";
 
 const Contact: React.FC = () => {
   return (
-    <div>
-       <Box>Pink</Box>
-      {/* Contact content */}
+    <div className="mt-16">
+      <h1 className="text-3xl font-bold">Hello world!</h1>
     </div>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
