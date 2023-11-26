@@ -20,16 +20,27 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = ["Home", "About Us", "Series", "Contact Us"];
+const navItems = [
+  "Home",
+  "About Us",
+  "Series",
+  "Testimonials",
+  "FAQs",
+  "Contact Us",
+];
 
 export default function DrawerAppBar(props: Props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [activeItem, setActiveItem] = React.useState(navItems[0]);
-  const navigate = useNavigate();
+  const [activeNavItem, setActiveNavItem] = React.useState(navItems[0]);
+  const location = useLocation();
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
+  };
+
+  const redirectToGoogle = () => {
+    console.log("hello");
   };
 
   const drawer = (
@@ -49,119 +60,96 @@ export default function DrawerAppBar(props: Props) {
   const container =
     window !== undefined ? () => window().document.body : undefined;
 
+  const redirectToSlack = () => {
+    "https://join.slack.com/t/lawxtech/shared_invite/zt-20u7mvfqu-EWVec2Qip3XhYoUyVtyvpA";
+  };
+
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex", marginBottom: "5em" }}>
       <CssBaseline />
       <AppBar
         component="nav"
         sx={{ backgroundColor: theme.palette.background.default }}
       >
-        <Container maxWidth="lg">
-          <Toolbar
+        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: "none" } }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Link to="/">
+            <img
+              src={require("../assets/logo/logo_2.JPG")}
+              alt="Logo"
+              style={{ maxHeight: "5em", marginLeft: "2em" }}
+            />
+          </Link>
+          <Box
             sx={{
               display: "flex",
-              justifyContent: "space-between",
               alignItems: "center",
-              boxShadow: "none",
+              justifyContent: "flex-end",
+              whiteSpace: "nowrap",
             }}
           >
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ mr: 2, display: { sm: "none" } }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Link
-              to="/"
-              style={{
-                border: "1px solid red",
-                marginLeft: "2em",
-              }}
-            >
-              <img
-                src={require("../assets/logo/logo_2.JPG")}
-                alt="Logo"
-                style={{
-                  maxHeight: "4em",
-                  border: "1px solid red",
-                }}
-              />
-            </Link>
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "flex-end",
-                whiteSpace: "nowrap",
-              }}
-            >
-              {navItems.map((item) => (
-                <ListItem
-                  key={item}
-                  sx={{ mr: 2, color: theme.palette.text.primary }}
-                  disablePadding
+            {navItems.map((item) => (
+              <ListItem
+                key={item}
+                sx={{ mr: 2, color: theme.palette.text.primary }}
+                disablePadding
+              >
+                <ListItemButton
+                  sx={{
+                    textAlign: "center",
+                    color:
+                      item === activeItem
+                        ? theme.palette.background.paper
+                        : "inherit",
+                  }}
+                  onClick={() => {
+                    setActiveItem(item);
+                    navigate(
+                      `/${
+                        item === "Home"
+                          ? ""
+                          : item.toLowerCase().replace(/\s+/g, "-")
+                      }`
+                    );
+                  }}
                 >
-                  <ListItemButton
-                    sx={{
-                      textAlign: "center",
-                      color:
-                        item === activeItem
-                          ? theme.palette.background.paper
-                          : "inherit",
-                    }}
-                    onClick={() => {
-                      setActiveItem(item);
-                      navigate(
-                        `/${
-                          item === "Home"
-                            ? ""
-                            : item.toLowerCase().replace(/\s+/g, "-")
-                        }`
-                      );
-                    }}
-                  >
-                    <ListItemText
-                      primary={
-                        <span>
-                          {item}
-                          {item === activeItem && (
-                            <span
-                              style={{
-                                content: '""',
-                                display: "block",
-                                width: "100%",
-                                height: "0.1em",
-                                backgroundColor: theme.palette.text.primary,
-                                marginTop: "0.05em",
-                              }}
-                            ></span>
-                          )}
-                        </span>
-                      }
-                    />
-                  </ListItemButton>
-                </ListItem>
-              ))}
+                  <ListItemText
+                    primary={
+                      <span>
+                        {item}
+                        {item === activeItem && (
+                          <span
+                            style={{
+                              content: '""',
+                              display: "block",
+                              width: "100%",
+                              height: "0.15em",
+                              backgroundColor: theme.palette.text.primary,
+                              marginTop: "0.28em",
+                            }}
+                          ></span>
+                        )}
+                      </span>
+                    }
+                  />
+                </ListItemButton>
+              </ListItem>
+            ))}
+            <Box style={{ marginRight: "2em" }}>
+              <Button type="primary" onClick={redirectToGoogle}>
+                Join Community
+              </Button>
             </Box>
-            <Button
-              className="btn"
-              variant="contained"
-              size="medium"
-              target="_blank"
-              href="https://join.slack.com/t/lawxtech/shared_invite/zt-20u7mvfqu-EWVec2Qip3XhYoUyVtyvpA"
-              sx={{
-                fontWeight: "normal",
-                fontSize: "0.8rem",
-                marginRight: "2em",
-              }}
-            >
-              Join Community
-            </Button>
-          </Toolbar>
-        </Container>
+          </Box>
+        </Toolbar>
       </AppBar>
       <nav>
         <Drawer
