@@ -30,7 +30,7 @@ export default function DrawerAppBar() {
                 navigate(
                   `/${
                     item === "Home"
-                      ? ""
+                      ? "LawXTech"
                       : item.toLowerCase().replace(/\s+/g, "-")
                   }`
                 );
