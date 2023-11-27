@@ -1,6 +1,5 @@
 import React from "react";
 import { Typography, Container, Box } from "@mui/material";
-import Button from "@mui/material/Button";
 import "../.../../../App.css";
 import { Link } from "react-router-dom";
 
@@ -8,7 +7,7 @@ export const SpeakerAd = () => {
   return (
     <Container maxWidth="lg">
       <div className="min-h-[40vh] grid grid-cols-1 md:grid-cols-2 items-center mb-10 md:mb-24 px-6 md:px-0 ">
-        <Box maxWidth="sm" marginTop={20} marginRight={1}>
+        <Box maxWidth="sm">
           <Typography
             variant="h4"
             className="adText"
@@ -34,11 +33,11 @@ export const SpeakerAd = () => {
             </Link>
           </div>
         </Box>
-        <Box maxWidth="md" marginLeft={12} className="hidden md:block">
+        <Box maxWidth="md" marginLeft={12} className="hidden md:block  ">
           <img
             src={require("../../assets/speaker.png")}
             alt="Speaker"
-            className="adImg"
+            className="scale-75 "
           />
         </Box>
       </div>

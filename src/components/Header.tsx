@@ -32,10 +32,6 @@ export default function DrawerAppBar(props: Props) {
     setMobileOpen((prevState) => !prevState);
   };
 
-  const redirectToGoogle = () => {
-    console.log("hello");
-  };
-
   const drawer = (
     <Box sx={{ textAlign: "center" }}>
       <List>
@@ -53,9 +49,8 @@ export default function DrawerAppBar(props: Props) {
   const container =
     window !== undefined ? () => window().document.body : undefined;
 
-  const redirectToSlack = () => {
+  const slackLink =
     "https://join.slack.com/t/lawxtech/shared_invite/zt-20u7mvfqu-EWVec2Qip3XhYoUyVtyvpA";
-  };
 
   return (
     <Box sx={{ display: "flex", marginBottom: "5em" }}>

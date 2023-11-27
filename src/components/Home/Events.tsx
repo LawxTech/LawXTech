@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { Typography, Grid, Container, Box, Button } from "@mui/material";
+import { Typography, Grid, Container } from "@mui/material";
 
 export const Events = () => {
   return (
@@ -48,7 +47,7 @@ export const Events = () => {
       <div className="flex items-center min-h-[30vh] md:px-[3.5rem] bg-[#113167] my-6 ">
         <Container maxWidth="lg">
           <div className="w-full sm:w-2/3 px-6">
-            <h4 className="text-white text-[1.7rem] md:text-[3rem] ">
+            <h4 className="text-white text-[1.7rem] md:text-[2rem] ">
               Join us at Law x Tech as a VOLUNTEER
             </h4>
             <div className="w-full md:w-3/4 mt-[1rem]">
