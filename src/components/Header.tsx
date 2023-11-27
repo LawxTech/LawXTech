@@ -1,4 +1,3 @@
-
 import * as React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
@@ -36,7 +35,7 @@ export default function DrawerAppBar() {
                   }`
                 );
               }}
-              />
+            >
               {
                 <span>
                   {item}
@@ -64,41 +63,5 @@ export default function DrawerAppBar() {
         </div>
       </div>
     </div>
-              <ListItemText
-                primary={
-                  <span>
-                    {item}
-                    {item === activeNavItem && (
-                      <span
-                        style={{
-                          content: '""',
-                          display: "block",
-                          width: "100%",
-                          height: "0.15em",
-                          backgroundColor: theme.palette.text.primary,
-                          marginTop: "0.28em",
-                        }}
-                      ></span>
-                    )}
-                  </span>
-                }
-              />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </Box>    
-      <Box style={{ marginRight: "2em" }}>
-      <a href={slackUrl} target="_blank" rel="noopener noreferrer">
-          <Button type="primary" onClick={redirectToSlack}>
-            JOIN COMMUNITY
-          </Button>
-          </a>
-      </Box>
-        </Toolbar>
-      </AppBar>
-     
-      
-    </Box>
-
   );
 }
