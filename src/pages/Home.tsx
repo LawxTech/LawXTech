@@ -1,21 +1,20 @@
-import React from "react"
+import React from "react";
 import { Banner } from "../components/Home/Banner";
 import { Intro } from "../components/Home/Intro";
 import { Features } from "../components/Home/Features";
 import { Events } from "../components/Home/Events";
 import { SpeakerAd } from "../components/Home/SpeakerAd";
-import { MeetTeam } from "../components/Home/MeetTeam";
 import { Testimonials } from "../components/Home/Testimonials";
 
 const Home: React.FC = () => {
   return (
-    <>
-      <section>
+    <div>
+      <section className="min-h-[70vh] ">
         <Banner />
       </section>
-      <section>
+      {/* <section>
         <Intro />
-      </section>
+      </section> */}
       <section>
         <Features />
       </section>
@@ -26,13 +25,10 @@ const Home: React.FC = () => {
         <SpeakerAd />
       </section>
       <section>
-        <MeetTeam />
-      </section>
-      <section>
         <Testimonials />
       </section>
-    </>
-  )
+    </div>
+  );
 };
 
-export default Home
+export default Home;

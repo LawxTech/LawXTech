@@ -1,168 +1,153 @@
-// Footer.tsx
-import React, { useState } from 'react'
-import { makeStyles } from '@mui/styles'
-import theme from '../styles/theme'
-import { Box, Link, TextField } from '@mui/material'
-import { Button } from "../components/Button"
 
-const useStyles = makeStyles({
-  footer: {
-    backgroundColor: theme.palette.secondary.main,
-    color: theme.palette.background.default,
-    padding: '2em 5em',
-    marginTop: '2em'
-  },
-  inputBox: {
-    display: 'flex',
-    flexDirection: 'column',
-    margin: '0 5em',
-  },
-  whiteInputLabel: {
-    color: 'darkgrey !important', // Change label color to white
-  },
-  whiteInput: {
-    '& .MuiOutlinedInput-root': {
-      borderColor: 'darkgrey !important', // Change input border color to white
+import { Container } from "@mui/material";
+import { Link } from "react-router-dom";
+
+// make a json that contains footer data by categories
+const footerData = {
+  pages: [
+    {
+      title: "Home",
+      link: "/",
     },
-  }
-})
+    {
+      title: "About Us",
+      link: "/blogs",
+    },
+    {
+      title: "Series",
+      link: "/contact",
+    },
+    {
+      title: "Testimonials",
+      link: "/settings",
+    },
+    {
+      title: "FAQs",
+      link: "/newsletters",
+    },
+  ],
+  socials: [
+    {
+      title: "Slack",
+      link: "https://join.slack.com/t/lawxtech/shared_invite/zt-20u7mvfqu-EWVec2Qip3XhYoUyVtyvpA",
+      icon: "fab fa-slack",
+    },
+    {
+      title: "Twitter",
+      link: "https://twitter.com/",
+      icon: "fab fa-twitter",
+    },
+    {
+      title: "Youtube",
+      link: "https://www.youtube.com/",
+      icon: "fab fa-youtube",
+    },
+    {
+      title: "LinkedIn",
+      link: "https://www.linkedin.com/",
+      icon: "fab fa-linkedin-in",
+    },
+    {
+      title: "Instagram",
+      link: "https://www.instagram.com/",
+      icon: "fab fa-instagram",
+    },
+  ],
+  contact: [
+    {
+      title: "Email",
+      link: "mailto:lawxtech@gmail.com",
+      icon: "far fa-envelope",
+    },
+    {
+      title: "Phone",
+      link: "tel:+2348134567890",
+      icon: "fas fa-phone-alt",
+    },
+    {
+      title: "Address",
+      link: "https://goo.gl/maps/3Xb1kz4Uf4Yi8z5r7",
+      icon: "fas fa-map-marker-alt",
+    },
+  ],
+};
 
-const Footer: React.FC = () => {
-  const classes = useStyles()
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-
-  const handleNameChange = (e: any) => {
-    setName(e.target.value);
-  };
-
-  const handleEmailChange = (e: any) => {
-    setEmail(e.target.value);
-  };
-
-  const subscribeToNewsletter = async () => {
-    const formData = new FormData();
-    formData.append('name', name);
-    formData.append('email', email);
-
-    try {
-      const response = await fetch('https://formsubmit.co/rofiatolusanya12@gmail.com', {
-        method: 'POST',
-        body: formData,
-      });
-
-      if (response.ok) {
-        alert('Subscription successful!');
-        Promise.resolve().then(() => {
-          setName(''); // Reset the name to an empty string
-          setEmail(''); // Reset the email to an empty string
-        });
-      } else {
-        alert('Subscription failed. Please try again.');
-      }
-    } catch (error) {
-      console.error('Error submitting the form:', error);
-      alert('Subscription failed. Please try again.');
-    }
-  }
-
+function Footer() {
   return (
-    <footer className={classes.footer}>
-      <Box display='flex' justifyContent='space-between' >
-        <Box display='flex' marginBottom='2em'>
-          <Box style={{ marginRight: '2em' }}>
-            <Box marginBottom='0.5em' fontWeight='bold'> Social Media </Box>
-            <Box display='flex' flexDirection='column'>
-              <Link
-                href="https://www.linkedin.com/company/law-x-tech/"
-                target="_blank"
-                rel="noopener"
-                color="primary"
-                underline="hover"
-              >
-                LinkedIn
-              </Link>
-              <Link
-                href="https://x.com/lawxtech?s=21&t=1MzXUA2o4FeTHH1f7uE8AA"
-                target="_blank"
-                rel="noopener"
-                color="primary"
-                underline="hover"
-              >
-                Twitter
-              </Link>
-              <Link
-                href="https://instagram.com/lawxtech?igshid=MzMyNGUyNmU2YQ=="
-                target="_blank"
-                rel="noopener"
-                color="primary"
-                underline="hover"
-              >
-                Instagram
-              </Link>
-              <Link
-                href="https://join.slack.com/t/lawxtech/shared_invite/zt-20u7mvfqu-EWVec2Qip3XhYoUyVtyvpA"
-                target="_blank"
-                rel="noopener"
-                color="primary"
-                underline="hover"
-              >
-                Slack
-              </Link>
-            </Box>
-          </Box>
-          <Box>
-            <Box marginBottom='0.5em' fontWeight='bold'>Contact Us</Box>
-            <Box marginBottom='1em'>Lagos, Nigeria</Box>
-            <Box>+2349099030433</Box>
-            <Box>lawxtechseries@gmail.com</Box>
-          </Box>
-        </Box>
-        <Box className={classes.inputBox} marginBottom='2em'>
-          <Box>Subscribe to our Newsletters</Box>
-          <TextField
-            label="Name"
-            variant="outlined"
-            margin="dense"
-            size="small"
-            InputLabelProps={{
-              className: classes.whiteInputLabel
-            }}
-            InputProps={{
-              className: classes.whiteInput
-            }}
-            onChange={handleNameChange}
-          />
-          <TextField
-            label="Email Address"
-            variant="outlined"
-            margin="dense"
-            size="small"
-            InputLabelProps={{
-              className: classes.whiteInputLabel
-            }}
-            InputProps={{
-              className: classes.whiteInput
-            }}
-            onChange={handleEmailChange}
-          />
-          <Box style={{ marginTop: "0.5em" }}>
-            <Button type="primary" onClick={subscribeToNewsletter} fullwidth>
-              Subscribe
-            </Button>
-          </Box>
-        </Box>
-      </Box>
-      <Box display='flex' justifyContent='space-between' alignItems='center'>
-        <img
-          src={require("../assets/logo/logo_3.JPG")}
-          alt="Logo"
-          style={{ maxHeight: "3em" }}
-        />
-        <Box>&copy; 2023 Law x Tech. All Rights Reserved.</Box>
-      </Box>
-    </footer>
-  )
+    <>
+      <div className="w-full font-raleway bg-[#113167] text-neutral-50 py-20">
+        <Container maxWidth="lg">
+          <div className="px-6 xs:px-0 ">
+            <div className="md:flex flex-row lg:grid sm:grid-cols-2 mb-8">
+              <div className="w-full sm:w-1/3 lg:w-full mb-4">
+                <h3 className="font-[600] text-[1.5rem] ">LawXTech</h3>
+                <p className="text-sm font-[400] sm:text-base lg:text-base !leading-6 md:!leading-7 mt-4 sm:hidden xl:block lg:w-3/4">
+                  Law x Tech is your gateway to a thriving career at the
+                  intersection of law and technology. This is where Law meets
+                  Tech.
+                </p>
+              </div>
+
+              <div className="hidden w-full md:w-2/3 lg:w-full sm:grid grid-cols-3 sm:grid-cols-3 gap-4">
+                <div className="flex flex-col">
+                  <h3 className="font-raleway font-normal text-lg text-white mb-4">
+                    Pages
+                  </h3>
+                  <div className="flex flex-col space-y-2">
+                    {footerData.pages.map((item) => (
+                      <Link to={item.link} key={item.link}>
+                        <p className="font-raleway font-normal text-base text-neutral-50 cursor-pointer hover:underline">
+                          {item.title}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+                <div className="flex flex-col">
+                  <h3 className="font-raleway font-normal text-lg text-white mb-4">
+                    Socials
+                  </h3>
+                  <div className="flex flex-col space-y-2">
+                    {footerData.socials.map((item) => (
+                      <Link to={item.link} key={item.link}>
+                        <p className="font-raleway font-normal text-base text-neutral-50 cursor-pointer hover:underline">
+                          {item.title}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+                <div className="flex flex-col">
+                  <h3 className="font-raleway font-normal text-lg text-white mb-4">
+                    Contact
+                  </h3>
+                  <div className="flex flex-col space-y-2">
+                    {footerData.contact.map((item) => (
+                      <Link to={item.link} key={item.link}>
+                        <p className="font-raleway font-normal text-base text-neutral-50 cursor-pointer hover:underline">
+                          {item.title}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <hr className="mb-4" />
+
+            <div className="md:grid grid-cols-1 sm:grid-cols-2 items-center py-2 mt-4">
+              <div className="flex items-center font-raleway font-normal sm:text-base text-sm text-neutral-50 space-x-2 mb-3 md:mb-0">
+                <span className=" ">All rights reserved</span>
+                <span className="font-number ">LawXTech </span>
+                <span className="font-number ">© 2023 </span>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </div>
+    </>
+  );
 }
 
-export default Footer
+export default Footer;
