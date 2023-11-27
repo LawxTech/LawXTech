@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Contact: React.FC = () => {
-  const classes = useStyles();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -66,12 +65,7 @@ const Contact: React.FC = () => {
       });
   };
 
-  return (
-    <div>
-      <Box>Pink</Box>
-      {/* Contact content */}
-    </div>
-  );
+  return <div>{/* Contact content */}</div>;
 };
 
 export default Contact;

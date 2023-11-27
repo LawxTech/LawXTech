@@ -10,30 +10,23 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
-import Button from "@mui/material/Button";
 import theme from "../styles/theme";
 import Toolbar from "@mui/material/Toolbar";
-import { Container } from "@mui/material";
+import { Button } from "@mui/material";
 
 interface Props {
   window?: () => Window;
 }
 
 const drawerWidth = 240;
-const navItems = [
-  "Home",
-  "About Us",
-  "Series",
-  "Testimonials",
-  "FAQs",
-  "Contact Us",
-];
+const navItems = ["Home", "About Us", "Series", "Contact Us"];
 
 export default function DrawerAppBar(props: Props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [activeNavItem, setActiveNavItem] = React.useState(navItems[0]);
-  const location = useLocation();
+  const [activeItem, setActiveItem] = React.useState(navItems[0]);
+  const navigate = useNavigate();
+  // const location = useLocation();
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -144,9 +137,7 @@ export default function DrawerAppBar(props: Props) {
               </ListItem>
             ))}
             <Box style={{ marginRight: "2em" }}>
-              <Button type="primary" onClick={redirectToGoogle}>
-                Join Community
-              </Button>
+              <Button type="button">Join Community</Button>
             </Box>
           </Box>
         </Toolbar>
