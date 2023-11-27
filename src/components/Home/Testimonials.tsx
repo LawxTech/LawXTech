@@ -27,6 +27,7 @@ export const Testimonials: React.FC = () => {
     arrows: false,
   };
 
+
   return (
     <>
       <section className="min-h-[40vh] grid grid-cols-1 items-center bg-neutral-100 ">
@@ -71,3 +72,4 @@ export const Testimonials: React.FC = () => {
     </>
   );
 };
+
