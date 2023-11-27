@@ -22,7 +22,7 @@ export const Banner = () => {
         >
           <div className="h-[70vh] flex items-center w-full md:w-[700px] p-8 mx-auto">
             <div className="grid grid-cols-1 gap-[1.3rem] ">
-              <h1 className="text-[2.5rem] md:text-[3.5rem] md:!leading-[4rem] font-[600] text-[#fff] sm:text-center ">
+              <h1 className="text-[2.5rem] leading-[2.9rem] md:text-[3.5rem] md:!leading-[4rem] font-[500] md:font-[600] text-[#fff] sm:text-center ">
                 Empowering Lawyers in the Tech World.
               </h1>
 

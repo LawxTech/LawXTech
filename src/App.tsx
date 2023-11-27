@@ -11,7 +11,7 @@ const App: React.FC = () => {
     <ThemeProvider theme={theme}>
       <div>
         <Header />
-        <main className="mt-18">
+        <main>
           <Routes />
         </main>
         <Footer />

@@ -9,7 +9,7 @@ import { Testimonials } from "../components/Home/Testimonials";
 const Home: React.FC = () => {
   return (
     <div>
-      <section className="mt-12 min-h-[70vh] ">
+      <section className="min-h-[70vh] ">
         <Banner />
       </section>
       {/* <section>
