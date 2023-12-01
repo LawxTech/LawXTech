@@ -1,115 +1,45 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import React from "react";
 
 const Founder: React.FC = () => {
   return (
     <div>
-      <section
-        style={{
-          padding: "6.13rem 4.38rem",
-        }}
-      >
-        <Container
-          maxWidth="lg"
-          style={{
-            backgroundColor: "#fff",
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gridGap: "1.5rem",
-          }}
-        >
-          <Box
-            sx={{
-              width: "100%",
-              display: "flex",
-              justifyContent: "end",
-            }}
-          >
-            <Box
-              sx={{
-                height: "30rem",
-                width: "30rem",
-                border: "1px solid #113167",
-              }}
-            >
+      <section className="py-[5rem] px-[1.5rem] lg:px-[4.38rem] bg-[#F5F5F5] ">
+        <Container maxWidth="lg" className="grid grid-cols-2 gap-[1.5rem] ">
+          <div className="grid grid-cols-2 gap-[1.5rem]">
+            <div className="rounded-[1rem] border border-[#113167] w-[30rem] h-[30rem] ">
               <img
                 src="/images/sopuruchi.jpeg"
                 alt="about the founder"
-                style={{
-                  objectFit: "fill",
-                  width: "100%",
-                  height: "100%",
-                }}
+                className="w-full h-full rounded-[1rem] object-cover object-center"
               />
-            </Box>
-          </Box>
-
-          <Box
-            sx={{
-              width: "100%",
-            }}
-          >
-            <Typography
-              variant="h3"
-              sx={{
-                color: "#113167",
-              }}
-            >
-              About our Founder
-            </Typography>
-            <Box
-              sx={{
-                width: "28rem",
-              }}
-            >
-              <Typography
-                variant="body1"
-                fontWeight={400}
-                sx={{
-                  marginBottom: "0.625rem",
-                  lineHeight: "1.85",
-                  textAlign: "justify",
-                  textJustify: "auto",
-                }}
-              >
-                Meet Sopuruchi Rufus, the driving force behind Law x Tech. With
-                a dynamic blend of legal expertise and technological innovation,
-                being a product manager herself, she has set the course for our
-                organization’s exceptional journey.
-              </Typography>
-
-              <Typography
-                variant="body1"
-                fontWeight={400}
-                sx={{
-                  marginBottom: "0.625rem",
-                  lineHeight: "1.85",
-                  textAlign: "justify",
-                  textJustify: "auto",
-                }}
-              >
-                In a world increasingly shaped by technology, Sopuruchi Rufus
-                recognized the transformative power of innovation early on. Her
-                passion for technology and its potential to revolutionize the
-                legal industry has driven Law x Tech to the forefront of the
-                legal-tech realm.
-              </Typography>
-              <Typography
-                variant="body1"
-                fontWeight={400}
-                sx={{
-                  marginBottom: "0.625rem",
-                  lineHeight: "1.85",
-                  textAlign: "justify",
-                  textJustify: "auto",
-                }}
-              >
-                Her dedication to merging the worlds of law and technology has
-                empowered Law x Tech to provide opportunities to law
-                professionals to acquire tech skills.
-              </Typography>
-            </Box>
-          </Box>
+            </div>
+            <div>
+              <h3 className="text-[#113167] text-[2rem] lg:text-[2.6rem] font-bold mt-[1rem] ">
+                About our Founder
+              </h3>
+              <div className="max-w-[28rem] grid gap-[0.875remrem] ">
+                <p className="text-[1rem] text-justify font-[400] leading-[1.8rem] ">
+                  Meet Sopuruchi Rufus, the driving force behind Law x Tech.
+                  With a dynamic blend of legal expertise and technological
+                  innovation, being a product manager herself, she has set the
+                  course for our organization’s exceptional journey.
+                </p>
+                <p className="text-[1rem] text-justify font-[400] leading-[1.8rem] ">
+                  In a world increasingly shaped by technology, Sopuruchi Rufus
+                  recognized the transformative power of innovation early on.
+                  Her passion for technology and its potential to revolutionize
+                  the legal industry has driven Law x Tech to the forefront of
+                  the legal-tech realm.
+                </p>
+                <p className="text-[1rem] text-justify font-[400] leading-[1.8rem] ">
+                  Her dedication to merging the worlds of law and technology has
+                  empowered Law x Tech to provide opportunities to law
+                  professionals to acquire tech skills.
+                </p>
+              </div>
+            </div>
+          </div>
         </Container>
       </section>
     </div>
