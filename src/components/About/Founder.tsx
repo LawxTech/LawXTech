@@ -1,4 +1,4 @@
-import { Box, Container } from "@mui/material";
+import { Container } from "@mui/material";
 import React from "react";
 
 const Founder: React.FC = () => {
@@ -6,8 +6,8 @@ const Founder: React.FC = () => {
     <div>
       <section className="py-[5rem] px-[1.5rem] lg:px-[4.38rem] bg-[#F5F5F5] ">
         <Container maxWidth="lg" className="grid grid-cols-2 gap-[1.5rem] ">
-          <div className="grid grid-cols-2 gap-[1.5rem]">
-            <div className="rounded-[1rem] border border-[#113167] w-[30rem] h-[30rem] ">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-[1.5rem]">
+            <div className="rounded-[1rem] border border-[#113167] w-[30rem] h-[30rem] mx-auto ">
               <img
                 src="/images/sopuruchi.jpeg"
                 alt="about the founder"
@@ -18,7 +18,7 @@ const Founder: React.FC = () => {
               <h3 className="text-[#113167] text-[2rem] lg:text-[2.6rem] font-bold mt-[1rem] ">
                 About our Founder
               </h3>
-              <div className="max-w-[28rem] grid gap-[0.875remrem] ">
+              <div className=" md:w-2/3 mx-auto lg:max-w-[28rem] grid gap-[0.875remrem] ">
                 <p className="text-[1rem] text-justify font-[400] leading-[1.8rem] ">
                   Meet Sopuruchi Rufus, the driving force behind Law x Tech.
                   With a dynamic blend of legal expertise and technological
