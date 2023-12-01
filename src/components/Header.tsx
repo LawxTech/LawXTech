@@ -10,8 +10,6 @@ export default function Header({ setOpenSideBar }: Props) {
   const navItems = ["Home", "About Us", "Series", "Contact Us"];
   const [activeItem, setActiveItem] = React.useState(navItems[0]);
   const navigate = useNavigate();
-  const slackLink =
-    "https://join.slack.com/t/lawxtech/shared_invite/zt-20u7mvfqu-EWVec2Qip3XhYoUyVtyvpA";
 
   return (
     <div className=" h-[4.5rem] lg:h-full px-[2rem] flex items-center justify-between ">
@@ -80,18 +78,22 @@ export default function Header({ setOpenSideBar }: Props) {
           ))}{" "}
         </div>
         <div className="mr-[1em] ">
-          <Button
-            type="button"
-            href={slackLink}
-            sx={{
-              bgcolor: "#113167",
-              color: "#fff",
-              padding: "0.5rem 1.5rem",
-              fontSize: "0.85rem",
-            }}
+          <Link
+            to="https://join.slack.com/t/lawxtech/shared_invite/zt-20u7mvfqu-EWVec2Qip3XhYoUyVtyvpA"
+            target="_blank"
+            className=" sm:text-center"
           >
-            Join Community
-          </Button>
+            <Button
+              className="btn !text-[0.75rem] "
+              variant="contained"
+              size="medium"
+              sx={{
+                padding: ".75rem 1.5rem",
+              }}
+            >
+              Join Community
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
