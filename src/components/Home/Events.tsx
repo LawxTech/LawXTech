@@ -3,50 +3,38 @@ import { Typography, Grid, Container } from "@mui/material";
 export const Events = () => {
   return (
     <>
-      <Container maxWidth="md">
-        <Typography
-          variant="h4"
-          align="center"
-          sx={{
-            color: "#133167",
-            fontWeight: "bold",
-            fontSize: "1.8rem",
-            marginTop: 6,
-            marginBottom: 3,
-          }}
-          gutterBottom
-        >
-          Upcoming Events
-        </Typography>
-      </Container>
-
-      <Container maxWidth="lg" className="mb-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-8">
-          {Array(3).fill(
-            <Grid item maxWidth="sm" key="comm">
-              <div className="border rounded-lg w-[20rem] ">
-                <img
-                  src={require("../../assets/events/event1.png")}
-                  className=""
-                  alt="Upcoming Events"
-                />
-                <div className="p-4">
-                  <h5 className="text-[#133167] font-[600] text-[1.2rem]">
-                    Community Chat
-                  </h5>
-                  <p className="text-[#133167] font-[400] text-[0.85rem]">
-                    30-09-2023
-                  </p>
+      <Container maxWidth="lg">
+        <div className=" py-[5rem]">
+          <h4 className="text-[#133167] font-[600] text-[1.5rem] md:text-[2rem] text-center">
+            Upcoming Events
+          </h4>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-8 mt-6  ">
+            {Array(3).fill(
+              <Grid item maxWidth="sm" key="comm">
+                <div className="border rounded-lg w-[20rem] ">
+                  <img
+                    src={require("../../assets/events/event1.png")}
+                    className=""
+                    alt="Upcoming Events"
+                  />
+                  <div className="p-4">
+                    <h5 className="text-[#133167] font-[600] text-[1.2rem]">
+                      Community Chat
+                    </h5>
+                    <p className="text-[#133167] font-[400] text-[0.85rem]">
+                      30-09-2023
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </Grid>
-          )}
+              </Grid>
+            )}
+          </div>
         </div>
       </Container>
 
-      <div className="flex items-center min-h-[30vh] md:px-[3.5rem] bg-[#113167] my-6 ">
+      <div className="flex items-center py-[5.5rem] md:px-[3.5rem] bg-[#113167]">
         <Container maxWidth="lg">
-          <div className="w-full sm:w-2/3 px-6">
+          <div className="w-full lg:w-2/3">
             <h4 className="text-white text-[1.7rem] md:text-[2rem] ">
               Join us at Law x Tech as a VOLUNTEER
             </h4>

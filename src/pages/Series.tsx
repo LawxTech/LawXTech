@@ -1,8 +1,19 @@
-import { Box, Button, Container, Typography } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Container } from "@mui/material";
 
-const Series: React.FC = () => {
+interface Video {
+  id: string;
+  snippet: {
+    title: string;
+    description: string;
+    resourceId: {
+      videoId: string;
+    };
+  };
+}
+
+const Series = () => {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
@@ -13,9 +24,9 @@ const Series: React.FC = () => {
           {
             params: {
               part: "snippet",
-              maxResults: 50, // Change this value as per your requirement
-              playlistId: "YOUR_PLAYLIST_ID", // Replace with your playlist ID
-              key: "YOUR_YOUTUBE_API_KEY", // Replace with your YouTube Data API key
+              maxResults: 50,
+              playlistId: "YOUR_PLAYLIST_ID",
+              key: "YOUR_YOUTUBE_API_KEY",
             },
           }
         );
@@ -26,200 +37,55 @@ const Series: React.FC = () => {
     };
     fetchData();
   }, []);
+
   return (
     <div>
       <Container maxWidth="lg">
-        <Box marginTop={4}></Box>
-        <Box
-          marginTop={6}
-          marginBottom={6}
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            margin: "0 auto",
-            padding: "0.8rem",
-            border: "1px solid #113167",
-            width: "50%",
-            borderRadius: 2,
-          }}
-        >
-          <Button
-            sx={{
-              padding: "0.75rem 3.5rem",
-              background: "#113167",
-              color: "white",
-            }}
-          >
+        <div className="mt-6 mb-6 grid grid-cols-2 gap-4 p-2 border border-[#113167] md:w-1/2 rounded-md mx-auto">
+          <button className="p-3.5 bg-[#113167] rounded-lg text-white">
             LawXTech Series
-          </Button>
-          <Button color="secondary">LawXTech Mini Series</Button>
-        </Box>
-        <Box marginTop={8}>
-          <Typography
-            variant="h4"
-            color="#133167"
-            align="center"
-            sx={{ fontSize: "2rem", marginTop: "4%", marginBottom: "4%" }}
-            fontWeight="700"
-            marginX="auto"
-            gutterBottom
-          >
+          </button>
+          <button className="text-secondary hover:bg-blue-800 hover:text-white rounded-lg ">
+            Mini Series
+          </button>
+        </div>
+        <div className="mt-8 py-[5rem] ">
+          <h4 className="text-[#113167] text-2xl font-bold text-center my-4">
             Law X Tech Series
-          </Typography>
+          </h4>
 
-          {/* <Box
-            bgcolor="#113167"
-            sx={{
-              padding: "2.5rem",
-              borderRadius: 7,
-              display: "grid",
-              gridTemplateColumns: "repeat(2, 1fr)",
-              marginBottom: 8,
-            }}
-          >
-            <Box
-              sx={{
-                color: "white",
-              }}
-            >
-              <Typography
-                variant="body1"
-                sx={{
-                  color: "white",
-                  marginBottom: "0.4rem",
-                }}
-              >
-                Keynote
-              </Typography>
-              <Typography variant="h5" fontWeight="500" mb="0.8rem">
-                Empowering Legal Technology: From Enthusiast to Expert
-              </Typography>
-              <Typography
-                variant="body2"
-                sx={{
-                  color: "white",
-                  textAlign: "justify",
-                  textJustify: "auto",
-                  marginBottom: "1.2rem",
-                }}
-              >
-                We are thrilled to introduce Ibrahim Haruna, a legal trailblazer
-                and tech enthusiast who will be taking the stage at our upcoming
-                Law x Tech event. He is not your average attorney; they are a
-                visionary at the forefront of bridging the gap between the legal
-                world and cutting-edge technology. At the upcoming Law x Tech
-                event, Ibrahim Haruna will share his unique perspective on how
-                technology is reshaping the legal landscape. Their talk promises
-                to be an enlightening exploration of the opportunities and
-                challenges that lie ahead for both legal professionals and tech
-                enthusiasts alike. Join us at the next Law x Tech Series event
-                as he leads us on a journey through the exciting world where law
-                meets technology.
-              </Typography>
-              <Typography
-                variant="body1"
-                sx={{
-                  color: "white",
-                  fontWeight: "500",
-                  marginBottom: "0.4rem",
-                }}
-              >
-                View Link
-              </Typography>
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "end",
-              }}
-            >
-              <img
-                src={require(`../assets/team/joel.png`)}
-                alt={`Team member`}
-                style={{
-                  width: "24rem",
-                  height: "24rem",
-                  borderRadius: 8,
-                }}
-              />
-            </Box>
-          </Box> */}
-          {videos.map((video: any, index) => (
-            <Box
-              sx={{
-                padding: "2.5rem",
-                borderRadius: 7,
-                display: "grid",
-                gridTemplateColumns: "repeat(2, 1fr)",
-                marginBottom: 8,
-                border: "3px dotted #133167",
-              }}
+          {videos.map((video: Video, index) => (
+            <div
               key={index}
+              className="p-6 rounded-md grid grid-cols-2 gap-4 border-dotted border-2 border-blue-800 mb-8"
             >
-              <Box
-                sx={{
-                  color: "#133167",
-                }}
-              >
-                <Typography
-                  variant="body1"
-                  sx={{
-                    color: "#133167",
-                    marginBottom: "0.4rem",
-                  }}
-                >
-                  Keynote
-                </Typography>
-                <Typography variant="h5" fontWeight="500" mb="0.8rem">
-                  {video?.snippet.title}
-                </Typography>
-                <Typography
-                  variant="body2"
-                  sx={{
-                    color: "#133167",
-                    textAlign: "justify",
-                    textJustify: "auto",
-                    marginBottom: "1.2rem",
-                  }}
-                >
+              <div className="text-blue-800">
+                <p className="mb-1">Keynote</p>
+                <h5 className="text-xl font-semibold mb-2">
+                  {video?.snippet?.title}
+                </h5>
+                <p className="text-blue-800 text-justify mb-4">
                   {video.snippet.description}
-                </Typography>
+                </p>
                 <a
                   href={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="text-blue-800 font-semibold mb-1"
                 >
-                  <Typography
-                    variant="body1"
-                    sx={{
-                      color: "#133167",
-                      fontWeight: "500",
-                      marginBottom: "0.4rem",
-                    }}
-                  >
-                    View Link
-                  </Typography>
+                  View Link
                 </a>
-              </Box>
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "end",
-                }}
-              >
+              </div>
+              <div className="flex justify-end">
                 <img
                   src={require(`../assets/team/joel.png`)}
                   alt={`Team member`}
-                  style={{
-                    width: "24rem",
-                    height: "24rem",
-                    borderRadius: 8,
-                  }}
+                  className="w-24 h-24 rounded-8"
                 />
-              </Box>
-            </Box>
+              </div>
+            </div>
           ))}
-        </Box>
+        </div>
       </Container>
     </div>
   );
