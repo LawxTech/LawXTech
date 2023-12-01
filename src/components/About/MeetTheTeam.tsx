@@ -1,6 +1,3 @@
-import React from "react";
-import { Typography, Container, Box } from "@mui/material";
-
 const teamMembers = [
   {
     name: "Sopuruchi Rufus",
@@ -51,70 +48,34 @@ const teamMembers = [
 ];
 
 const MeetTeam = () => {
-  const sharedTextStyle = {
-    fontSize: "0.9rem",
-    fontWeight: "400",
-  };
-
   return (
     <div>
-      <section
-        style={{
-          backgroundColor: "#fff",
-          padding: "6.13rem 4.38rem",
-        }}
-      >
-        <Container maxWidth="lg">
-          <Typography
-            variant="h4"
-            color="#133167"
-            align="center"
-            sx={{ fontSize: "1.8rem", marginTop: "4%", marginBottom: "4%" }}
-            marginTop={2}
-            fontWeight="700"
-            marginX="auto"
-            gutterBottom
-          >
+      <section className="bg-white p-16">
+        <div className="container mx-auto">
+          <h4 className="text-2xl text-blue-800 text-center mb-8 font-bold mt-4">
             Meet the Team
-          </Typography>
-          <Box
-            sx={{
-              display: "grid",
-              gridTemplateColumns: "repeat(4, 1fr)",
-              gap: "1.5rem",
-              alignItems: "center",
-              justifyContent: "center",
-              marginBottom: "4%",
-            }}
-          >
+          </h4>
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 md:gap-6 items-center justify-center mb-4">
             {teamMembers.map((member, index) => (
-              <Box key={index} sx={{}} marginBottom={3}>
+              <div className="mb-6 flex lg:block" key={index}>
                 <img
                   src={require(`../../assets/Members/${member.image}`)}
-                  alt={`Team member ${index + 1}`}
-                  style={{
-                    width: "15rem",
-                    height: "15rem",
-                    borderRadius: 8,
-                  }}
+                  alt={`Team member {{ $index + 1 }}`}
+                  className="w-24 h-24 lg:w-60 lg:h-60 rounded-lg"
                 />
-                <Typography variant="h6" sx={sharedTextStyle} paragraph>
-                  {member.position}
-                </Typography>
-                <Typography
-                  sx={{
-                    fontWeight: "500",
-                    fontSize: "1.125rem",
-                    marginTop: -2,
-                  }}
-                >
-                  {member.name}
-                </Typography>
-              </Box>
+                <div className="w-full p-2">
+                  <h6 className="text-sm md:text-lg  mt-2">
+                    {member.position}
+                  </h6>
+                  <p className="font-bold text-lg md:text-lg mt-0.5">
+                    {member.name}
+                  </p>
+                </div>
+              </div>
             ))}
-          </Box>
-          <Box id="team"></Box>
-        </Container>
+          </div>
+          <div id="team"></div>
+        </div>
       </section>
     </div>
   );
