@@ -1,25 +1,19 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Container } from "@mui/material";
 import React from "react";
 
 const OurStory: React.FC = () => {
   return (
     <div>
       <section
-        style={{
-          backgroundColor: "#E7EBF0",
-          padding: "6.13rem 4.38rem",
-        }}
+        className="py-[5rem] px-[1.5rem] lg:py-[7.38rem] lg:px-[4.38rem] "
+        id="ourStory"
       >
         <Container maxWidth="lg">
-          <Box>
-            <Typography variant="h2">Our Story</Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                lineHeight: "1.7rem",
-                marginBottom: "0.625rem",
-              }}
-            >
+          <div>
+            <h2 className="text-[2rem] lg:text-[2.8rem] font-bold ">
+              Our Story
+            </h2>
+            <p className="text-[0.875rem] font-[500] md:text-[1rem] leading-[1.7rem] mt-[1rem]">
               Law x Tech launched in 2023 to pioneer a new work model that helps
               legal professionals find more flexibility and connect the legal
               spectrum to technology for more opportunities. We understand that
@@ -32,22 +26,16 @@ const OurStory: React.FC = () => {
               emerging areas being Tech Law or Legal Technology. We have taken
               the responsibility to arm this next generation of professionals
               with the tools they need to thrive in the new internet economy.
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                lineHeight: "1.7rem",
-                marginBottom: "0.625rem",
-              }}
-            >
+            </p>
+            <p className="text-[0.875rem] font-[500] md:text-[1rem] leading-[1.7rem] mt-[1rem]">
               We hope to pioneer a transformed legal profession by empowering
               legal minds with the skills to navigate technology. We envision
               tech-savvy lawyers who integrate innovation and drive impact,
               shaping a collaborative future in law and tech for lawyers and/or
               law students whether rooted in law or aspiring to transition to
               tech, with Law x Tech Community as the catalyst.
-            </Typography>
-          </Box>
+            </p>
+          </div>
         </Container>
       </section>
     </div>

@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import React from "react";
 import { makeStyles } from "@mui/styles";
 
@@ -24,9 +24,8 @@ const Banner: React.FC = () => {
   return (
     <>
       <section
-        className={heroStyling().hero}
+        className={`${heroStyling().hero} p-[1.5rem] lg:px-[4.38rem] `}
         style={{
-          padding: "0 4.38rem",
           backgroundColor: "#113167",
           position: "relative",
         }}
@@ -46,14 +45,9 @@ const Banner: React.FC = () => {
               left: "0rem",
             }}
           >
-            <Typography
-              variant="h1"
-              sx={{
-                color: "#fff",
-              }}
-            >
+            <h1 className="text-white leading-[3.4rem] text-[2.9rem] lg:leading-[4rem] lg:text-[4rem] font-bold">
               Discover Our Mission <br /> and Vision.
-            </Typography>
+            </h1>
           </Box>
         </Container>
       </section>

@@ -29,7 +29,7 @@ const Series: React.FC = () => {
   return (
     <div>
       <Container maxWidth="lg">
-        <Box marginTop={12}></Box>
+        <Box marginTop={4}></Box>
         <Box
           marginTop={6}
           marginBottom={6}
@@ -60,7 +60,6 @@ const Series: React.FC = () => {
             color="#133167"
             align="center"
             sx={{ fontSize: "2rem", marginTop: "4%", marginBottom: "4%" }}
-            marginTop={2}
             fontWeight="700"
             marginX="auto"
             gutterBottom
@@ -217,7 +216,6 @@ const Series: React.FC = () => {
                     borderRadius: 8,
                   }}
                 />
-
               </Box>
             </Box>
           ))}
