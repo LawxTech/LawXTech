@@ -2,18 +2,40 @@ import * as React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 
-const navItems = ["Home", "About Us", "Series", "Contact Us"];
+interface Props {
+  setOpenSideBar: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-export default function DrawerAppBar() {
+export default function Header({ setOpenSideBar }: Props) {
+  const navItems = ["Home", "About Us", "Series", "Contact Us"];
   const [activeItem, setActiveItem] = React.useState(navItems[0]);
   const navigate = useNavigate();
-
   const slackLink =
     "https://join.slack.com/t/lawxtech/shared_invite/zt-20u7mvfqu-EWVec2Qip3XhYoUyVtyvpA";
 
   return (
-    <div className=" px-[2rem] flex justify-between border ">
-      <Link to="/">
+    <div className=" h-[4.5rem] lg:h-full px-[2rem] flex items-center justify-between ">
+      <div className="lg:hidden">
+        <button
+          onClick={() => setOpenSideBar(true)}
+          className="focus:outline-none"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6 text-[#113167]"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fillRule="evenodd"
+              className="text-[#113167]"
+              d="M3 5h14a1 1 0 010 2H3a1 1 0 010-2zm0 5h14a1 1 0 010 2H3a1 1 0 010-2zm0 5h14a1 1 0 010 2H3a1 1 0 010-2z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+      <Link to="/" className="hidden lg:block">
         <img
           src={require("../assets/logo/logo_2.JPG")}
           alt="Logo"
@@ -21,7 +43,7 @@ export default function DrawerAppBar() {
         />
       </Link>
       <div className="md:flex flex-end items-center space-x-8 hidden">
-        <div className="flex items-center space-x-5">
+        <div className="flex items-center space-x-8">
           {navItems.map((item) => (
             <button
               key={item}
@@ -47,7 +69,8 @@ export default function DrawerAppBar() {
                         width: "100%",
                         height: "0.15em",
                         marginTop: "0.08em",
-                        backgroundColor: "#15994B",
+                        backgroundColor: "#113167",
+                        borderRadius: "0.5em",
                       }}
                     ></span>
                   )}
@@ -57,7 +80,16 @@ export default function DrawerAppBar() {
           ))}{" "}
         </div>
         <div className="mr-[1em] ">
-          <Button type="button" href={slackLink}>
+          <Button
+            type="button"
+            href={slackLink}
+            sx={{
+              bgcolor: "#113167",
+              color: "#fff",
+              padding: "0.5rem 1.5rem",
+              fontSize: "0.85rem",
+            }}
+          >
             Join Community
           </Button>
         </div>
