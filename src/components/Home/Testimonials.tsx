@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Typography, Container, Box } from "@mui/material";
+import { Typography, Container } from "@mui/material";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -18,7 +18,7 @@ export const Testimonials: React.FC = () => {
   const slidesToShow = window.innerWidth > 768 ? 3 : 1;
 
   var settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     autoplay: true,
@@ -27,12 +27,11 @@ export const Testimonials: React.FC = () => {
     arrows: false,
   };
 
-
   return (
     <>
-      <section className="min-h-[40vh] grid grid-cols-1 items-center bg-neutral-100 ">
+      <section className="py-[6rem] grid grid-cols-1 items-center bg-neutral-100 ">
         <Container maxWidth="lg">
-          <h6 className="text-[#133167] font-[700] text-[1.6rem] mb-4 text-center">
+          <h6 className="text-[#133167] font-[700] text-[1.6rem] mb-6 text-center">
             Testimonials
           </h6>
           <Slider {...settings}>
@@ -72,4 +71,3 @@ export const Testimonials: React.FC = () => {
     </>
   );
 };
-
