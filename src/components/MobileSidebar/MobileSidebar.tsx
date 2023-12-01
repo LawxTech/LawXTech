@@ -18,10 +18,6 @@ const MobileSidebar = ({ setOpenSideBar }: Props) => {
       link: "/about-us",
     },
     {
-      page: "Blogs",
-      link: "/blogs",
-    },
-    {
       page: "Series",
       link: "/series",
     },
@@ -50,7 +46,6 @@ const MobileSidebar = ({ setOpenSideBar }: Props) => {
     }
   };
 
-  // Listen for window resize when sidebar is open
   useEffect(() => {
     window.addEventListener("resize", handleResize);
 
