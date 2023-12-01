@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Box, Container } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import "../.../../../App.css";
 
 interface FeatureBoxProps {
