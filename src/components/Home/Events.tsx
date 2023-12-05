@@ -1,4 +1,5 @@
-import { Typography, Grid, Container } from "@mui/material";
+import { Grid, Container } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export const Events = () => {
   return (
@@ -32,24 +33,26 @@ export const Events = () => {
         </div>
       </Container>
 
-      <div className="flex items-center py-[5.5rem] md:px-[3.5rem] bg-[#113167]">
+      <div className="flex items-center py-[5.5rem] lg:px-[3.5rem] bg-[#113167]">
         <Container maxWidth="lg">
-          <div className="w-full lg:w-2/3">
+          <div className="w-full lg:w-1/2">
             <h4 className="text-white text-[1.7rem] md:text-[2rem] ">
               Join us at Law x Tech as a VOLUNTEER
             </h4>
-            <div className="w-full md:w-3/4 mt-[1rem]">
+            <div className="w-full xl:w-3/4 mt-[1rem]">
               <p className="text-white text-[.9rem] text-justify ">
                 Do you have tech skills such as graphics designing, web
-                development, community management, copy writing, project
-                management and the likes? Are you interested in gaining hands on
-                experience working on real life projects with us? Then, join us
-                today!
+                development, community management, copy writing, content writing
+                / creation, project management and the likes? Are you interested
+                in gaining hands on experience working on real life projects
+                with us? Then, join us today!
               </p>
             </div>
-            <button className="bg-white px-10 h-[3rem] rounded-md text-[#131157] font-[600] text-[.95rem] mt-[1.5rem] ">
-              Apply Here
-            </button>
+            <Link to="https://forms.gle/Uba4R8QKKeiufVUj6">
+              <button className="bg-white px-10 h-[3rem] rounded-md text-[#131157] font-[600] text-[.95rem] mt-[1.5rem] ">
+                Apply Here
+              </button>
+            </Link>
           </div>
         </Container>
       </div>
