@@ -1,3 +1,5 @@
+import { Container } from "@mui/material";
+
 const teamMembers = [
   {
     name: "Sopuruchi Rufus",
@@ -12,7 +14,7 @@ const teamMembers = [
   },
   {
     name: "Ezinne",
-    position: "Social Media Manager",
+    position: "Community Manager",
     image: "Ezinne, Social Media Manager Vounteer.jpeg",
   },
   {
@@ -50,33 +52,35 @@ const teamMembers = [
 const MeetTeam = () => {
   return (
     <div>
-      <section className="bg-white p-16">
-        <div className="container mx-auto">
-          <h4 className="text-2xl text-blue-800 text-center mb-8 font-bold mt-4">
-            Meet the Team
-          </h4>
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 md:gap-6 items-center justify-center mb-4">
-            {teamMembers.map((member, index) => (
-              <div className="mb-6 flex lg:block" key={index}>
-                <img
-                  src={require(`../../assets/Members/${member.image}`)}
-                  alt={`Team member {{ $index + 1 }}`}
-                  className="w-24 h-24 lg:w-60 lg:h-60 rounded-lg"
-                />
-                <div className="w-full p-2">
-                  <h6 className="text-sm md:text-lg  mt-2">
-                    {member.position}
-                  </h6>
-                  <p className="font-bold text-lg md:text-lg mt-0.5">
-                    {member.name}
-                  </p>
+      <Container maxWidth="lg">
+        <section className="bg-white p-16">
+          <div className="container mx-auto">
+            <h4 className="text-2xl text-blue-800 text-center mb-8 font-bold mt-4">
+              Meet the Team
+            </h4>
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 md:gap-6 items-center justify-center mb-4">
+              {teamMembers.map((member, index) => (
+                <div className="mb-6 flex lg:block" key={index}>
+                  <img
+                    src={require(`../../assets/Members/${member.image}`)}
+                    alt={`Team member {{ $index + 1 }}`}
+                    className="w-24 h-24 lg:w-60 lg:h-60 rounded-lg"
+                  />
+                  <div className="w-full p-2">
+                    <h6 className="text-sm md:text-lg  mt-2">
+                      {member.position}
+                    </h6>
+                    <p className="font-bold text-lg md:text-lg mt-0.5">
+                      {member.name}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+            <div id="team"></div>
           </div>
-          <div id="team"></div>
-        </div>
-      </section>
+        </section>
+      </Container>
     </div>
   );
 };
