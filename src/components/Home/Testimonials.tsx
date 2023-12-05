@@ -15,7 +15,8 @@ export const Testimonials: React.FC = () => {
     }
   }, []);
 
-  const slidesToShow = window.innerWidth > 768 ? 3 : 1;
+  const slidesToShow =
+    window.innerWidth > 600 ? (window.innerWidth > 800 ? 3 : 2) : 1;
 
   var settings = {
     dots: false,

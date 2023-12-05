@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const SpeakerAd = () => {
   return (
-    <div className="py-[5rem] ">
+    <div className="py-[5rem] md:py-0 ">
       <Container maxWidth="lg">
-        <div className=" grid grid-cols-1 md:grid-cols-2 items-center ">
+        <div className=" grid grid-cols-1 md:grid-cols-2 items-center border ">
           <div className="">
             <h4 className=" text-[1.8rem] mx-auto ">
               Become a Speaker at the Law x Tech Series
@@ -25,11 +25,11 @@ const SpeakerAd = () => {
               </Link>
             </div>
           </div>
-          <div className="hidden md:block  ">
+          <div className="hidden md:block border ">
             <img
               src={require("../../assets/speaker.png")}
               alt="Speaker"
-              className="scale-75 "
+              className="scale-50 "
             />
           </div>
         </div>
