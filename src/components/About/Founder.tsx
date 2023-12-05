@@ -18,7 +18,7 @@ const Founder: React.FC = () => {
               <h3 className="text-[#113167] text-[2rem] lg:text-[2.6rem] font-bold mt-[1rem] ">
                 About our Founder
               </h3>
-              <div className=" md:w-2/3 mx-auto lg:max-w-[28rem] grid gap-[0.875remrem] ">
+              <div className=" md:w-2/3 mx-auto lg:mx-0 lg:w-[28rem] grid gap-[0.875remrem] ">
                 <p className="text-[1rem] text-justify font-[400] leading-[1.8rem] ">
                   Meet Sopuruchi Rufus, the driving force behind Law x Tech.
                   With a dynamic blend of legal expertise and technological
