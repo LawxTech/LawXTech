@@ -38,7 +38,7 @@ export const Testimonials: React.FC = () => {
           <Slider {...settings}>
             {Array.from(Array(6).keys()).map((item, index) => (
               <div
-                className="p-6 grid items-center gap-[1rem] bg-white rounded-lg shadow-lg border border-[#133167] witnessbox "
+                className="p-6 grid items-center gap-[1rem] bg-white rounded-lg border border-[#133167] witnessbox "
                 key={index}
                 id="testimony"
               >

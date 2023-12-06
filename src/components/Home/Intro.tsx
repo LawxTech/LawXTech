@@ -43,7 +43,7 @@ export const Intro = () => {
                   maxWidth="md"
                   alt="Hero image"
                   width="98%"
-                  src={require("../../assets/slack.png")}
+                  src={"/assets/slack.png"}
                 />
               </Link>
             </Grid>

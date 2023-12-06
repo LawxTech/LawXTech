@@ -14,6 +14,7 @@ interface Video {
 }
 
 const Series = () => {
+  const [activeTab, setActiveTab] = useState("mini-series");
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
@@ -42,17 +43,53 @@ const Series = () => {
     <div>
       <Container maxWidth="lg">
         <div className="mt-6 mb-6 grid grid-cols-2 gap-4 p-2 border border-[#113167] md:w-1/2 rounded-md mx-auto">
-          <button className="p-3.5 bg-[#113167] rounded-lg text-white">
+          <button
+            onClick={() => setActiveTab("lawxtech-series")}
+            className={` ${
+              activeTab === "lawxtech-series"
+                ? "bg-[#113167] text-white "
+                : " text-black "
+            } rounded-lg p-3.5 `}
+          >
             LawXTech Series
           </button>
-          <button className="text-secondary hover:bg-blue-800 hover:text-white rounded-lg ">
+          <button
+            onClick={() => setActiveTab("mini-series")}
+            className={` ${
+              activeTab === "mini-series"
+                ? "bg-[#113167] text-white "
+                : " text-black "
+            } rounded-lg p-3.5 `}
+          >
             Mini Series
           </button>
         </div>
-        <div className="mt-8 py-[5rem] ">
-          <h4 className="text-[#113167] text-2xl font-bold text-center my-4">
-            Law X Tech Series
+        <div className="mt-12 pb-[5rem] ">
+          <h4 className="text-[#113167] text-4xl font-bold text-center my-4">
+            Law x Tech {activeTab === "mini-series" ? "Mini" : ""} Series
           </h4>
+
+          <div className="mt-12  ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6  ">
+              {Array.from(Array(4).keys()).map((item, index) => (
+                <div className="border rounded-lg w-[22rem] ">
+                  <img
+                    src={`/assets/series/LxT Series ${index + 1}.jpeg`}
+                    className=""
+                    alt="Upcoming Events"
+                  />
+                  <div className="p-4">
+                    <h5 className="text-[#133167] font-[600] text-[1.2rem]">
+                      Community Chat
+                    </h5>
+                    <p className="text-[#133167] font-[400] text-[0.85rem]">
+                      30-09-2023
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
 
           {videos.map((video: Video, index) => (
             <div
@@ -78,7 +115,7 @@ const Series = () => {
               </div>
               <div className="flex justify-end">
                 <img
-                  src={require(`../assets/team/joel.png`)}
+                  src={`/assets/team/joel.png`}
                   alt={`Team member`}
                   className="w-24 h-24 rounded-8"
                 />

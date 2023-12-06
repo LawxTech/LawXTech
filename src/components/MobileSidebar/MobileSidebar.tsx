@@ -102,7 +102,7 @@ const MobileSidebar = ({ setOpenSideBar }: Props) => {
         <div className={`h-[5.75rem] border-b flex items-center py-6 pl-3`}>
           <Link to="/" onClick={() => setOpenSideBar(false)}>
             <img
-              src={require("../../assets/logo/logo_2.JPG")}
+              src={"/assets/logo/logo_2.JPG"}
               alt="Logo"
               className="h-[90px] w-[90px]"
             />

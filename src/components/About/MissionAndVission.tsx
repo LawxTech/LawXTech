@@ -13,7 +13,7 @@ const MIssionAndVission = () => {
               <h2 className="text-[2rem] lg:text-[2.8rem] font-bold ">
                 Our Mission
               </h2>
-              <p className="text-[0.875rem] font-[500] md:text-[1rem] leading-[1.7rem]  text-white mt-[1rem]">
+              <p className="text-[0.875rem] font-[500] md:text-[1rem] leading-[1.7rem] text-justify text-white mt-[1rem]">
                 At LawxTech, our mission is to bridge the gap between the worlds
                 of law and technology, providing a dynamic platform where
                 lawyers and law students can explore, learn, and thrive in the
@@ -28,7 +28,7 @@ const MIssionAndVission = () => {
               <h2 className="text-[2.3rem] lg:text-[2.8rem] font-bold ">
                 Our Vision
               </h2>
-              <p className="text-[0.875rem] font-[500] md:text-[1rem] leading-[1.7rem]  text-white mt-[1rem]">
+              <p className="text-[0.875rem] font-[500] md:text-[1rem] leading-[1.7rem] text-justify text-white mt-[1rem]">
                 Our vision is to pioneer a transformed legal profession by
                 empowering legal minds with the skills to navigate technology.
                 We envision tech-savvy lawyers who integrate innovation and

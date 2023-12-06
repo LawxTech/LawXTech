@@ -1,11 +1,24 @@
 import { Container } from "@mui/material";
 import { Link } from "react-router-dom";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+
 const SpeakerAd = () => {
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 1000,
+    autoplay: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+  };
   return (
     <div className="py-[5rem] md:py-0 ">
       <Container maxWidth="lg">
-        <div className=" grid grid-cols-1 md:grid-cols-2 items-center border ">
+        <div className=" grid grid-cols-1 md:grid-cols-2 items-center ">
           <div className="">
             <h4 className=" text-[1.8rem] mx-auto ">
               Become a Speaker at the Law x Tech Series
@@ -25,12 +38,18 @@ const SpeakerAd = () => {
               </Link>
             </div>
           </div>
-          <div className="hidden md:block border ">
-            <img
-              src={require("../../assets/speaker.png")}
-              alt="Speaker"
-              className="scale-50 "
-            />
+          <div className="hidden md:flex h-[75vh] justify-center items-center relative ">
+            <div className="w-[24rem] h-[32rem] border-8 rounded-[1rem] rotate-3">
+              <Slider {...settings}>
+                {Array.from(Array(6).keys()).map((item, index) => (
+                  <img
+                    src={`/assets/Speakers/Speaker(${index + 1}).jpg`}
+                    alt="Speaker"
+                    className=" w-[24rem] h-[31rem] rounded-xl object-cover object-center"
+                  />
+                ))}
+              </Slider>
+            </div>
           </div>
         </div>
       </Container>

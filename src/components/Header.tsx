@@ -36,7 +36,7 @@ export default function Header({ setOpenSideBar }: Props) {
         </div>
         <Link to="/" className="hidden lg:block">
           <img
-            src={require("../assets/logo/logo_2.JPG")}
+            src={"/assets/logo/logo_2.JPG"}
             alt="Logo"
             className="h-[80px] w-[80px]"
           />
@@ -51,7 +51,7 @@ export default function Header({ setOpenSideBar }: Props) {
                   navigate(
                     `/${
                       item === "Home"
-                        ? "LawXTech"
+                        ? ""
                         : item.toLowerCase().replace(/\s+/g, "-")
                     }`
                   );

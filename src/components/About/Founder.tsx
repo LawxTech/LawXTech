@@ -4,7 +4,7 @@ import React from "react";
 const Founder: React.FC = () => {
   return (
     <div>
-      <section className="py-[5rem] px-[1.5rem] lg:px-[4.38rem] bg-[#F5F5F5] ">
+      <section className="py-[6rem] px-[1.5rem] lg:px-[4.38rem] bg-[#F5F5F5] ">
         <Container maxWidth="lg" className="grid grid-cols-2 gap-[1.5rem] ">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-[1.5rem]">
             <div className="rounded-[1rem] border border-[#113167] md:w-[30rem] md:h-[30rem] mx-auto w-full h-full">

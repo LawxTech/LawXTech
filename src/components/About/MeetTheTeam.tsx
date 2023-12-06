@@ -62,7 +62,7 @@ const MeetTeam = () => {
               {teamMembers.map((member, index) => (
                 <div className="mb-6 flex lg:block" key={index}>
                   <img
-                    src={require(`../../assets/Members/${member.image}`)}
+                    src={(`../../assets/Members/${member.image}`)}
                     alt={`Team member {{ $index + 1 }}`}
                     className="w-24 h-24 lg:w-60 lg:h-60 rounded-lg"
                   />
