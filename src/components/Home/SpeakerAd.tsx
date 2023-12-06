@@ -43,7 +43,7 @@ const SpeakerAd = () => {
               <Slider {...settings}>
                 {Array.from(Array(6).keys()).map((item, index) => (
                   <img
-                    src={`/assets/Speakers/Speaker(${index + 1}).jpg`}
+                    src={`/assets/speakers/Speaker(${index + 1}).jpg`}
                     alt="Speaker"
                     className=" w-[24rem] h-[31rem] rounded-xl object-cover object-center"
                   />
