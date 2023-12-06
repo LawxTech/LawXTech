@@ -8,13 +8,13 @@ import { Testimonials } from "../components/Home/Testimonials";
 const Home: React.FC = () => {
   return (
     <div>
-      <section className="min-h-[70vh] ">
+      <section>
         <Banner />
       </section>
       <section>
         <Features />
       </section>
-      <section className="spacing">
+      <section>
         <Events />
       </section>
       <section>

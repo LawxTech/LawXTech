@@ -15,7 +15,8 @@ export const Testimonials: React.FC = () => {
     }
   }, []);
 
-  const slidesToShow = window.innerWidth > 768 ? 3 : 1;
+  const slidesToShow =
+    window.innerWidth > 600 ? (window.innerWidth > 800 ? 3 : 2) : 1;
 
   var settings = {
     dots: false,
@@ -37,7 +38,7 @@ export const Testimonials: React.FC = () => {
           <Slider {...settings}>
             {Array.from(Array(6).keys()).map((item, index) => (
               <div
-                className="p-6 grid items-center gap-[1rem] bg-white rounded-lg shadow-lg border border-[#133167] witnessbox "
+                className="p-6 grid items-center gap-[1rem] bg-white rounded-lg border border-[#133167] witnessbox "
                 key={index}
                 id="testimony"
               >

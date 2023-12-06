@@ -3,15 +3,16 @@ import { ThemeProvider } from "@mui/system";
 import theme from "../../styles/theme";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
+import Counter from "../../utils/Counter";
 
 export const Banner = () => {
   return (
     <ThemeProvider theme={theme}>
-      <div className="w-full h-[70vh] border-b">
+      <div className="w-full h-[75vh] border-b">
         <div
           style={{
             width: "100%",
-            height: "70vh",
+            height: "75vh",
             background: `url("/images/about.jpeg")`,
             boxShadow: "inset 0 0 0 1000px rgba(0, 0, 0, 0.7)",
             backgroundPosition: "center",
@@ -19,6 +20,7 @@ export const Banner = () => {
             backgroundRepeat: "no-repeat",
             position: "relative",
           }}
+          id="banner"
         >
           <div className="h-[70vh] flex items-center w-full md:w-[700px] p-8 mx-auto">
             <div className="grid grid-cols-1 gap-[1.3rem] ">
@@ -34,7 +36,7 @@ export const Banner = () => {
               </p>
 
               <Link
-                to="https://join.slack.com/t/lawxtech/shared_invite/zt-20u7mvfqu-EWVec2Qip3XhYoUyVtyvpA"
+                to="https://forms.gle/P9jUJr3NaAGnS4Je6"
                 target="_blank"
                 className=" sm:text-center"
               >
@@ -54,30 +56,30 @@ export const Banner = () => {
         </div>
       </div>
       <Container maxWidth="lg">
-        <div className="py-14">
+        <div className="py-12 ">
           <div className="grid lg:grid-cols-4 grid-cols-2 gap-4">
             <div className="flex flex-col items-center justify-center p-4">
               <p className="text-[.95rem] text-center ">Mini Series</p>
               <h1 className="text-[2.5rem] !leading-[3.6rem] font-[600] text-[#113167] text-center ">
-                22
+                <Counter targetValue={12} />
               </h1>
             </div>
             <div className="flex flex-col items-center justify-center p-4">
               <p className="text-[.95rem] text-center ">Major Seies</p>
               <h1 className="text-[2.5rem] !leading-[3.6rem] font-[600] text-[#113167] text-center ">
-                12
+                <Counter targetValue={12} />
               </h1>
             </div>
             <div className="flex flex-col items-center justify-center p-4">
               <p className="text-[.95rem] text-center ">Current Members</p>
               <h1 className="text-[2.5rem] !leading-[3.6rem] font-[600] text-[#113167] text-center ">
-                300+
+                <Counter targetValue={300} />
               </h1>
             </div>
             <div className="flex flex-col items-center justify-center p-4">
               <p className="text-[.95rem] text-center ">Team Members</p>
               <h1 className="text-[2.5rem] !leading-[3.6rem] font-[600] text-[#113167] text-center ">
-                10
+                <Counter targetValue={10} />
               </h1>
             </div>
           </div>

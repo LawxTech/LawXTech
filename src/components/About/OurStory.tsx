@@ -13,7 +13,7 @@ const OurStory: React.FC = () => {
             <h2 className="text-[2rem] lg:text-[2.8rem] font-bold ">
               Our Story
             </h2>
-            <p className="text-[0.875rem] font-[500] md:text-[1rem] leading-[1.7rem] mt-[1rem]">
+            <p className="text-[0.875rem] font-[500] md:text-[1rem] leading-[1.7rem] text-justify mt-[1rem]">
               Law x Tech launched in 2023 to pioneer a new work model that helps
               legal professionals find more flexibility and connect the legal
               spectrum to technology for more opportunities. We understand that
@@ -27,7 +27,7 @@ const OurStory: React.FC = () => {
               the responsibility to arm this next generation of professionals
               with the tools they need to thrive in the new internet economy.
             </p>
-            <p className="text-[0.875rem] font-[500] md:text-[1rem] leading-[1.7rem] mt-[1rem]">
+            <p className="text-[0.875rem] font-[500] md:text-[1rem] text-justify leading-[1.7rem] mt-[1.5rem]">
               We hope to pioneer a transformed legal profession by empowering
               legal minds with the skills to navigate technology. We envision
               tech-savvy lawyers who integrate innovation and drive impact,
