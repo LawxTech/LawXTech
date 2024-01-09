@@ -4,7 +4,7 @@ const teamMembers = [
   {
     name: "Sopuruchi Rufus",
     position: "Founder",
-    image: "Sopuruchi Rufus, Founder .jpeg",
+    image: "ruchi-rufus.jpeg",
   },
   {
     name: "Joel",
@@ -41,11 +41,6 @@ const teamMembers = [
     position: "Email Marketer ",
     image: "BAKARE ADEFOLAKEMI, Email Marketer Volunteer.JPG",
   },
-  // {
-  //   name: "Aniefiok Michael",
-  //   position: "UI/UX",
-  //   image: "Aniefiok Michael, UI_UX Volunteer .jpeg",
-  // },
 ];
 
 const MeetTeam = () => {
@@ -60,18 +55,18 @@ const MeetTeam = () => {
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 md:gap-6 items-center justify-center mb-4">
               {teamMembers.map((member, index) => (
                 <div className="mb-6 flex items-center lg:block" key={index}>
-                  <div className=" overflow-hidden rounded-lg h-[6rem] !w-[6rem] flex-shrink-0 lg:w-60 lg:h-60">
+                  <div className=" overflow-hidden rounded-lg h-[6rem] w-[6rem] flex-shrink-0 lg:w-60 lg:h-60">
                     <img
                       src={`/assets/members/${member.image}`}
                       alt={`Team member : ${member.name}`}
-                      className=" rounded-lg object-center object-fill"
+                      className="h-[6rem] w-[6rem] lg:w-60 lg:h-60 rounded-lg object-center object-cover "
                     />
                   </div>
                   <div className="w-full p-2">
-                    <h6 className="text-sm md:text-lg  mt-2">
+                    <h6 className="text-sm md:text-[1rem] mt-1.5 ">
                       {member.position}
                     </h6>
-                    <p className="font-bold text-lg md:text-lg mt-0.5">
+                    <p className="font-bold text-lg md:text-[1.15rem] mt- ">
                       {member.name}
                     </p>
                   </div>
