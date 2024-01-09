@@ -13,8 +13,8 @@ export default function Header({ setOpenSideBar }: Props) {
 
   return (
     <Container maxWidth="lg">
-      <div className=" h-[4.5rem] lg:h-full sm:px-[2rem] flex items-center justify-between ">
-        <div className="w-full flex justify-between items-center lg:hidden">
+      <div className=" h-[4.5rem] lg:h-full flex items-center justify-between ">
+        <div className="w-full flex justify-between items-center md:hidden">
           <Link to="/" className="">
             <img
               src={"/assets/logo/logo_2.JPG"}
@@ -24,7 +24,7 @@ export default function Header({ setOpenSideBar }: Props) {
           </Link>
           <button
             onClick={() => setOpenSideBar(true)}
-            className="focus:outline-none mr-[1rem] "
+            className="focus:outline-none mr-[1rem] md:hidden "
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +41,7 @@ export default function Header({ setOpenSideBar }: Props) {
             </svg>
           </button>
         </div>
-        <Link to="/" className="hidden lg:block">
+        <Link to="/" className="hidden md:block">
           <img
             src={"/assets/logo/logo_2.JPG"}
             alt="Logo"
@@ -63,9 +63,14 @@ export default function Header({ setOpenSideBar }: Props) {
                     }`
                   );
                 }}
+                className="flex-shrink-0"
               >
                 {
-                  <span>
+                  <span
+                    className={`${
+                      item === activeItem ? "text-[#113167] font-[500] " : ""
+                    }`}
+                  >
                     {item}
                     {item === activeItem && (
                       <span
@@ -92,7 +97,7 @@ export default function Header({ setOpenSideBar }: Props) {
               className=" sm:text-center"
             >
               <Button
-                className="btn !text-[0.75rem] "
+                className="btn !text-[0.75rem] flex-shrink-0 "
                 variant="contained"
                 size="medium"
                 sx={{
