@@ -13,11 +13,18 @@ export default function Header({ setOpenSideBar }: Props) {
 
   return (
     <Container maxWidth="lg">
-      <div className=" h-[4.5rem] lg:h-full px-[2rem] flex items-center justify-between ">
-        <div className="lg:hidden">
+      <div className=" h-[4.5rem] lg:h-full sm:px-[2rem] flex items-center justify-between ">
+        <div className="w-full flex justify-between items-center lg:hidden">
+          <Link to="/" className="">
+            <img
+              src={"/assets/logo/logo_2.JPG"}
+              alt="Logo"
+              className="h-[80px] w-[80px]"
+            />
+          </Link>
           <button
             onClick={() => setOpenSideBar(true)}
-            className="focus:outline-none"
+            className="focus:outline-none mr-[1rem] "
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

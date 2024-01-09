@@ -9,6 +9,7 @@ import MobileSidebar from "./components/MobileSidebar/MobileSidebar";
 
 const App: React.FC = () => {
   const [openSideBar, setOpenSideBar] = React.useState(false);
+
   return (
     <ThemeProvider theme={theme}>
       <div>
@@ -19,9 +20,9 @@ const App: React.FC = () => {
             <MobileSidebar setOpenSideBar={setOpenSideBar} />
           </div>
         )}
-        <main>
+        <div>
           <Routes />
-        </main>
+        </div>
         <Footer />
       </div>
     </ThemeProvider>

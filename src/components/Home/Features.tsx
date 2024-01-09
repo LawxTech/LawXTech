@@ -64,10 +64,10 @@ export const Features = () => {
     <>
       <Container maxWidth="lg">
         <div className="py-12 ">
-          <h4 className="text-[#133167] font-[600] text-[1.4rem] md:text-[1.8rem] my-6 md:text-center ">
+          <h4 className="text-[#133167] font-[600] text-[1.4rem] md:text-[1.8rem] my-6 text-center ">
             Why Join Our Community?
           </h4>
-          <div className="flex flex-row overflow-y-auto md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mx-8 md:mx-0 ">
             {benefits.map((benefit) => (
               <Box maxWidth="sm" key={benefit.src}>
                 <FeatureBox

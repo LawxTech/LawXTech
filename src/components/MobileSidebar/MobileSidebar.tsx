@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import SidebarLink from "./SidebarLink";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -42,24 +42,39 @@ const MobileSidebar = ({ setOpenSideBar }: Props) => {
 
   const handleResize = () => {
     if (window.innerWidth >= 1280) {
-      //   dispatch(hideMobileSidebar());
+      setOpenSideBar(false);
     }
   };
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
-
-    // Cleanup - remove event listener when sidebar is closed
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   });
 
-  // Prevent the rest of the page from scrolling
   useEffect(() => {
     document.body.classList.add("no-scroll");
     return () => {
       document.body.classList.remove("no-scroll");
+    };
+  }, []);
+
+  // Enable outside click to close the modal
+  const bodyRef = useRef<HTMLDivElement>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (modalRef.current && modalRef.current.contains(e.target as Node)) {
+        return;
+      }
+      if (bodyRef.current && bodyRef.current.contains(e.target as Node)) {
+        setOpenSideBar(false);
+      }
+    };
+    document.body.addEventListener("click", handleClick);
+    return () => {
+      document.body.removeEventListener("click", handleClick);
     };
   }, []);
 
@@ -84,6 +99,7 @@ const MobileSidebar = ({ setOpenSideBar }: Props) => {
           duration: 0.1,
         },
       }}
+      ref={bodyRef}
       className="h-screen w-screen flex fixed top-0 left-0 z-50 bg-black bg-opacity-80"
     >
       <motion.div
@@ -97,6 +113,7 @@ const MobileSidebar = ({ setOpenSideBar }: Props) => {
             duration: 0.3,
           },
         }}
+        ref={modalRef}
         className="h-full w-[18rem] px-3 bg-white"
       >
         <div className={`h-[5.75rem] border-b flex items-center py-6 pl-3`}>
