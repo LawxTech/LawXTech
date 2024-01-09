@@ -12,7 +12,7 @@ export const Events = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6  ">
             {Array.from(Array(3).keys()).map((item, index) => (
               <Grid item maxWidth="sm" key="comm">
-                <div className="border rounded-lg w-[22rem] ">
+                <div className="drop-shadow-md rounded-lg w-[22rem] mx-auto ">
                   <img
                     src={`/assets/events/event${index + 1}.png`}
                     className="object-cover object-center "
