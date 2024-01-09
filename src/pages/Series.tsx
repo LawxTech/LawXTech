@@ -72,20 +72,20 @@ const Series = () => {
           <div className="mt-12  ">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6  ">
               {Array.from(Array(4).keys()).map((item, index) => (
-                <div className="border rounded-lg w-[22rem] ">
+                <div className="border overflow-hidden rounded-lg w-[22rem] ">
                   <img
                     src={`/assets/series/LxT Series ${index + 1}.jpeg`}
                     className=""
                     alt="Upcoming Events"
                   />
-                  <div className="p-4">
+                  {/* <div className="p-4">
                     <h5 className="text-[#133167] font-[600] text-[1.2rem]">
                       Community Chat
                     </h5>
                     <p className="text-[#133167] font-[400] text-[0.85rem]">
                       30-09-2023
                     </p>
-                  </div>
+                  </div> */}
                 </div>
               ))}
             </div>
