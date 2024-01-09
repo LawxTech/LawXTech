@@ -2,36 +2,22 @@ import { Container } from "@mui/material";
 import React from "react";
 
 const Contact: React.FC = () => {
-  //   fetch("https://formsubmit.co/rofiatolusanya12@gmail.com", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(formData),
-  //   })
-  //     .then((response) => {
-  //       if (response.ok) {
-  //         alert("Subscription successful!");
-  //         resetForm();
-  //       } else {
-  //         alert("Subscription failed. Please try again later.");
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error:", error);
-  //       alert("Subscription failed. Please try again later.");
-  //     });
-  // };
-
   return (
     <div>
       <Container maxWidth="lg">
-        <section className="  md:my-[5rem] p-[1rem] md:flex items-center md:gap-x-8 ">
-          <div className="md:w-1/2 lg:w-1/3 bg-[#113167] text-white p-[2rem] rounded-xl ">
+        <section className="px-[1rem] sm:px-0 md:my-[1rem] ">
+          <div className="flex ">
+            <h1 className="text-[2rem] md:text-[3rem] text-[#113167] font-[700] ">
+              Contact Us
+            </h1>
+          </div>
+        </section>
+        <section className="px-[1rem] md:px-0 mb-[5rem] flex flex-col-reverse md:flex-row-reverse items-center md:gap-x-8 ">
+          <div className="w-full md:w-1/2 lg:w-1/3 bg-[#113167] text-white p-[2rem] rounded-xl ">
             <h2 className="text-white font-bold text-[1.7rem] ">
               Contact Information
             </h2>
-            <p className="text-base ">Send us a mail.</p>
+            <p className="text-base ">Reach out to us today.</p>
             <div className="py-[3rem] grid grid-cols-1 gap-y-10 mt-6 mb-24 ">
               <div className="flex items-center space-x-4">
                 <p className="">
@@ -52,7 +38,7 @@ const Contact: React.FC = () => {
                     />
                   </svg>
                 </p>
-                <p className="text-lg">+234 909 903 0433</p>
+                <p className="sm:text-lg">+234 909 903 0433</p>
               </div>
               <div className="flex items-center space-x-4">
                 <p className="">
@@ -69,7 +55,7 @@ const Contact: React.FC = () => {
                     />
                   </svg>
                 </p>
-                <p className="text-lg">lawxtechseries@gmail.com</p>
+                <p className=" sm:text-lg">lawxtechseries@gmail.com</p>
               </div>
               <div className="flex items-center space-x-4">
                 <p className="">
@@ -86,11 +72,11 @@ const Contact: React.FC = () => {
                     />
                   </svg>
                 </p>
-                <p className="text-lg">Lagos, Nigeria</p>
+                <p className="sm:text-lg">Lagos, Nigeria</p>
               </div>
             </div>
           </div>
-          <div className="w-full md:w-1/2 lg:w-2/3 py-[5rem] md:px-6 ">
+          <div className="w-full md:w-1/2 lg:w-2/3 py-[2rem] md:py-[5rem] md:px-6 ">
             <form action="">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 ">
                 <div className="">
