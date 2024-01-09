@@ -9,13 +9,13 @@ const Founder: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-[1.5rem]">
             <div className="rounded-[1rem] border border-[#113167] md:w-[30rem] md:h-[30rem] mx-auto w-full h-full">
               <img
-                src="/images/sopuruchi.jpeg"
+                src="/images/ruchi-rufus.jpeg"
                 alt="about the founder"
-                className="w-full h-full rounded-[1rem] object-cover object-center"
+                className="w-full h-full rounded-[1rem] object-cover "
               />
             </div>
             <div>
-              <h3 className="text-[#113167] text-[2rem] lg:text-[2.6rem] font-bold mt-[1rem] ">
+              <h3 className="text-[#113167] text-[1.8rem] md:text-[2rem] lg:text-[2.6rem] font-bold mt-[1rem] ">
                 About our Founder
               </h3>
               <div className=" md:w-2/3 mx-auto lg:mx-0 lg:w-[28rem] grid gap-[0.875remrem] ">
