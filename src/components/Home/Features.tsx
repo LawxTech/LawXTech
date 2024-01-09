@@ -17,9 +17,11 @@ const FeatureBox: React.FC<FeatureBoxProps> = ({
 }) => {
   return (
     <>
-      <div className="h-48 w-full p-5 bg-[#E7EBF0] cursor-pointer shadow-sm rounded-md ">
+      <div className="h-48 w-full p-5 bg-[#E7EBF0] border border-[#133167] cursor-pointer shadow-sm rounded-md ">
         <img src={src} alt={alt} className="h-12 w-12 rounded-md " />
-        <h4 className="text-[1.2rem] font-[500] mt-4 ">{title}</h4>
+        <h4 className="text-[1.2rem] font-[500] mt-4 text-[#133167] ">
+          {title}
+        </h4>
         <p className="text-[0.87rem] ">{description}</p>
       </div>
     </>
