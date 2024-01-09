@@ -13,7 +13,8 @@ export const Banner = () => {
           style={{
             width: "100%",
             height: "75vh",
-            background: `url("/images/about.jpeg")`,
+            // background: `url("/images/about.jpeg")`,
+            background: `url("/images/landing-image.jpg")`,
             boxShadow: "inset 0 0 0 1000px rgba(0, 0, 0, 0.7)",
             backgroundPosition: "center",
             backgroundSize: "cover",
@@ -65,7 +66,7 @@ export const Banner = () => {
               </h1>
             </div>
             <div className="flex flex-col items-center justify-center p-4">
-              <p className="text-[.95rem] text-center ">Major Seies</p>
+              <p className="text-[.95rem] text-center ">Major Series</p>
               <h1 className="text-[2.5rem] !leading-[3.6rem] font-[600] text-[#113167] text-center ">
                 <Counter targetValue={12} />
               </h1>
