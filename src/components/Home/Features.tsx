@@ -7,17 +7,23 @@ interface FeatureBoxProps {
   alt: string;
   title: string;
   description: string;
+  index: number;
 }
 
 const FeatureBox: React.FC<FeatureBoxProps> = ({
   src,
+  index,
   alt,
   title,
   description,
 }) => {
   return (
     <>
-      <div className="h-48 w-full p-5 bg-[#E7EBF0] border border-[#133167] cursor-pointer shadow-sm rounded-md ">
+      <div
+        data-aos="fade-left"
+        data-aos-delay={index * 100}
+        className="h-48 w-full p-5 bg-[#E7EBF0] border border-[#133167] cursor-pointer shadow-sm rounded-md "
+      >
         <img src={src} alt={alt} className="h-12 w-12 rounded-md " />
         <h4 className="text-[1.2rem] font-[500] mt-4 text-[#133167] ">
           {title}
@@ -70,13 +76,14 @@ export const Features = () => {
             Why Join Our Community?
           </h4>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mx-8 md:mx-0 ">
-            {benefits.map((benefit) => (
+            {benefits.map((benefit, index) => (
               <Box maxWidth="sm" key={benefit.src}>
                 <FeatureBox
                   src={benefit.src}
                   alt={benefit.alt}
                   title={benefit.title}
                   description={benefit.description}
+                  index={index}
                 />
               </Box>
             ))}
