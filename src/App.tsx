@@ -23,6 +23,7 @@ const App: React.FC = () => {
         <div>
           <Routes />
         </div>
+
         <Footer />
       </div>
     </ThemeProvider>
