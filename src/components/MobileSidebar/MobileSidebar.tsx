@@ -14,12 +14,16 @@ const MobileSidebar = ({ setOpenSideBar }: Props) => {
       link: "/",
     },
     {
-      page: "About",
+      page: "About Us",
       link: "/about-us",
     },
     {
       page: "Series",
       link: "/series",
+    },
+    {
+      page: "Blogs",
+      link: "/blogs",
     },
     {
       page: "Contact",
