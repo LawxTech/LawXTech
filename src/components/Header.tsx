@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button, Container } from "@mui/material";
 
 interface Props {
@@ -7,9 +7,16 @@ interface Props {
 }
 
 export default function Header({ setOpenSideBar }: Props) {
-  const navItems = ["Home", "About Us", "Series", "Contact Us"];
-  const [activeItem, setActiveItem] = React.useState(navItems[0]);
+  const navItems = ["Home", "About Us", "Series", "Blogs", "Contact Us"];
   const navigate = useNavigate();
+
+  const path = useLocation().pathname;
+  const [activeItem, setActiveItem] = React.useState(
+    navItems.find((item) =>
+      path.includes(item.toLowerCase().replace(/\s+/g, "-"))
+    )
+  );
+  console.log(activeItem);
 
   return (
     <Container maxWidth="lg">
@@ -53,8 +60,11 @@ export default function Header({ setOpenSideBar }: Props) {
             {navItems.map((item) => (
               <button
                 key={item}
+                data-aos="fade-left"
+                data-aos-delay={navItems.indexOf(item) * 100}
                 onClick={() => {
                   setActiveItem(item);
+                  console.log(item);
                   navigate(
                     `/${
                       item === "Home"
@@ -95,6 +105,8 @@ export default function Header({ setOpenSideBar }: Props) {
               to="https://forms.gle/P9jUJr3NaAGnS4Je6"
               target="_blank"
               className=" sm:text-center"
+              data-aos="fade-left"
+              data-aos-delay={500}
             >
               <Button
                 className="btn !text-[0.75rem] flex-shrink-0 "
