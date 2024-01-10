@@ -8,12 +8,11 @@ import Counter from "../../utils/Counter";
 export const Banner = () => {
   return (
     <ThemeProvider theme={theme}>
-      <div className="w-full h-[75vh] border-b">
+      <div className="w-full min-h-[80vh] border-b">
         <div
           style={{
             width: "100%",
-            height: "75vh",
-            // background: `url("/images/about.jpeg")`,
+            height: "80vh",
             background: `url("/images/landing-image.jpg")`,
             boxShadow: "inset 0 0 0 1000px rgba(0, 0, 0, 0.7)",
             backgroundPosition: "center",
@@ -25,21 +24,28 @@ export const Banner = () => {
         >
           <div className="h-[70vh] flex items-center w-full md:w-[700px] p-8 mx-auto">
             <div className="grid grid-cols-1 gap-[1.3rem] ">
-              <h1 className="text-[2.5rem] leading-[2.9rem] md:text-[3.5rem] md:!leading-[4rem] font-[500] md:font-[600] text-[#fff] sm:text-center ">
+              <h1
+                data-aos="fade-down"
+                className="text-[2.5rem] leading-[2.9rem] md:text-[3.5rem] md:!leading-[4rem] font-[500] md:font-[600] text-[#fff] sm:text-center "
+              >
                 Empowering Lawyers in the Tech World.
               </h1>
 
-              <p className="text-[1rem] sm:text-center text-neutral-200 font-[500] ">
+              <p
+                data-aos="fade-left"
+                className="text-[1rem] sm:text-center text-neutral-200 font-[500] "
+              >
                 Are you a lawyer looking to embrace the dynamic world of
                 technology? Or you are a techie seeking legal knowledge to boost
-                your career? &nbsp; Law x Tech is your gateway to a thriving
-                career at the intersection of law and technology.
+                your career? Law x Tech is your gateway to a thriving career at
+                the intersection of law and technology.
               </p>
 
               <Link
                 to="https://forms.gle/P9jUJr3NaAGnS4Je6"
                 target="_blank"
                 className=" sm:text-center"
+                data-aos="fade-up"
               >
                 <Button
                   className="btn"

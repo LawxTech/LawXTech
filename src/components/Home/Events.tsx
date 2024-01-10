@@ -11,7 +11,7 @@ export const Events = () => {
           </h4>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6  ">
             {Array.from(Array(3).keys()).map((item, index) => (
-              <Grid item maxWidth="sm" key="comm">
+              <Grid item maxWidth="sm" key={index}>
                 <div className="drop-shadow-md rounded-lg w-[22rem] mx-auto ">
                   <img
                     src={`/assets/events/event${index + 1}.png`}
@@ -36,11 +36,11 @@ export const Events = () => {
       <div className="flex items-center py-[5.5rem] lg:px-[3.5rem] bg-[#113167]">
         <Container maxWidth="lg">
           <div className="w-full lg:w-1/2 ">
-            <h4 className="text-white text-[1.7rem] md:text-[2rem] ">
-              Join us at Law x Tech as a VOLUNTEER
+            <h4 className="text-white text-[1.7rem] md:text-[2rem] font-[500] ">
+              Join us at LawxTech as a VOLUNTEER
             </h4>
             <div className="w-full xl:w-4/5 mt-[1rem]">
-              <p className="text-white text-[.9rem] text-justify ">
+              <p className="text-white text-[.9rem] text-justify !leading-6 ">
                 Do you have tech skills such as graphics designing, web
                 development, community management, copy writing, content writing
                 / creation, project management and the likes? Are you interested

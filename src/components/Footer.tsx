@@ -17,6 +17,10 @@ const footerData = {
       link: "/series",
     },
     {
+      title: "Blogs",
+      link: "/blogs",
+    },
+    {
       title: "Contact",
       link: "/contact-us",
     },
@@ -59,11 +63,6 @@ const footerData = {
       link: "tel:+2349099030433",
       icon: "fas fa-phone-alt",
     },
-    {
-      title: "Address",
-      link: "https://goo.gl/maps/3Xb1kz4Uf4Yi8z5r7",
-      icon: "fas fa-map-marker-alt",
-    },
   ],
 };
 
@@ -75,8 +74,13 @@ function Footer() {
           <div className="px-6 xs:px-0 ">
             <div className="md:flex flex-row lg:grid sm:grid-cols-2 mb-8">
               <div className="w-full sm:w-1/3 lg:w-full mb-4">
-                <h3 className="font-[600] text-[1.5rem] ">LawxTech</h3>
-                <p className="text-sm font-[400] sm:text-base lg:text-base !leading-6 md:!leading-7 mt-4 sm:hidden xl:block lg:w-3/4">
+                <h3 data-aos="fade-down" className="font-[600] text-[1.5rem] ">
+                  LawxTech
+                </h3>
+                <p
+                  data-aos="fade-left"
+                  className="text-sm font-[400] sm:text-base lg:text-base !leading-6 md:!leading-7 mt-4 sm:hidden xl:block lg:w-3/4"
+                >
                   Law x Tech is your gateway to a thriving career at the
                   intersection of law and technology. <br />
                   <span className="pt-2">This is where Law meets Tech.</span>
@@ -85,12 +89,21 @@ function Footer() {
 
               <div className="hidden w-full md:w-2/3 lg:w-full sm:grid grid-cols-3 sm:grid-cols-3 gap-4">
                 <div className="flex flex-col">
-                  <h3 className="font-raleway font-medium text-lg text-white mb-4">
+                  <h3
+                    data-aos="fade-left"
+                    className="font-raleway font-medium text-lg text-white mb-4"
+                  >
                     Socials
                   </h3>
                   <div className="flex flex-col space-y-2">
-                    {footerData.socials.map((item) => (
-                      <Link to={item.link} key={item.link} target="_blank">
+                    {footerData.socials.map((item, index) => (
+                      <Link
+                        data-aos="fade-up"
+                        data-aos-delay={index * 100}
+                        to={item.link}
+                        key={item.link}
+                        target="_blank"
+                      >
                         <p className="font-raleway font-normal text-base text-neutral-50 cursor-pointer hover:underline">
                           {item.title}
                         </p>
@@ -99,12 +112,20 @@ function Footer() {
                   </div>
                 </div>
                 <div className="flex flex-col">
-                  <h3 className="font-raleway font-medium text-lg text-white mb-4">
+                  <h3
+                    data-aos="fade-left"
+                    className="font-raleway font-medium text-lg text-white mb-4"
+                  >
                     Pages
                   </h3>
                   <div className="flex flex-col space-y-2">
-                    {footerData.pages.map((item) => (
-                      <Link to={item.link} key={item.link}>
+                    {footerData.pages.map((item, index) => (
+                      <Link
+                        data-aos="fade-up"
+                        data-aos-delay={index * 100}
+                        to={item.link}
+                        key={item.link}
+                      >
                         <p className="font-raleway font-normal text-base text-neutral-50 cursor-pointer hover:underline">
                           {item.title}
                         </p>
@@ -114,12 +135,21 @@ function Footer() {
                 </div>
 
                 <div className="flex flex-col">
-                  <h3 className="font-raleway font-medium text-lg text-white mb-4">
+                  <h3
+                    data-aos="fade-left"
+                    className="font-raleway font-medium text-lg text-white mb-4"
+                  >
                     Contact
                   </h3>
                   <div className="flex flex-col space-y-2">
-                    {footerData.contact.map((item) => (
-                      <Link to={item.link} key={item.link} target="_blank">
+                    {footerData.contact.map((item, index) => (
+                      <Link
+                        data-aos="fade-up"
+                        data-aos-delay={index * 100}
+                        to={item.link}
+                        key={item.link}
+                        target="_blank"
+                      >
                         <p className="font-raleway font-normal text-base text-neutral-50 cursor-pointer hover:underline">
                           {item.title}
                         </p>

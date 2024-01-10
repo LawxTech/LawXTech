@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button, Container } from "@mui/material";
 
 interface Props {
@@ -7,14 +7,21 @@ interface Props {
 }
 
 export default function Header({ setOpenSideBar }: Props) {
-  const navItems = ["Home", "About Us", "Series", "Contact Us"];
-  const [activeItem, setActiveItem] = React.useState(navItems[0]);
+  const navItems = ["Home", "About Us", "Series", "Blogs", "Contact Us"];
   const navigate = useNavigate();
+
+  const path = useLocation().pathname;
+  const [activeItem, setActiveItem] = React.useState(
+    navItems.find((item) =>
+      path.includes(item.toLowerCase().replace(/\s+/g, "-"))
+    )
+  );
+  console.log(activeItem);
 
   return (
     <Container maxWidth="lg">
-      <div className=" h-[4.5rem] lg:h-full sm:px-[2rem] flex items-center justify-between ">
-        <div className="w-full flex justify-between items-center lg:hidden">
+      <div className=" h-[4.5rem] lg:h-full flex items-center justify-between ">
+        <div className="w-full flex justify-between items-center md:hidden">
           <Link to="/" className="">
             <img
               src={"/assets/logo/logo_2.JPG"}
@@ -24,7 +31,7 @@ export default function Header({ setOpenSideBar }: Props) {
           </Link>
           <button
             onClick={() => setOpenSideBar(true)}
-            className="focus:outline-none mr-[1rem] "
+            className="focus:outline-none mr-[1rem] md:hidden "
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +48,7 @@ export default function Header({ setOpenSideBar }: Props) {
             </svg>
           </button>
         </div>
-        <Link to="/" className="hidden lg:block">
+        <Link to="/" className="hidden md:block">
           <img
             src={"/assets/logo/logo_2.JPG"}
             alt="Logo"
@@ -53,8 +60,11 @@ export default function Header({ setOpenSideBar }: Props) {
             {navItems.map((item) => (
               <button
                 key={item}
+                data-aos="fade-left"
+                data-aos-delay={navItems.indexOf(item) * 100}
                 onClick={() => {
                   setActiveItem(item);
+                  console.log(item);
                   navigate(
                     `/${
                       item === "Home"
@@ -63,9 +73,14 @@ export default function Header({ setOpenSideBar }: Props) {
                     }`
                   );
                 }}
+                className="flex-shrink-0"
               >
                 {
-                  <span>
+                  <span
+                    className={`${
+                      item === activeItem ? "text-[#113167] font-[500] " : ""
+                    }`}
+                  >
                     {item}
                     {item === activeItem && (
                       <span
@@ -90,9 +105,11 @@ export default function Header({ setOpenSideBar }: Props) {
               to="https://forms.gle/P9jUJr3NaAGnS4Je6"
               target="_blank"
               className=" sm:text-center"
+              data-aos="fade-left"
+              data-aos-delay={500}
             >
               <Button
-                className="btn !text-[0.75rem] "
+                className="btn !text-[0.75rem] flex-shrink-0 "
                 variant="contained"
                 size="medium"
                 sx={{

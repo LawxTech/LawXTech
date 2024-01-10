@@ -18,12 +18,19 @@ const SpeakerAd = () => {
   return (
     <div className="py-[5rem] md:py-0 ">
       <Container maxWidth="lg">
-        <div className=" grid grid-cols-1 md:grid-cols-2 items-center ">
-          <div className="">
-            <h4 className=" text-[1.8rem] mx-auto ">
-              Become a Speaker at the Law x Tech Series
+        <div className=" py-[3rem] grid grid-cols-1 md:grid-cols-2 items-center ">
+          <div className=" lg:w-[30rem] ">
+            <h4
+              data-aos="fade-right"
+              className="text-[#113167] text-[1.8rem] mx-auto font-[500] "
+            >
+              {/* Become a Speaker at the LawxTech Series */}
+              Would you like to speak at LawxTech Series?
             </h4>
-            <p className=" text-[.9rem] text-justify ">
+            <p
+              data-aos="fade-right"
+              className="mt-[0.5rem] text-[.9rem] text-justify !leading-6 "
+            >
               Are you passionate about the intersection of law and technology?
               Do you have insights and experiences that can inspire and educate
               others in this rapidly evolving field? If so, we invite you to
@@ -31,14 +38,21 @@ const SpeakerAd = () => {
               webinar!
             </p>
             <div className="">
-              <Link to="https://forms.gle/NFD7ex8vRV1YKZV39" target="_blank">
-                <button className="text-white px-10 h-[3rem] rounded-md bg-[#131157] font-[600] text-[.95rem] mt-[1.5rem] ">
+              <Link
+                data-aos="fade-right"
+                to="https://forms.gle/NFD7ex8vRV1YKZV39"
+                target="_blank"
+              >
+                <button className="text-white px-10 h-[3rem] rounded-md bg-[#131157] font-[600] text-[.95rem] mt-[1rem] ">
                   SPEAK HERE
                 </button>
               </Link>
             </div>
           </div>
-          <div className="hidden md:flex h-[75vh] justify-center items-center relative ">
+          <div
+            data-aos="fade-left"
+            className="hidden md:flex h-[75vh] justify-center items-center relative "
+          >
             <div className="w-[24rem] h-[32rem] border-8 rounded-[1rem] rotate-3">
               <Slider {...settings}>
                 {Array.from(Array(6).keys()).map((item, index) => (
