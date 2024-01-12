@@ -45,7 +45,10 @@ const Banner: React.FC = () => {
               left: "0rem",
             }}
           >
-            <h1 className="text-white leading-[3.4rem] text-[2.9rem] lg:leading-[4rem] lg:text-[4rem] font-bold">
+            <h1
+              data-aos="fade-up"
+              className="text-white leading-[3.4rem] text-[2.9rem] lg:leading-[4rem] lg:text-[4rem] font-bold"
+            >
               Discover Our Mission <br /> and Vision.
             </h1>
           </Box>
