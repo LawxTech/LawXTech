@@ -1,7 +1,7 @@
 // App.tsx
 import React from "react";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "./components/shared/Header";
+import Footer from "./components/shared/Footer";
 import Routes from "./Routes";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./styles/theme";
