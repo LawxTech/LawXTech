@@ -1,48 +1,29 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import { Container } from "@mui/material";
+import { Link } from "react-router-dom";
 
-interface Video {
-  id: string;
-  snippet: {
-    title: string;
-    description: string;
-    resourceId: {
-      videoId: string;
-    };
-  };
-}
+// interface Video {
+//   id: string;
+//   snippet: {
+//     title: string;
+//     description: string;
+//     resourceId: {
+//       videoId: string;
+//     };
+//   };
+// }
 
 const Series = () => {
-  const [activeTab, setActiveTab] = useState("mini-series");
-  const [videos, setVideos] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          "https://www.googleapis.com/youtube/v3/playlistItems",
-          {
-            params: {
-              part: "snippet",
-              maxResults: 50,
-              playlistId: "YOUR_PLAYLIST_ID",
-              key: "YOUR_YOUTUBE_API_KEY",
-            },
-          }
-        );
-        setVideos(response.data.items);
-      } catch (error) {
-        console.error("Error fetching data from YouTube API", error);
-      }
-    };
-    fetchData();
-  }, []);
+  const [activeTab, setActiveTab] = useState("lawxtech-series");
+  // const [videos, setVideos] = useState([]);
 
   return (
     <div>
       <Container maxWidth="lg">
-        <div className="mt-6 mb-6 grid grid-cols-2 gap-4 p-2 border border-[#113167] md:w-1/2 rounded-md mx-auto">
+        <div
+          data-aos="fade-up"
+          className="mt-6 mb-6 grid grid-cols-2 gap-4 p-2 border border-[#113167] md:w-1/2 rounded-md mx-auto"
+        >
           <button
             onClick={() => setActiveTab("lawxtech-series")}
             className={` ${
@@ -65,33 +46,41 @@ const Series = () => {
           </button>
         </div>
         <div className="mt-12 pb-[5rem] ">
-          <h4 className="text-[#113167] text-4xl font-bold text-center my-4">
+          <h4
+            data-aos="fade-left"
+            className="text-[#113167] text-4xl font-bold text-center my-4"
+          >
             Law x Tech {activeTab === "mini-series" ? "Mini" : ""} Series
           </h4>
 
           <div className="mt-12  ">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6  ">
-              {Array.from(Array(4).keys()).map((item, index) => (
-                <div className="border overflow-hidden rounded-lg w-[22rem] ">
-                  <img
-                    src={`/assets/series/LxT Series ${index + 1}.jpeg`}
-                    className=""
-                    alt="Upcoming Events"
-                  />
-                  {/* <div className="p-4">
-                    <h5 className="text-[#133167] font-[600] text-[1.2rem]">
-                      Community Chat
-                    </h5>
-                    <p className="text-[#133167] font-[400] text-[0.85rem]">
-                      30-09-2023
-                    </p>
-                  </div> */}
-                </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6 place-items-center ">
+              {Array.from(
+                Array(activeTab === "lawxtech-series" ? 6 : 5).keys()
+              ).map((item, index) => (
+                <Link
+                  data-aos="fade-up"
+                  data-aos-delay={index * 100}
+                  to="/"
+                  key={index}
+                >
+                  <div className="border overflow-hidden rounded-lg w-[22rem] ">
+                    <img
+                      src={`/assets/series/${
+                        activeTab === "lawxtech-series"
+                          ? "LxT Series"
+                          : "Mini Series"
+                      } ${index + 1}.jpeg`}
+                      className=""
+                      alt="Upcoming Events"
+                    />
+                  </div>
+                </Link>
               ))}
             </div>
           </div>
 
-          {videos.map((video: Video, index) => (
+          {/* {videos.map((video: Video, index) => (
             <div
               key={index}
               className="p-6 rounded-md grid grid-cols-2 gap-4 border-dotted border-2 border-blue-800 mb-8"
@@ -121,7 +110,7 @@ const Series = () => {
                 />
               </div>
             </div>
-          ))}
+          ))} */}
         </div>
       </Container>
     </div>

@@ -14,7 +14,7 @@ export default function Header({ setOpenSideBar }: Props) {
   const [activeItem, setActiveItem] = React.useState(
     navItems.find((item) =>
       path.includes(item.toLowerCase().replace(/\s+/g, "-"))
-    )
+    ) || "Home"
   );
   console.log(activeItem);
 
@@ -48,7 +48,11 @@ export default function Header({ setOpenSideBar }: Props) {
             </svg>
           </button>
         </div>
-        <Link to="/" className="hidden md:block">
+        <Link
+          onClick={() => setActiveItem("Home")}
+          to="/"
+          className="hidden md:block"
+        >
           <img
             src={"/assets/logo/logo_2.JPG"}
             alt="Logo"

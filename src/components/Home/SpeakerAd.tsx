@@ -40,7 +40,7 @@ const SpeakerAd = () => {
             <div className="">
               <Link
                 data-aos="fade-right"
-                to="https://forms.gle/NFD7ex8vRV1YKZV39"
+                to="https://forms.gle/ee4eCViprcSn4DE87"
                 target="_blank"
               >
                 <button className="text-white px-10 h-[3rem] rounded-md bg-[#131157] font-[600] text-[.95rem] mt-[1rem] ">

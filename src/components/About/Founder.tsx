@@ -6,7 +6,10 @@ const Founder: React.FC = () => {
     <div>
       <section className="py-[6rem] px-[1.5rem] lg:px-[4.38rem] bg-[#F5F5F5] ">
         <Container maxWidth="lg" className=" ">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-[1.5rem]">
+          <div
+            className="grid grid-cols-1 md:grid-cols-2 gap-[1.5rem]"
+            data-aos="fade-right"
+          >
             <div className="rounded-[1rem] border border-[#113167] md:w-[30rem] md:h-[30rem] mx-auto w-full h-full">
               <img
                 src="/images/ruchi-rufus.jpeg"
@@ -14,7 +17,7 @@ const Founder: React.FC = () => {
                 className="w-full h-full rounded-[1rem] "
               />
             </div>
-            <div>
+            <div data-aos="fade-left">
               <h3 className="text-[#113167] text-[1.8rem] md:text-[2rem] lg:text-[2.6rem] font-bold mt-[1rem] ">
                 About our Founder
               </h3>

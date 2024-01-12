@@ -49,12 +49,20 @@ const MeetTeam = () => {
       <Container maxWidth="lg">
         <section className="bg-white py-8 px-[1.5rem] md:p-16">
           <div className="container mx-auto">
-            <h4 className="text-[1.8rem] text-[#113167] text-center mb-8 font-bold mt-4">
+            <h4
+              data-aos="fade-left"
+              className="text-[1.8rem] md:text-[2rem] lg:text-[2.6rem] text-[#113167] text-center mb-8 font-bold mt-4"
+            >
               Our Volunteers
             </h4>
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 md:gap-6 items-center justify-center mb-4">
               {teamMembers.map((member, index) => (
-                <div className="mb-6 flex items-center lg:block" key={index}>
+                <div
+                  data-aos="fade-up"
+                  data-aos-delay={index * 100}
+                  className="mb-6 flex items-center lg:block"
+                  key={index}
+                >
                   <div className=" overflow-hidden rounded-lg h-[6rem] w-[6rem] flex-shrink-0 lg:w-60 lg:h-60">
                     <img
                       src={`/assets/members/${member.image}`}

@@ -3,7 +3,6 @@ import { Banner } from "../components/Home/Banner";
 import { Features } from "../components/Home/Features";
 import { Events } from "../components/Home/Events";
 import SpeakerAd from "../components/Home/SpeakerAd";
-import { Testimonials } from "../components/Home/Testimonials";
 import Reviews from "../components/Home/Reviews";
 
 const Home: React.FC = () => {
@@ -67,7 +66,6 @@ const Home: React.FC = () => {
       </section>
       <section>
         <Reviews reviews={reviews} />
-        {/* <Testimonials /> */}
       </section>
     </div>
   );
