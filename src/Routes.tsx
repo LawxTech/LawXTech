@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Series from "./pages/Series";
 import Contact from "./pages/Contact";
 import Blogs from "./pages/Blogs";
+import Blog from "./components/Blog/Blog";
 
 const Routes: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const Routes: React.FC = () => {
       <Route path="/about-us" element={<About />} />
       <Route path="/series" element={<Series />} />
       <Route path="/blogs" element={<Blogs />} />
+      <Route path="/blogs/:blogId" element={<Blog />} />
       <Route path="/contact-us" element={<Contact />} />
     </ReactRoutes>
   );

@@ -43,6 +43,18 @@ export const Events = () => {
       <div className="flex items-center py-[5.5rem] lg:px-[3.5rem] bg-[#113167]">
         <Container maxWidth="lg">
           <div className="grid md:grid-cols-2 gap-5 ">
+            <div className="">
+              <div
+                data-aos="fade-left"
+                className="border-2 rounded-xl w-[20rem] h-[22rem] mx-auto overflow-hidden"
+              >
+                <img
+                  src={`/assets/members/Chidimma M. Chukwuani, Content Creator Volunteer.jpeg`}
+                  alt={`Team member : Chidimma Chukwuani`}
+                  className="h-[22rem] w-[22rem] "
+                />
+              </div>
+            </div>
             <div className="w-full ">
               <h4
                 data-aos="fade-up"
@@ -67,18 +79,6 @@ export const Events = () => {
                   Apply Here
                 </button>
               </Link>
-            </div>
-            <div className="">
-              <div
-                data-aos="fade-left"
-                className="border-2 rounded-xl w-[20rem] h-[22rem] mx-auto overflow-hidden"
-              >
-                <img
-                  src={`/assets/members/Chidimma M. Chukwuani, Content Creator Volunteer.jpeg`}
-                  alt={`Team member : Chidimma Chukwuani`}
-                  className="h-[22rem] w-[22rem] "
-                />
-              </div>
             </div>
           </div>
         </Container>

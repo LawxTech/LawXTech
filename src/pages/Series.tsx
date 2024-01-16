@@ -54,7 +54,7 @@ const Series = () => {
           </h4>
 
           <div className="mt-12  ">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6 place-items-center ">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 place-items-center ">
               {Array.from(
                 Array(activeTab === "lawxtech-series" ? 6 : 5).keys()
               ).map((item, index) => (
@@ -64,14 +64,14 @@ const Series = () => {
                   to="/"
                   key={index}
                 >
-                  <div className="border overflow-hidden rounded-lg w-[22rem] ">
+                  <div className="border overflow-hidden rounded-lg w-80 ">
                     <img
                       src={`/assets/series/${
                         activeTab === "lawxtech-series"
                           ? "LxT Series"
                           : "Mini Series"
                       } ${index + 1}.jpeg`}
-                      className=""
+                      className="w-80 h-80 rounded-lg "
                       alt="Upcoming Events"
                     />
                   </div>

@@ -38,14 +38,11 @@ const Banner: React.FC = () => {
             position: "relative",
           }}
         >
-          <div className="absolute left-0 bottom-0 lg:w-[28rem] grid gap-y-[.85rem] ">
-            <h1 className="text-[#113167] leading-[3.4rem] text-[2.9rem] lg:leading-[4rem] lg:text-[3rem] font-[700] ">
+          <div className="absolute left-0 bottom-0 lg:w-[26rem] grid gap-y-[.75rem] ">
+            <p className="text-[#113167] ">Lawxtech </p>
+            <h1 className="text-[#113167] leading-[3.2rem] text-[2.9rem] lg:leading-[3.5rem] lg:text-[2.75rem] font-[700] ">
               Discover the World of Law and Technology.
             </h1>
-
-            <button className="px-6 py-3 text-[#113167] text-[.8rem] border border-[#113167] rounded-lg font-[600] hover:bg-[#113167] hover:text-white w-[10rem] ">
-              READ NOW
-            </button>
           </div>
         </Container>
       </section>
