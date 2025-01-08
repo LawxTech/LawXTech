@@ -6,8 +6,10 @@ interface Props {
   setOpenSideBar: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
+// "Blogs",
+
 export default function Header({ setOpenSideBar }: Props) {
-  const navItems = ["Home", "About Us", "Series", "Blogs", "Contact Us"];
+  const navItems = ["Home", "About Us", "Series", "Contact Us"];
   const navigate = useNavigate();
 
   const path = useLocation().pathname;
