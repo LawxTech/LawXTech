@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container } from "@mui/material";
 import { Link } from "react-router-dom";
 
@@ -16,6 +16,28 @@ import { Link } from "react-router-dom";
 const Series = () => {
   const [activeTab, setActiveTab] = useState("lawxtech-series");
   // const [videos, setVideos] = useState([]);
+
+  const [isFebuaryUpcoming, setIsFebuaryUpcoming] = useState(false);
+  const [isMarchUpcoming, setIsMarchUpcoming] = useState(false);
+
+  const isUpcoming = () => {
+    const today = new Date();
+    const feb15 = new Date(today.getFullYear(), 1, 15);
+    const mar1 = new Date(today.getFullYear(), 2, 1);
+
+    if (today < feb15) {
+      setIsFebuaryUpcoming(true);
+    }
+    if (today < mar1) {
+      setIsMarchUpcoming(true);
+      return today < mar1;
+    }
+    return false;
+  };
+
+  useEffect(() => {
+    isUpcoming();
+  }, []);
 
   return (
     <div>
@@ -54,29 +76,43 @@ const Series = () => {
           </h4>
 
           <div className="mt-12  ">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 place-items-center ">
-              {Array.from(
-                Array(activeTab === "lawxtech-series" ? 6 : 5).keys()
-              ).map((item, index) => (
-                <Link
-                  data-aos="fade-up"
-                  data-aos-delay={index * 100}
-                  to="/"
-                  key={index}
-                >
-                  <div className="border overflow-hidden rounded-lg w-80 ">
-                    <img
-                      src={`/assets/series/${
-                        activeTab === "lawxtech-series"
-                          ? "LxT Series"
-                          : "Mini Series"
-                      } ${index + 1}.jpeg`}
-                      className="w-80 h-80 rounded-lg "
-                      alt="Upcoming Events"
-                    />
-                  </div>
-                </Link>
-              ))}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-y-16  mt-6 place-items-center ">
+              {Array.from({ length: activeTab === "lawxtech-series" ? 8 : 5 })
+                .map((_, index) => index)
+                .reverse()
+                .map((index) => (
+                  <Link
+                    data-aos="fade-up"
+                    data-aos-delay={index * 100}
+                    to="/"
+                    key={index}
+                    className="block"
+                  >
+                    <div className="relative border overflow-hidden rounded-lg w-80 hover:scale-105 ease-in-out transition-transform duration-300">
+                      <img
+                        src={`/assets/series/${
+                          activeTab === "lawxtech-series"
+                            ? "LxT Series"
+                            : "Mini Series"
+                        } ${index + 1}.jpeg`}
+                        className="w-80 h-80 rounded-lg"
+                        alt="LawXtech Events"
+                      />
+
+                      {isFebuaryUpcoming && index === 7 && (
+                        <span className="px-3 py-1.5 bg-yellow-500 text-white absolute bottom-4 right-4 rounded-full text-sm font-[600] tracking-tight ">
+                          Upcoming
+                        </span>
+                      )}
+
+                      {isMarchUpcoming && index === 6 && (
+                        <span className="px-3 py-1.5 bg-yellow-500 text-white absolute bottom-4 right-4 rounded-full text-sm font-[600] tracking-tight ">
+                          Upcoming
+                        </span>
+                      )}
+                    </div>
+                  </Link>
+                ))}
             </div>
           </div>
 
