@@ -19,7 +19,7 @@ const CountUp = ({ targetValue }: Props) => {
           const elapsedTime = Date.now() - startTime;
           const updatedCount = Math.min(
             Math.floor(elapsedTime * increment),
-            targetValue
+            targetValue,
           );
           setCount(updatedCount);
 
@@ -35,7 +35,7 @@ const CountUp = ({ targetValue }: Props) => {
     }
 
     return () => observer.disconnect(); // Clean up the observer on component unmount
-  }, [targetValue]);
+  }, [targetValue, increment]);
 
   return <div ref={targetRef}>{count}</div>;
 };

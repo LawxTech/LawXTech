@@ -80,7 +80,7 @@ const MobileSidebar = ({ setOpenSideBar }: Props) => {
     return () => {
       document.body.removeEventListener("click", handleClick);
     };
-  }, []);
+  }, [setOpenSideBar]);
 
   return (
     <motion.div
