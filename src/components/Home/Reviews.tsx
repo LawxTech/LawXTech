@@ -16,11 +16,6 @@ function ReviewComponent({ reviews }: Props) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const sliderRef = useRef<HTMLDivElement>(null);
 
-  const handleDotClick = (index: number) => {
-    setCurrentIndex(index);
-    scrollToIndex(index);
-  };
-
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % reviews.length);
